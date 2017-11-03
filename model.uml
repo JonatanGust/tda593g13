@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_G0gQoMBvEeel9pEGYVsbnw" name="model">
   <packagedElement xmi:type="uml:Class" xmi:id="_omRaoMByEeel9pEGYVsbnw" name="Rover"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_GFWu0MBzEeel9pEGYVsbnw" name="Component1"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_0rUEYMBzEeel9pEGYVsbnw" name="Area"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_CRjQkMB0Eeel9pEGYVsbnw" name="Camera"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_F6yoIMB0Eeel9pEGYVsbnw" name="GPS"/>
@@ -176,6 +175,29 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_rnb6BMB8Eeel9pEGYVsbnw" name="is for" type="_JRZawMB4Eeel9pEGYVsbnw" association="_rnb6AMB8Eeel9pEGYVsbnw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rnb6BcB8Eeel9pEGYVsbnw" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rnb6BsB8Eeel9pEGYVsbnw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VY568MB_Eeel9pEGYVsbnw" memberEnd="_VY7JEsB_Eeel9pEGYVsbnw _VY8XMMB_Eeel9pEGYVsbnw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VY7JEMB_Eeel9pEGYVsbnw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VY7JEcB_Eeel9pEGYVsbnw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VY8XMMB_Eeel9pEGYVsbnw" name="nested in" type="_0rUEYMBzEeel9pEGYVsbnw" association="_VY568MB_Eeel9pEGYVsbnw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9jyqgMB_Eeel9pEGYVsbnw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9j278MB_Eeel9pEGYVsbnw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VY7JEsB_Eeel9pEGYVsbnw" name="nests" type="_0rUEYMBzEeel9pEGYVsbnw" association="_VY568MB_Eeel9pEGYVsbnw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VY7wIMB_Eeel9pEGYVsbnw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VY7wIcB_Eeel9pEGYVsbnw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PP7VEMCAEeel9pEGYVsbnw" memberEnd="_PP7VFMCAEeel9pEGYVsbnw _PP7VE8CAEeel9pEGYVsbnw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PP7VEcCAEeel9pEGYVsbnw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PP7VEsCAEeel9pEGYVsbnw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PP7VE8CAEeel9pEGYVsbnw" name="is in" type="_oV5qEMB3Eeel9pEGYVsbnw" association="_PP7VEMCAEeel9pEGYVsbnw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PP7VFMCAEeel9pEGYVsbnw" name="contains" type="_0rUEYMBzEeel9pEGYVsbnw" association="_PP7VEMCAEeel9pEGYVsbnw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PP7VFcCAEeel9pEGYVsbnw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PP7VFsCAEeel9pEGYVsbnw" value="*"/>
     </ownedEnd>
   </packagedElement>
 </uml:Model>
