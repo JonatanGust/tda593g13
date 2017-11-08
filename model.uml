@@ -2,14 +2,5 @@
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_G0gQoMBvEeel9pEGYVsbnw" name="model">
   <packagedElement xmi:type="uml:Package" href="Domain_model.uml#_LQ-WwMCBEeeMrZMCk1v-cA"/>
   <packagedElement xmi:type="uml:Package" href="Use_Cases.uml#_UrLAUMCBEeeMrZMCk1v-cA"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_2Bs7cMLXEeeC-NgdxlPDnQ" name="Logical Boundaries">
-    <generalization xmi:type="uml:Generalization" xmi:id="_A4jJMMLYEeeC-NgdxlPDnQ">
-      <general xmi:type="uml:Class" href="Domain_model.uml#_rcckQMB3Eeel9pEGYVsbnw"/>
-    </generalization>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_2fJscMLXEeeC-NgdxlPDnQ" name="Physical Boundaries">
-    <generalization xmi:type="uml:Generalization" xmi:id="_ATYmoMLYEeeC-NgdxlPDnQ">
-      <general xmi:type="uml:Class" href="Domain_model.uml#_rcckQMB3Eeel9pEGYVsbnw"/>
-    </generalization>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Package" href="Component_diagram.uml#_hqnK8MSiEeeHZ4TWwFBk2g"/>
 </uml:Model>
