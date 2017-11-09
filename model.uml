@@ -49,6 +49,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_jS7egMSgEeeNkM-fDIrCNA" general="_ZRrcAMSgEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_J-NcgMShEeeNkM-fDIrCNA" client="_f5yYcMSgEeeNkM-fDIrCNA" supplier="_yUdkAMSgEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_MHaksMShEeeNkM-fDIrCNA" client="_f5yYcMSgEeeNkM-fDIrCNA" supplier="_IgZQIMSgEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_14c20MVeEeecVOrCacIQRQ" client="_f5yYcMSgEeeNkM-fDIrCNA" supplier="_y7ziwMSeEeeNkM-fDIrCNA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_FjCRsMShEeeNkM-fDIrCNA" name="RoverUndercarriage">
         <generalization xmi:type="uml:Generalization" xmi:id="_H5kEMMShEeeNkM-fDIrCNA" general="_yUdkAMSgEeeNkM-fDIrCNA"/>
@@ -76,6 +77,7 @@
       <packagedElement xmi:type="uml:Component" xmi:id="_Tcwh8MSeEeeNkM-fDIrCNA" name="MissionPlanner">
         <generalization xmi:type="uml:Generalization" xmi:id="_WgFwEMSeEeeNkM-fDIrCNA" general="_H2uS8MSeEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_wT8IoMSeEeeNkM-fDIrCNA" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_gcu_YMSeEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_wUCMAMVeEeecVOrCacIQRQ" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_gcu_YMSeEeeNkM-fDIrCNA" name="StrategyHandler">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_kP4g4MSeEeeNkM-fDIrCNA" name="chooseStrategyFor">
@@ -85,7 +87,6 @@
       <packagedElement xmi:type="uml:Component" xmi:id="_rwNewMSeEeeNkM-fDIrCNA" name="StrategyPlanner">
         <generalization xmi:type="uml:Generalization" xmi:id="_vGhTQMSeEeeNkM-fDIrCNA" general="_gcu_YMSeEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_IjI3kMSfEeeNkM-fDIrCNA" client="_rwNewMSeEeeNkM-fDIrCNA" supplier="_y7ziwMSeEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_tx27gMSgEeeNkM-fDIrCNA" client="_rwNewMSeEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_y7ziwMSeEeeNkM-fDIrCNA" name="LocationHandler">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_0efdgMSeEeeNkM-fDIrCNA" name="getCurrentLocation"/>
@@ -93,14 +94,39 @@
       <packagedElement xmi:type="uml:Component" xmi:id="_4AchUMSeEeeNkM-fDIrCNA" name="GPS">
         <generalization xmi:type="uml:Generalization" xmi:id="_8AhEgMSeEeeNkM-fDIrCNA" general="_y7ziwMSeEeeNkM-fDIrCNA"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_q1pegMSfEeeNkM-fDIrCNA" name="NetworkDevice">
-        <generalization xmi:type="uml:Generalization" xmi:id="_wbvkUMSfEeeNkM-fDIrCNA" general="_OGjc0MSfEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_52N6sMSfEeeNkM-fDIrCNA" client="_q1pegMSfEeeNkM-fDIrCNA" supplier="_y7ziwMSeEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_7qetoMSfEeeNkM-fDIrCNA" client="_q1pegMSfEeeNkM-fDIrCNA" supplier="_gcu_YMSeEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="__14XEMSfEeeNkM-fDIrCNA" client="_q1pegMSfEeeNkM-fDIrCNA" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_T8fgAMSgEeeNkM-fDIrCNA" client="_q1pegMSfEeeNkM-fDIrCNA" supplier="_IgZQIMSgEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_oiG5IMSgEeeNkM-fDIrCNA" client="_q1pegMSfEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_Ydiz4MShEeeNkM-fDIrCNA" client="_q1pegMSfEeeNkM-fDIrCNA" supplier="_yUdkAMSgEeeNkM-fDIrCNA"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_Ypi0AMVbEeecVOrCacIQRQ" name="StateContainer">
+        <generalization xmi:type="uml:Generalization" xmi:id="_1aKqQMVcEeecVOrCacIQRQ" general="_uy1w8MVcEeecVOrCacIQRQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_pexrwMVbEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_y7ziwMSeEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_qNGKUMVbEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_ufMRoMVbEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_yUdkAMSgEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_wNgNkMVbEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_IgZQIMSgEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_ShDWUMVcEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_ApAWsMVcEeecVOrCacIQRQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_oOExgMVeEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_y36lYMVbEeecVOrCacIQRQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_y36lYMVbEeecVOrCacIQRQ" name="VideoHandler">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_3Dl7oMVbEeecVOrCacIQRQ" name="getVideo"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Component" xmi:id="_8aThoMVbEeecVOrCacIQRQ" name="Camera">
+        <generalization xmi:type="uml:Generalization" xmi:id="_-PhW0MVbEeecVOrCacIQRQ" general="_y36lYMVbEeecVOrCacIQRQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ApAWsMVcEeecVOrCacIQRQ" name="FaultHandler">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CjWjgMVcEeecVOrCacIQRQ" name="HandleFault">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GNt8cMVcEeecVOrCacIQRQ" name="Fault"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Component" xmi:id="_IH7mYMVcEeecVOrCacIQRQ" name="FaultResolver">
+        <generalization xmi:type="uml:Generalization" xmi:id="_NYWXIMVcEeecVOrCacIQRQ" general="_ApAWsMVcEeecVOrCacIQRQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_uy1w8MVcEeecVOrCacIQRQ" name="StateHandler">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_y-M-IMVcEeecVOrCacIQRQ" name="sendRoverState"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Component" xmi:id="_eKKSAMVdEeecVOrCacIQRQ" name="Communicator">
+        <generalization xmi:type="uml:Generalization" xmi:id="_iJ428MVdEeecVOrCacIQRQ" general="_TYmM4MVdEeecVOrCacIQRQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_i421wMVdEeecVOrCacIQRQ" client="_eKKSAMVdEeecVOrCacIQRQ" supplier="_uy1w8MVcEeecVOrCacIQRQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_TYmM4MVdEeecVOrCacIQRQ" name="DataCommunicator">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_XvU8kMVdEeecVOrCacIQRQ" name="getState"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mP4NQMSfEeeNkM-fDIrCNA" name="recieveMission"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_h6Im8MSdEeeNkM-fDIrCNA" name="RoverManager">
@@ -115,19 +141,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_7MbxoMSdEeeNkM-fDIrCNA" name="roverID"/>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_83dJAMSdEeeNkM-fDIrCNA" name="RoverLord">
+    <packagedElement xmi:type="uml:Component" xmi:id="_83dJAMSdEeeNkM-fDIrCNA" name="CentralStation">
       <generalization xmi:type="uml:Generalization" xmi:id="__HEbMMSdEeeNkM-fDIrCNA" general="_h6Im8MSdEeeNkM-fDIrCNA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_BjbI4MSeEeeNkM-fDIrCNA" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_2ntesMScEeeNkM-fDIrCNA"/>
-      <packagedElement xmi:type="uml:Usage" xmi:id="_GggcAMSgEeeNkM-fDIrCNA" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_OGjc0MSfEeeNkM-fDIrCNA"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_OGjc0MSfEeeNkM-fDIrCNA" name="CommunicationManager">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_RtXygMSfEeeNkM-fDIrCNA" name="sendLocation"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_VGaK4MSfEeeNkM-fDIrCNA" name="sendVideo"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_WR_NMMSfEeeNkM-fDIrCNA" name="sendSensoryInfo"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_dUx6gMSfEeeNkM-fDIrCNA" name="sendMissionInfo"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_geqckMSfEeeNkM-fDIrCNA" name="sendStrategyInfo"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_jISKMMSfEeeNkM-fDIrCNA" name="sendOperatinalityInfo"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_mP4NQMSfEeeNkM-fDIrCNA" name="recieveMission"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="__uUlMMVdEeecVOrCacIQRQ" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_TYmM4MVdEeecVOrCacIQRQ"/>
     </packagedElement>
   </packagedElement>
 </uml:Model>
