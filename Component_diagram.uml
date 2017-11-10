@@ -4,6 +4,7 @@
     <packagedElement xmi:type="uml:Component" xmi:id="_zETCUMScEeeNkM-fDIrCNA" name="View">
       <generalization xmi:type="uml:Generalization" xmi:id="_1xgPcMScEeeNkM-fDIrCNA" general="_0O8X4MSZEeeEO62YmYOaFA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_fW0VoMSdEeeNkM-fDIrCNA" client="_zETCUMScEeeNkM-fDIrCNA" supplier="_2ntesMScEeeNkM-fDIrCNA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_6AYZoMYbEeepsMJMafenNg" client="_zETCUMScEeeNkM-fDIrCNA" supplier="_h6Im8MSdEeeNkM-fDIrCNA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_0O8X4MSZEeeEO62YmYOaFA" name="RoverView" visibility="private">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_R7QPwMSaEeeEO62YmYOaFA" name="showInterface"/>
@@ -30,10 +31,9 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_XYtPkMSdEeeNkM-fDIrCNA" name="roverID" effect="read"/>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_ZsCkIMSdEeeNkM-fDIrCNA" name="RoverDataBase">
-      <generalization xmi:type="uml:Generalization" xmi:id="_ci4OYMSdEeeNkM-fDIrCNA" general="_2ntesMScEeeNkM-fDIrCNA"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_M1jc0MVAEeeAY7_lVUhDDw" name="Rover">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_2JBtkMYbEeepsMJMafenNg"/>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_38Rz4MYbEeepsMJMafenNg"/>
       <packagedElement xmi:type="uml:Interface" xmi:id="_ZRrcAMSgEeeNkM-fDIrCNA" name="MovementManager">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_cduhQMSgEeeNkM-fDIrCNA" name="goToPoint">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_evKYYMSgEeeNkM-fDIrCNA" name="point"/>
@@ -125,6 +125,7 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_XvU8kMVdEeecVOrCacIQRQ" name="getState"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_mP4NQMSfEeeNkM-fDIrCNA" name="recieveMission"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_WXAtcMYbEeepsMJMafenNg" client="_TYmM4MVdEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_h6Im8MSdEeeNkM-fDIrCNA" name="RoverManager">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_kW4WMMSdEeeNkM-fDIrCNA" name="setMissionOf">
@@ -137,10 +138,11 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_3pfPUMSdEeeNkM-fDIrCNA" name="changeMissionOf">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_7MbxoMSdEeeNkM-fDIrCNA" name="roverID"/>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Xy9uEMYbEeepsMJMafenNg" name="calculate"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_83dJAMSdEeeNkM-fDIrCNA" name="CentralStation">
       <generalization xmi:type="uml:Generalization" xmi:id="__HEbMMSdEeeNkM-fDIrCNA" general="_h6Im8MSdEeeNkM-fDIrCNA"/>
-      <packagedElement xmi:type="uml:Usage" xmi:id="_BjbI4MSeEeeNkM-fDIrCNA" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_2ntesMScEeeNkM-fDIrCNA"/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_VU37AMYbEeepsMJMafenNg" general="_2ntesMScEeeNkM-fDIrCNA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="__uUlMMVdEeecVOrCacIQRQ" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_TYmM4MVdEeecVOrCacIQRQ"/>
     </packagedElement>
   </packagedElement>
