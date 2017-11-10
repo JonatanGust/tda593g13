@@ -175,7 +175,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FjDf1cShEeeNkM-fDIrCNA"/>
             </children>
             <element xmi:type="uml:Component" href="Component_diagram.uml#_FjCRsMShEeeNkM-fDIrCNA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FjC4wcShEeeNkM-fDIrCNA" x="254" y="992"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FjC4wcShEeeNkM-fDIrCNA" x="248" y="972"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_OsOgQMSgEeeNkM-fDIrCNA" type="Component_PackagedElementShape">
             <children xmi:type="notation:DecorationNode" xmi:id="_OsPHUMSgEeeNkM-fDIrCNA" type="Component_NameLabel"/>
@@ -187,7 +187,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OsPHVcSgEeeNkM-fDIrCNA"/>
             </children>
             <element xmi:type="uml:Component" href="Component_diagram.uml#_OsN5MMSgEeeNkM-fDIrCNA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OsOgQcSgEeeNkM-fDIrCNA" x="834" y="992"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OsOgQcSgEeeNkM-fDIrCNA" x="828" y="972"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_yUeLEMSgEeeNkM-fDIrCNA" type="Interface_ClassifierShape">
             <children xmi:type="notation:DecorationNode" xmi:id="_yUeyIMSgEeeNkM-fDIrCNA" type="Interface_ClassifierNameLabel"/>
@@ -205,10 +205,6 @@
                 <element xmi:type="uml:Operation" href="Component_diagram.uml#_3jOH4MSgEeeNkM-fDIrCNA"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_3jf0scSgEeeNkM-fDIrCNA"/>
               </children>
-              <children xmi:type="notation:Shape" xmi:id="_5MOtEMSgEeeNkM-fDIrCNA" type="Operation_InterfaceOperationLabel">
-                <element xmi:type="uml:Operation" href="Component_diagram.uml#_5L_cgMSgEeeNkM-fDIrCNA"/>
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_5MOtEcSgEeeNkM-fDIrCNA"/>
-              </children>
               <children xmi:type="notation:Shape" xmi:id="_6ieuUMSgEeeNkM-fDIrCNA" type="Operation_InterfaceOperationLabel">
                 <element xmi:type="uml:Operation" href="Component_diagram.uml#_6iPdwMSgEeeNkM-fDIrCNA"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_6ieuUcSgEeeNkM-fDIrCNA"/>
@@ -216,14 +212,6 @@
               <children xmi:type="notation:Shape" xmi:id="_ALgMUMShEeeNkM-fDIrCNA" type="Operation_InterfaceOperationLabel">
                 <element xmi:type="uml:Operation" href="Component_diagram.uml#_ALQUsMShEeeNkM-fDIrCNA"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_ALgMUcShEeeNkM-fDIrCNA"/>
-              </children>
-              <children xmi:type="notation:Shape" xmi:id="_BSMHkMShEeeNkM-fDIrCNA" type="Operation_InterfaceOperationLabel">
-                <element xmi:type="uml:Operation" href="Component_diagram.uml#_BR3-gMShEeeNkM-fDIrCNA"/>
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BSMHkcShEeeNkM-fDIrCNA"/>
-              </children>
-              <children xmi:type="notation:Shape" xmi:id="_B_eEUMShEeeNkM-fDIrCNA" type="Operation_InterfaceOperationLabel">
-                <element xmi:type="uml:Operation" href="Component_diagram.uml#_B_OMsMShEeeNkM-fDIrCNA"/>
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_B_eEUcShEeeNkM-fDIrCNA"/>
               </children>
               <styles xmi:type="notation:TitleStyle" xmi:id="_yUeyKcSgEeeNkM-fDIrCNA"/>
               <styles xmi:type="notation:SortingStyle" xmi:id="_yUeyKsSgEeeNkM-fDIrCNA"/>
@@ -347,7 +335,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4AeWgsSeEeeNkM-fDIrCNA"/>
             </children>
             <element xmi:type="uml:Component" href="Component_diagram.uml#_4AchUMSeEeeNkM-fDIrCNA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4AdvccSeEeeNkM-fDIrCNA" x="654" y="992"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4AdvccSeEeeNkM-fDIrCNA" x="648" y="972"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_YqoZIMVbEeecVOrCacIQRQ" type="Component_PackagedElementShape_CN">
             <children xmi:type="notation:DecorationNode" xmi:id="_YqqOUMVbEeecVOrCacIQRQ" type="Component_NameLabel_CN"/>
@@ -395,7 +383,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8aw0pcVbEeecVOrCacIQRQ"/>
             </children>
             <element xmi:type="uml:Component" href="Component_diagram.uml#_8aThoMVbEeecVOrCacIQRQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8awNkcVbEeecVOrCacIQRQ" x="54" y="992"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8awNkcVbEeecVOrCacIQRQ" x="48" y="972"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_ApeQwMVcEeecVOrCacIQRQ" type="Interface_ClassifierShape_CN">
             <children xmi:type="notation:DecorationNode" xmi:id="_Ape30MVcEeecVOrCacIQRQ" type="Interface_ClassifierNameLabel_CN"/>

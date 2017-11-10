@@ -56,15 +56,10 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_yUdkAMSgEeeNkM-fDIrCNA" name="WheelManager">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_3jOH4MSgEeeNkM-fDIrCNA" name="goForward"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_5L_cgMSgEeeNkM-fDIrCNA" name="goBackward"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_6iPdwMSgEeeNkM-fDIrCNA" name="turn">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_-52XMMSgEeeNkM-fDIrCNA" name="angle"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_ALQUsMShEeeNkM-fDIrCNA" name="stop"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_BR3-gMShEeeNkM-fDIrCNA" name="start"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_B_OMsMShEeeNkM-fDIrCNA" name="setSpeed">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_D-17EMShEeeNkM-fDIrCNA" name="amount"/>
-        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_H2uS8MSeEeeNkM-fDIrCNA" name="MissionHandler">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Kpjm8MSeEeeNkM-fDIrCNA" name="activateMission"/>
