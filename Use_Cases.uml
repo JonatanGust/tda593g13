@@ -12,11 +12,12 @@
     <packagedElement xmi:type="uml:UseCase" xmi:id="_tl90gMCCEeeMrZMCk1v-cA" name="Execute mission"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_uJ5oAMCCEeeMrZMCk1v-cA" name="Send information"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_up0eMMCCEeeMrZMCk1v-cA" name="Handle fault"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_wshVwMCCEeeMrZMCk1v-cA" name="Choose strategy"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_xIvXsMCCEeeMrZMCk1v-cA" name="Handle obstacle"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_DOg00MCEEeeMrZMCk1v-cA" client="_nai0EMCCEeeMrZMCk1v-cA" supplier="_up0eMMCCEeeMrZMCk1v-cA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_oeocYMCEEeeMrZMCk1v-cA" client="_iEi_wMCCEeeMrZMCk1v-cA" supplier="_uJ5oAMCCEeeMrZMCk1v-cA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_pZuLoMCEEeeMrZMCk1v-cA" client="_nKDWcMCBEeeMrZMCk1v-cA" supplier="_tl90gMCCEeeMrZMCk1v-cA"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_EOFLcMYWEeesQ7SWJ3IeOw" name="Calculate reward points"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_O4QPIMYWEeesQ7SWJ3IeOw" client="_EOFLcMYWEeesQ7SWJ3IeOw" supplier="_uJ5oAMCCEeeMrZMCk1v-cA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_QfhH4MYWEeesQ7SWJ3IeOw" client="_iEi_wMCCEeeMrZMCk1v-cA" supplier="_EOFLcMYWEeesQ7SWJ3IeOw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_es9_8MCCEeeMrZMCk1v-cA" memberEnd="_es_OEcCCEeeMrZMCk1v-cA _es_1IMCCEeeMrZMCk1v-cA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_es-nAMCCEeeMrZMCk1v-cA" source="org.eclipse.papyrus">
@@ -59,20 +60,6 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="__k6tYcCCEeeMrZMCk1v-cA" type="_ZwnQIMCBEeeMrZMCk1v-cA" association="__k5fQMCCEeeMrZMCk1v-cA"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="__k6tYsCCEeeMrZMCk1v-cA" name="handle fault" type="_up0eMMCCEeeMrZMCk1v-cA" association="__k5fQMCCEeeMrZMCk1v-cA"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_AWcQ8MCDEeeMrZMCk1v-cA" memberEnd="_AWdfEcCDEeeMrZMCk1v-cA _AWdfEsCDEeeMrZMCk1v-cA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AWc4AMCDEeeMrZMCk1v-cA" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AWdfEMCDEeeMrZMCk1v-cA" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_AWdfEcCDEeeMrZMCk1v-cA" type="_ZwnQIMCBEeeMrZMCk1v-cA" association="_AWcQ8MCDEeeMrZMCk1v-cA"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_AWdfEsCDEeeMrZMCk1v-cA" name="change strategy" type="_wshVwMCCEeeMrZMCk1v-cA" association="_AWcQ8MCDEeeMrZMCk1v-cA"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_FnSfgMCDEeeMrZMCk1v-cA" memberEnd="_FnTtoMCDEeeMrZMCk1v-cA _FnTtocCDEeeMrZMCk1v-cA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FnTGkMCDEeeMrZMCk1v-cA" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FnTGkcCDEeeMrZMCk1v-cA" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_FnTtoMCDEeeMrZMCk1v-cA" name="rover" type="_ZwnQIMCBEeeMrZMCk1v-cA" association="_FnSfgMCDEeeMrZMCk1v-cA"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_FnTtocCDEeeMrZMCk1v-cA" name="handle obstacle" type="_xIvXsMCCEeeMrZMCk1v-cA" association="_FnSfgMCDEeeMrZMCk1v-cA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_ZwnQIMCBEeeMrZMCk1v-cA" name="Rover"/>
 </uml:Package>
