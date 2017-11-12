@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_hqnK8MSiEeeHZ4TWwFBk2g" name="Component diagram">
-  <packagedElement xmi:type="uml:Model" xmi:id="_oHZIQMU-EeeAY7_lVUhDDw" name="GUI">
-    <packagedElement xmi:type="uml:Component" xmi:id="_zETCUMScEeeNkM-fDIrCNA" name="View">
+  <packagedElement xmi:type="uml:Model" xmi:id="_oHZIQMU-EeeAY7_lVUhDDw" name="UI">
+    <packagedElement xmi:type="uml:Component" xmi:id="_zETCUMScEeeNkM-fDIrCNA" name="UI">
       <generalization xmi:type="uml:Generalization" xmi:id="_1xgPcMScEeeNkM-fDIrCNA" general="_0O8X4MSZEeeEO62YmYOaFA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_fW0VoMSdEeeNkM-fDIrCNA" client="_zETCUMScEeeNkM-fDIrCNA" supplier="_2ntesMScEeeNkM-fDIrCNA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_6AYZoMYbEeepsMJMafenNg" client="_zETCUMScEeeNkM-fDIrCNA" supplier="_h6Im8MSdEeeNkM-fDIrCNA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_0O8X4MSZEeeEO62YmYOaFA" name="RoverView" visibility="private">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_0O8X4MSZEeeEO62YmYOaFA" name="RoverUI" visibility="private">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_R7QPwMSaEeeEO62YmYOaFA" name="showInterface"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_vh22UMScEeeNkM-fDIrCNA" name="representData"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_2CGIkMU-EeeAY7_lVUhDDw" name="selectRover"/>
@@ -32,8 +32,12 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_M1jc0MVAEeeAY7_lVUhDDw" name="Rover">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_2JBtkMYbEeepsMJMafenNg"/>
-      <ownedComment xmi:type="uml:Comment" xmi:id="_38Rz4MYbEeepsMJMafenNg"/>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_2JBtkMYbEeepsMJMafenNg">
+        <body>Midlevel above, lowlevel below</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_38Rz4MYbEeepsMJMafenNg">
+        <body>Highlevel above, midlevel below</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Interface" xmi:id="_ZRrcAMSgEeeNkM-fDIrCNA" name="MovementManager">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_cduhQMSgEeeNkM-fDIrCNA" name="goToPoint">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_evKYYMSgEeeNkM-fDIrCNA" name="point"/>
@@ -120,7 +124,7 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_XvU8kMVdEeecVOrCacIQRQ" name="getState"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_mP4NQMSfEeeNkM-fDIrCNA" name="recieveMission"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Usage" xmi:id="_WXAtcMYbEeepsMJMafenNg" client="_TYmM4MVdEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_WXAtcMYbEeepsMJMafenNg" client="_eKKSAMVdEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_h6Im8MSdEeeNkM-fDIrCNA" name="RoverManager">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_kW4WMMSdEeeNkM-fDIrCNA" name="setMissionOf">
