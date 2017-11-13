@@ -112,6 +112,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_IH7mYMVcEeecVOrCacIQRQ" name="FaultResolver">
         <generalization xmi:type="uml:Generalization" xmi:id="_NYWXIMVcEeecVOrCacIQRQ" general="_ApAWsMVcEeecVOrCacIQRQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_b3P18MhXEeeTH8jU0S3H5Q" client="_IH7mYMVcEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_uy1w8MVcEeecVOrCacIQRQ" name="StateHandler">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_y-M-IMVcEeecVOrCacIQRQ" name="sendRoverState"/>

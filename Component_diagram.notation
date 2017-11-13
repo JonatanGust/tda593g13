@@ -959,4 +959,19 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6J0pgMYbEeepsMJMafenNg" id="(1.0,0.8571428571428571)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6J0pgcYbEeepsMJMafenNg" id="(0.05305039787798409,0.0)"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_b7dAgMhXEeeTH8jU0S3H5Q" type="Usage_Edge" source="_IIV2EMVcEeecVOrCacIQRQ" target="_H2vhEMSeEeeNkM-fDIrCNA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_b7gD0MhXEeeTH8jU0S3H5Q" type="Usage_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_dNiTcMhXEeeTH8jU0S3H5Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_b7gD0chXEeeTH8jU0S3H5Q" x="-1" y="59"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_b7gD0shXEeeTH8jU0S3H5Q" type="Usage_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_dRCTYMhXEeeTH8jU0S3H5Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_b7gD08hXEeeTH8jU0S3H5Q" x="-1" y="28"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_b7dAgchXEeeTH8jU0S3H5Q"/>
+    <element xmi:type="uml:Usage" href="Component_diagram.uml#_b3P18MhXEeeTH8jU0S3H5Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_b7dAgshXEeeTH8jU0S3H5Q" points="[737, 480, -643984, -643984]$[800, 480, -643984, -643984]$[800, -20, -643984, -643984]$[710, -20, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cCwiYMhXEeeTH8jU0S3H5Q" id="(1.0,0.2857142857142857)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cCwiYchXEeeTH8jU0S3H5Q" id="(1.0,0.4411764705882353)"/>
+  </edges>
 </notation:Diagram>
