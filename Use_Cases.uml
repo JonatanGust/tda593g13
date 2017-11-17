@@ -15,6 +15,7 @@
     <packagedElement xmi:type="uml:UseCase" xmi:id="_EOFLcMYWEeesQ7SWJ3IeOw" name="Calculate reward points"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_O4QPIMYWEeesQ7SWJ3IeOw" client="_EOFLcMYWEeesQ7SWJ3IeOw" supplier="_uJ5oAMCCEeeMrZMCk1v-cA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_QfhH4MYWEeesQ7SWJ3IeOw" client="_iEi_wMCCEeeMrZMCk1v-cA" supplier="_EOFLcMYWEeesQ7SWJ3IeOw"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_C-zWoMuBEeeCUsOBgAancg" name="Handle obstacle"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_es9_8MCCEeeMrZMCk1v-cA" memberEnd="_es_OEcCCEeeMrZMCk1v-cA _es_1IMCCEeeMrZMCk1v-cA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_es-nAMCCEeeMrZMCk1v-cA" source="org.eclipse.papyrus">
