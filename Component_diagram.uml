@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_hqnK8MSiEeeHZ4TWwFBk2g" name="Component diagram">
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_hqnK8MSiEeeHZ4TWwFBk2g" name="Component diagram">
   <packagedElement xmi:type="uml:Model" xmi:id="_oHZIQMU-EeeAY7_lVUhDDw" name="UI">
     <packagedElement xmi:type="uml:Component" xmi:id="_zETCUMScEeeNkM-fDIrCNA" name="UI">
       <generalization xmi:type="uml:Generalization" xmi:id="_1xgPcMScEeeNkM-fDIrCNA" general="_0O8X4MSZEeeEO62YmYOaFA"/>
@@ -25,7 +25,7 @@
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_c_LIQMuBEee4lOItTkPZDg" name="position" type="_fl8BEMt_Eee4lOItTkPZDg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_DgFfUMSdEeeNkM-fDIrCNA" name="getImageOf">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_DgFfUMSdEeeNkM-fDIrCNA" name="getVideoOf">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_G-PBMMSdEeeNkM-fDIrCNA" name="roverID" effect="read">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
@@ -66,7 +66,6 @@
       <packagedElement xmi:type="uml:Component" xmi:id="_f5yYcMSgEeeNkM-fDIrCNA" name="MovementPlanner">
         <generalization xmi:type="uml:Generalization" xmi:id="_jS7egMSgEeeNkM-fDIrCNA" general="_ZRrcAMSgEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_J-NcgMShEeeNkM-fDIrCNA" client="_f5yYcMSgEeeNkM-fDIrCNA" supplier="_yUdkAMSgEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_QqqogM3YEeepzNDjIBOcwA" client="_f5yYcMSgEeeNkM-fDIrCNA" supplier="_Tcwh8MSeEeeNkM-fDIrCNA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_FjCRsMShEeeNkM-fDIrCNA" name="RoverHardware">
         <generalization xmi:type="uml:Generalization" xmi:id="_H5kEMMShEeeNkM-fDIrCNA" general="_yUdkAMSgEeeNkM-fDIrCNA"/>
@@ -93,9 +92,7 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_fCd9EMt-Eee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Nw4kQMSeEeeNkM-fDIrCNA" name="abortMission"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_QEj3EMSeEeeNkM-fDIrCNA" name="getMissionStatus">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_fk_IMM3XEeepzNDjIBOcwA" type="_EaicMMt-Eee4lOItTkPZDg" direction="return"/>
-        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_QEj3EMSeEeeNkM-fDIrCNA" name="missionStatus"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_Tcwh8MSeEeeNkM-fDIrCNA" name="MissionPlanner">
         <generalization xmi:type="uml:Generalization" xmi:id="_WgFwEMSeEeeNkM-fDIrCNA" general="_H2uS8MSeEeeNkM-fDIrCNA"/>
@@ -103,8 +100,8 @@
         <packagedElement xmi:type="uml:Usage" xmi:id="_wUCMAMVeEeecVOrCacIQRQ" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_gcu_YMSeEeeNkM-fDIrCNA" name="StrategyHandler">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_kP4g4MSeEeeNkM-fDIrCNA" name="chooseStrategy">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_pNlxAMSeEeeNkM-fDIrCNA" name="mission" type="_EaicMMt-Eee4lOItTkPZDg" direction="inout"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_kP4g4MSeEeeNkM-fDIrCNA" name="chooseStrategyFor">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_pNlxAMSeEeeNkM-fDIrCNA" name="mission" type="_EaicMMt-Eee4lOItTkPZDg"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_rwNewMSeEeeNkM-fDIrCNA" name="StrategyPlanner">
@@ -117,7 +114,7 @@
         <packagedElement xmi:type="uml:Usage" xmi:id="_ShDWUMVcEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_ApAWsMVcEeecVOrCacIQRQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_ApAWsMVcEeecVOrCacIQRQ" name="FaultHandler">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_CjWjgMVcEeecVOrCacIQRQ" name="handleFault" isQuery="true">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CjWjgMVcEeecVOrCacIQRQ" name="HandleFault" isQuery="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_GNt8cMVcEeecVOrCacIQRQ" name="fault" type="_8tRZEMt-Eee4lOItTkPZDg"/>
         </ownedOperation>
       </packagedElement>
@@ -125,18 +122,8 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_NYWXIMVcEeecVOrCacIQRQ" general="_ApAWsMVcEeecVOrCacIQRQ"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_b3P18MhXEeeTH8jU0S3H5Q" client="_IH7mYMVcEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_uy1w8MVcEeecVOrCacIQRQ" name="StateHandler" visibility="package">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_y-M-IMVcEeecVOrCacIQRQ" name="getPosition">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_XpftwM3WEeepzNDjIBOcwA" type="_fl8BEMt_Eee4lOItTkPZDg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_4I4xQM3WEeepzNDjIBOcwA" name="getImage">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8nXuwM3WEeepzNDjIBOcwA" type="_nYqWgMt_Eee4lOItTkPZDg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_I2rkQM3XEeepzNDjIBOcwA" name="getOperationalStatus">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ORjRgM3XEeepzNDjIBOcwA" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-          </ownedParameter>
-        </ownedOperation>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_uy1w8MVcEeecVOrCacIQRQ" name="StateHandler">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_y-M-IMVcEeecVOrCacIQRQ" name="sendRoverState"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_eKKSAMVdEeecVOrCacIQRQ" name="Communicator">
         <generalization xmi:type="uml:Generalization" xmi:id="_iJ428MVdEeecVOrCacIQRQ" general="_TYmM4MVdEeecVOrCacIQRQ"/>
@@ -153,11 +140,7 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_LjLn8MuAEee4lOItTkPZDg" name="getImage">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_diXxYMuAEee4lOItTkPZDg" name="image" type="_nYqWgMt_Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_LqcGgMuAEee4lOItTkPZDg" name="getOperationalStatus">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_X4-JoM3VEeepzNDjIBOcwA" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-          </ownedParameter>
-        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_LqcGgMuAEee4lOItTkPZDg" name="getOperationalStatus"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_LxCdwMuAEee4lOItTkPZDg" name="getMissionStatus">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oOKlsMuAEee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
@@ -189,4 +172,15 @@
   <packagedElement xmi:type="uml:DataType" xmi:id="_fl8BEMt_Eee4lOItTkPZDg" name="Position"/>
   <packagedElement xmi:type="uml:DataType" xmi:id="_nYqWgMt_Eee4lOItTkPZDg" name="Image"/>
   <packagedElement xmi:type="uml:DataType" xmi:id="_0_y6kMt_Eee4lOItTkPZDg" name="SensorData"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_H4aJ4MuBEeeCUsOBgAancg" memberEnd="_H4fCYMuBEeeCUsOBgAancg _H4fpcMuBEeeCUsOBgAancg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_H4dNMMuBEeeCUsOBgAancg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_H4d0QMuBEeeCUsOBgAancg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_H4fCYMuBEeeCUsOBgAancg" name="handle obstacle" association="_H4aJ4MuBEeeCUsOBgAancg">
+      <type xmi:type="uml:UseCase" href="Use_Cases.uml#_C-zWoMuBEeeCUsOBgAancg"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_H4fpcMuBEeeCUsOBgAancg" association="_H4aJ4MuBEeeCUsOBgAancg">
+      <type xmi:type="uml:Actor" href="Use_Cases.uml#_ZwnQIMCBEeeMrZMCk1v-cA"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Package>

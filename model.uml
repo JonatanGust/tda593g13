@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_G0gQoMBvEeel9pEGYVsbnw" name="model">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_G0gQoMBvEeel9pEGYVsbnw" name="model">
   <packagedElement xmi:type="uml:Package" href="Domain_model.uml#_LQ-WwMCBEeeMrZMCk1v-cA"/>
   <packagedElement xmi:type="uml:Package" href="Use_Cases.uml#_UrLAUMCBEeeMrZMCk1v-cA"/>
   <packagedElement xmi:type="uml:Package" href="Component_diagram.uml#_hqnK8MSiEeeHZ4TWwFBk2g"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_H4aJ4MuBEeeCUsOBgAancg" memberEnd="_H4fCYMuBEeeCUsOBgAancg _H4fpcMuBEeeCUsOBgAancg">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_H4dNMMuBEeeCUsOBgAancg" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_H4d0QMuBEeeCUsOBgAancg" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_H4fCYMuBEeeCUsOBgAancg" name="handle obstacle" association="_H4aJ4MuBEeeCUsOBgAancg">
-      <type xmi:type="uml:UseCase" href="Use_Cases.uml#_C-zWoMuBEeeCUsOBgAancg"/>
-    </ownedEnd>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_H4fpcMuBEeeCUsOBgAancg" association="_H4aJ4MuBEeeCUsOBgAancg">
-      <type xmi:type="uml:Actor" href="Use_Cases.uml#_ZwnQIMCBEeeMrZMCk1v-cA"/>
-    </ownedEnd>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Package" href="Class_diagram.uml#_CmSDkM3fEeesA5480aNfQQ"/>
 </uml:Model>
