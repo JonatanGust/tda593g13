@@ -66,6 +66,7 @@
       <packagedElement xmi:type="uml:Component" xmi:id="_f5yYcMSgEeeNkM-fDIrCNA" name="MovementPlanner">
         <generalization xmi:type="uml:Generalization" xmi:id="_jS7egMSgEeeNkM-fDIrCNA" general="_ZRrcAMSgEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_J-NcgMShEeeNkM-fDIrCNA" client="_f5yYcMSgEeeNkM-fDIrCNA" supplier="_yUdkAMSgEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_PMeeQM6_EeeVqPKc-a6Beg" client="_f5yYcMSgEeeNkM-fDIrCNA" supplier="_TYmM4MVdEeecVOrCacIQRQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_FjCRsMShEeeNkM-fDIrCNA" name="RoverHardware">
         <generalization xmi:type="uml:Generalization" xmi:id="_H5kEMMShEeeNkM-fDIrCNA" general="_yUdkAMSgEeeNkM-fDIrCNA"/>
@@ -144,8 +145,14 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_LxCdwMuAEee4lOItTkPZDg" name="getMissionStatus">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oOKlsMuAEee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_v08d4M7CEee7r9bWW8p0SA" name="validatePosition">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8pOosM7CEee7r9bWW8p0SA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Usage" xmi:id="_WXAtcMYbEeepsMJMafenNg" client="_eKKSAMVdEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_IB6YMM7DEee7r9bWW8p0SA" client="_TYmM4MVdEeecVOrCacIQRQ" supplier="_YWrAIM7DEee7r9bWW8p0SA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_h6Im8MSdEeeNkM-fDIrCNA" name="RoverManager">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_kW4WMMSdEeeNkM-fDIrCNA" name="changeMissionOf">
@@ -163,7 +170,19 @@
     <packagedElement xmi:type="uml:Component" xmi:id="_83dJAMSdEeeNkM-fDIrCNA" name="CentralStation">
       <generalization xmi:type="uml:Generalization" xmi:id="__HEbMMSdEeeNkM-fDIrCNA" general="_h6Im8MSdEeeNkM-fDIrCNA"/>
       <generalization xmi:type="uml:Generalization" xmi:id="_VU37AMYbEeepsMJMafenNg" general="_2ntesMScEeeNkM-fDIrCNA"/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_veHc0M7DEee7r9bWW8p0SA" general="_YWrAIM7DEee7r9bWW8p0SA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="__uUlMMVdEeecVOrCacIQRQ" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_TYmM4MVdEeecVOrCacIQRQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_YWrAIM7DEee7r9bWW8p0SA" name="LocationManager" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_gMFdMM7DEee7r9bWW8p0SA" name="validatePosition" concurrency="guarded">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5HE7IM7DEee7r9bWW8p0SA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jhNwgM7EEeembKjRYDRBgQ" name="point"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UhJOIM7FEeembKjRYDRBgQ" name="roverID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:DataType" xmi:id="_EaicMMt-Eee4lOItTkPZDg" name="Mission"/>
