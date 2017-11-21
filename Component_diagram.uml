@@ -145,14 +145,9 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_LxCdwMuAEee4lOItTkPZDg" name="getMissionStatus">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oOKlsMuAEee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_v08d4M7CEee7r9bWW8p0SA" name="validatePosition">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8pOosM7CEee7r9bWW8p0SA" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-          </ownedParameter>
-        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Usage" xmi:id="_WXAtcMYbEeepsMJMafenNg" client="_eKKSAMVdEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
-      <packagedElement xmi:type="uml:Usage" xmi:id="_IB6YMM7DEee7r9bWW8p0SA" client="_TYmM4MVdEeecVOrCacIQRQ" supplier="_YWrAIM7DEee7r9bWW8p0SA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_8n3IAM7IEeeCfKbzkzCauA" client="_ZRrcAMSgEeeNkM-fDIrCNA" supplier="_YWrAIM7DEee7r9bWW8p0SA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_h6Im8MSdEeeNkM-fDIrCNA" name="RoverManager">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_kW4WMMSdEeeNkM-fDIrCNA" name="changeMissionOf">
