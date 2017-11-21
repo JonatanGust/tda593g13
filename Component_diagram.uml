@@ -178,7 +178,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_5HE7IM7DEee7r9bWW8p0SA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jhNwgM7EEeembKjRYDRBgQ" name="point"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jhNwgM7EEeembKjRYDRBgQ" name="position" type="_fl8BEMt_Eee4lOItTkPZDg"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_UhJOIM7FEeembKjRYDRBgQ" name="roverID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
