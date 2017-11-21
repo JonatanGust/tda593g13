@@ -360,7 +360,9 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_U2qosM31Eeek8LApaKUyHw" name="Observer">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_00f3QM31Eeek8LApaKUyHw" name="update"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_00f3QM31Eeek8LApaKUyHw" name="update">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJgsUM7KEeeO2p5ASy90lQ" name="updateEvent" type="_wWhAQM7KEeeO2p5ASy90lQ"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_UpsuQM32Eeek8LApaKUyHw" name="SensorData"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_3aZF8M66EeesO-dB23-pgQ" name="Fault"/>
@@ -382,4 +384,5 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_D0lfU87HEeeu9fRpFdrWYg" name="movementai" type="_HopPkM3yEeek8LApaKUyHw" association="_D0kRMM7HEeeu9fRpFdrWYg"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wWhAQM7KEeeO2p5ASy90lQ" name="UpdateEvent"/>
 </uml:Package>
