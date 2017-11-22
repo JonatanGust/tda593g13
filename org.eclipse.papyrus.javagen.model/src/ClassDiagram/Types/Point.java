@@ -15,8 +15,11 @@ public class Point {
 	 * 
 	 */
 	public Position position;
+
 	/**
 	 * 
+	 * @param position 
 	 */
-	public boolean status;
+	public void Point(Position position) {
+	}
 };

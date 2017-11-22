@@ -398,9 +398,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MQ1sIM-GEee2sKQ3GKyGHw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MQ7LsM-GEee2sKQ3GKyGHw" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_XgZU0M-GEee2sKQ3GKyGHw" name="status" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_KODnIM-pEeex3IThi1054A" name="Point">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_PLg_oM-pEeex3IThi1054A" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_UpsuQM32Eeek8LApaKUyHw" name="SensorData">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_GV9EQM-VEeecqo1J0OwUdA" name="frontDistance">
