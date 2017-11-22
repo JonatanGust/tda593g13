@@ -22,27 +22,33 @@ public class Main {
 
 		Color c = Color.GRAY;
 
-		Boundary w1 = new HorizontalBoundary(-5.0f, -5.0f, 5.0f, e, c);
+		new HorizontalBoundary(-10.0f, -10.0f, 10.0f, e, c);
+		new HorizontalBoundary(10.0f, -10.0f, 10.0f, e, c);
+		new VerticalBoundary(-10.0f, -10.0f, 10.0f, e, c);
+		new VerticalBoundary(10.0f, -10.0f, 10.0f, e, c);
 
-		Boundary w2 = new HorizontalBoundary(5.0f, -5.0f, 5.0f, e, c);
 
-		Boundary w3 = new VerticalBoundary(5.0f, -5.0f, 5.0f, e, c);
+		new HorizontalWall(5f, -5f, 5f, e, c);
+		new HorizontalWall(0f, -5f, -3f, e, c);
+		new HorizontalWall(0f, -2f, 2f, e, c);
+		new HorizontalWall(0f, 3f, 5f, e, c);
+		new HorizontalWall(-5f, -5f, 5f, e, c);
 
-		Boundary w4 = new VerticalBoundary(-5.0f, -5.0f, 5.0f, e, c);
+		new VerticalWall(-5f, -5f, -3f, e, c);
+		new VerticalWall(-5f, -2f, 2f, e, c);
+		new VerticalWall(-5f, 3f, 5f, e, c);
+		new VerticalWall(0f, -5f, -3f, e, c);
+		new VerticalWall(0f, -2f, 2f, e, c);
+		new VerticalWall(0f, 3f, 5f, e, c);
+		new VerticalWall(5f, -5f, -3f, e, c);
+		new VerticalWall(5f, -2f, 2f, e, c);
+		new VerticalWall(5f, 3f, 5f, e, c);
 
-		AbstractWall roomWall1 = new HorizontalWall(-1f, 4.5f, 1f, e, c);
-
-		AbstractWall roomWall2 = new HorizontalWall(-4.5f, 4.5f, 1f, e, c);
-
-		AbstractWall roomWall3 = new VerticalWall(4.5f, -4.5f, -1f, e, c);
-
-		AbstractWall roomWall4 = new VerticalWall(1f, -4.5f, -1f, e, c);
 
 		Set<RobotAvatar> robots = new HashSet<>();
 
 		RobotAvatar robot1 = new RobotAvatar(new Point(0, 0), "Robot 1");
 		RobotAvatar robot2 = new RobotAvatar(new Point(1, 3), "Robot 2");
-
 		RobotAvatar robot3 = new RobotAvatar(new Point(1, 0), "Robot 3");
 		RobotAvatar robot4 = new RobotAvatar(new Point(2, 3), "Robot 4");
 
@@ -53,5 +59,5 @@ public class Main {
 		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e);
 
 	}
-
+	
 }
