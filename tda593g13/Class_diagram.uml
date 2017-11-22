@@ -136,7 +136,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_HopPkM3yEeek8LApaKUyHw" name="MovementAI">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_OP7Fkc3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" association="_OP53cM3yEeek8LApaKUyHw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_D0lfUM7HEeeu9fRpFdrWYg" name="locationmanager" type="_rdAQcM7GEeeu9fRpFdrWYg" association="_D0kRMM7HEeeu9fRpFdrWYg">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_D0lfUM7HEeeu9fRpFdrWYg" name="locationmanager" type="_rdAQcM7GEeeu9fRpFdrWYg" aggregation="shared" association="_D0kRMM7HEeeu9fRpFdrWYg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_D0lfUc7HEeeu9fRpFdrWYg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_D0lfUs7HEeeu9fRpFdrWYg" value="1"/>
         </ownedAttribute>
@@ -189,8 +189,8 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_b-6akM3xEeek8LApaKUyHw" name="Rover" visibility="public">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_yjy8wM3xEeek8LApaKUyHw" name="strategyHandler" visibility="private" type="_sAirIM3xEeek8LApaKUyHw" association="_yjxHkM3xEeek8LApaKUyHw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_NbD6Ic3yEeek8LApaKUyHw" name="movementmanager" visibility="private" type="_9apxkM3xEeek8LApaKUyHw" association="_NbCE8M3yEeek8LApaKUyHw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_OsY_Ic3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" association="_OsXxAM3yEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NbD6Ic3yEeek8LApaKUyHw" name="movementmanager" visibility="private" type="_9apxkM3xEeek8LApaKUyHw" aggregation="composite" association="_NbCE8M3yEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_OsY_Ic3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" aggregation="composite" association="_OsXxAM3yEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_gWh7EM3xEeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_-ZJPkM3wEeek8LApaKUyHw" contract="_-ZJPkM3wEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_E1fZMM33Eeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw" contract="_U2qosM31Eeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_oObkEc30Eeek8LApaKUyHw" name="changeMission">
@@ -278,7 +278,7 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_TLa2kM3vEeek8LApaKUyHw" name="RoverLord">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_MCHmsc3xEeek8LApaKUyHw" name="roverCommunicator" visibility="private" type="_-ZJPkM3wEeek8LApaKUyHw" association="_MCFxgM3xEeek8LApaKUyHw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MCHmsc3xEeek8LApaKUyHw" name="roverCommunicator" visibility="private" type="_-ZJPkM3wEeek8LApaKUyHw" aggregation="shared" association="_MCFxgM3xEeek8LApaKUyHw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OaKcIM3xEeek8LApaKUyHw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OacI8M3xEeek8LApaKUyHw" value="*"/>
         </ownedAttribute>
@@ -377,8 +377,8 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_upNK0M-DEee5y9oWZBua7Q" name="Ui">
       <packagedElement xmi:type="uml:Class" xmi:id="_CT78EM3vEeek8LApaKUyHw" name="RoverView">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_u2yU8s3wEeek8LApaKUyHw" name="dataManager" visibility="private" type="_NNCMkM3vEeek8LApaKUyHw" association="_u2xG0M3wEeek8LApaKUyHw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_BO5KIc3wEeek8LApaKUyHw" name="roverManager" visibility="private" type="_NjAckM3vEeek8LApaKUyHw" association="_BO2G0M3wEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_u2yU8s3wEeek8LApaKUyHw" name="dataManager" visibility="private" type="_NNCMkM3vEeek8LApaKUyHw" aggregation="shared" association="_u2xG0M3wEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BO5KIc3wEeek8LApaKUyHw" name="roverManager" visibility="private" type="_NjAckM3vEeek8LApaKUyHw" aggregation="shared" association="_BO2G0M3wEeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_06Mo4M3wEeek8LApaKUyHw" name="changeMission">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_06N3AM3wEeek8LApaKUyHw" name="mission" type="_8ov64M3uEeek8LApaKUyHw">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_06OeEM3wEeek8LApaKUyHw" value="1"/>
@@ -460,7 +460,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_qaXcwM-MEeecuuyO-uFmog" name="List&lt;Point>"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_w-vd0M-OEeecqo1J0OwUdA" name="Environment">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_YYeAwM-QEeecqo1J0OwUdA" name="area" type="_BYcasM-QEeecqo1J0OwUdA" association="_YYcLkM-QEeecqo1J0OwUdA">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YYeAwM-QEeecqo1J0OwUdA" name="area" type="_CgCfcM-REeecqo1J0OwUdA" association="_YYcLkM-QEeecqo1J0OwUdA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YYeAwc-QEeecqo1J0OwUdA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YYen0M-QEeecqo1J0OwUdA" value="*"/>
         </ownedAttribute>
@@ -492,6 +492,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_-SW-EM-QEeecqo1J0OwUdA" name="List&lt;Integer>"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_JD7YUM-TEeecqo1J0OwUdA" name="Object"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_YeGUYM-gEeex3IThi1054A" client="_qaXcwM-MEeecuuyO-uFmog" supplier="_PV5HwM31Eeek8LApaKUyHw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_MQwMkM-GEee2sKQ3GKyGHw" memberEnd="_MQz28M-GEee2sKQ3GKyGHw _MRDHgM-GEee2sKQ3GKyGHw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MQyBwM-GEee2sKQ3GKyGHw" source="org.eclipse.papyrus">
