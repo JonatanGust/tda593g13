@@ -4,6 +4,7 @@
 
 package ClassDiagram.Types;
 
+import ClassDiagram.Types.Point;
 import java.util.List;
 
 /************************************************************/
@@ -14,9 +15,44 @@ public class Mission {
 	/**
 	 * 
 	 */
-	public List<Point> finishedPoints;
+	private List<Point> finishedPoints;
 	/**
 	 * 
 	 */
-	public List<Point> remainingPoints;
+	private List<Point> remainingPoints;
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public boolean isFinished() {
+	}
+
+	/**
+	 * 
+	 * @param point 
+	 */
+	public void setPointFinished(Point point) {
+	}
+
+	/**
+	 * 
+	 * @param points 
+	 */
+	public void Mission(List<Point> points) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public List<Point> getFinishedPoints() {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public List<Point> getRemainingPoints() {
+	}
 };

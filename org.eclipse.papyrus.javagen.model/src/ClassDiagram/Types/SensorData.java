@@ -25,4 +25,14 @@ public class SensorData {
 	 * 
 	 */
 	public double leftDistance;
+
+	/**
+	 * 
+	 * @param frontDistance 
+	 * @param rightDistance 
+	 * @param backDistance 
+	 * @param leftDistance 
+	 */
+	public void SensorData(double frontDistance, double rightDistance, double backDistance, double leftDistance) {
+	}
 };

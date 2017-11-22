@@ -15,4 +15,11 @@ public class Fault {
 	 * 
 	 */
 	public FaultType faultType;
+
+	/**
+	 * 
+	 * @param faultType 
+	 */
+	public void Fault(FaultType faultType) {
+	}
 };

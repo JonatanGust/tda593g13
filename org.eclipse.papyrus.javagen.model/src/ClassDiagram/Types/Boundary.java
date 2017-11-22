@@ -14,13 +14,51 @@ public class Boundary {
 	/**
 	 * 
 	 */
-	public double width;
+	private double width;
 	/**
 	 * 
 	 */
-	public double height;
+	private double height;
 	/**
 	 * 
 	 */
-	public Position position;
+	private Position position;
+
+	/**
+	 * 
+	 * @param position 
+	 * @return 
+	 */
+	public boolean contains(Position position) {
+	}
+
+	/**
+	 * 
+	 * @param width 
+	 * @param height 
+	 * @param position 
+	 */
+	public void Boundary(double width, double height, Position position) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public double getWidth() {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public double getHeight() {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Position getPosition() {
+	}
 };

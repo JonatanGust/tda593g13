@@ -14,5 +14,19 @@ public class Environment {
 	/**
 	 * 
 	 */
-	public Area[] area;
+	public Area[] areas;
+
+	/**
+	 * 
+	 * @param areas 
+	 */
+	public void Environment(Area[] areas) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Area[] getAreas() {
+	}
 };

@@ -15,9 +15,17 @@ public class UpdateEvent {
 	/**
 	 * 
 	 */
-	public UpdateEventType updateEventType;
+	public UpdateEventType type;
 	/**
 	 * 
 	 */
 	public Object data;
+
+	/**
+	 * 
+	 * @param type 
+	 * @param data 
+	 */
+	public void UpdateEvent(UpdateEventType type, Object data) {
+	}
 };

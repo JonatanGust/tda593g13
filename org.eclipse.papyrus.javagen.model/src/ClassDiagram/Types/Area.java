@@ -15,13 +15,57 @@ public class Area {
 	/**
 	 * 
 	 */
-	public Boundary boundary;
+	private Boundary boundary;
 	/**
 	 * 
 	 */
-	public boolean isRestricted;
+	private boolean restricted;
 	/**
 	 * 
 	 */
-	public List<Integer> roversInside;
+	private List<Integer> roversInside;
+
+	/**
+	 * 
+	 * @param boundary 
+	 * @param restricted 
+	 */
+	public void Area(Boundary boundary, boolean restricted) {
+	}
+
+	/**
+	 * 
+	 * @param roverID 
+	 */
+	public void addRover(int roverID) {
+	}
+
+	/**
+	 * 
+	 * @param roverID 
+	 */
+	public void removeRover(int roverID) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Boundary getBoundary() {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public boolean isRestricted() {
+	}
+
+	/**
+	 * 
+	 * @param roverID 
+	 * @return 
+	 */
+	public boolean isRoverInside(int roverID) {
+	}
 };

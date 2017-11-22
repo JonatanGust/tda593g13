@@ -17,4 +17,12 @@ public class Position {
 	 * 
 	 */
 	public double z;
+
+	/**
+	 * 
+	 * @param x 
+	 * @param z 
+	 */
+	public void Position(double x, double z) {
+	}
 };
