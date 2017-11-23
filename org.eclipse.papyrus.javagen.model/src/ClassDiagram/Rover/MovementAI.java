@@ -13,6 +13,8 @@ import ClassDiagram.Types.Position;
 import ClassDiagram.Types.SensorData;
 import ClassDiagram.Types.UpdateEvent;
 import ClassDiagram.Types.UpdateEventType;
+import java.util.*;
+
 
 /************************************************************/
 /**
@@ -26,6 +28,23 @@ public class MovementAI implements MovementManager, Observer {
 	private Environment environment;
 
 	private Point targetPoint;
+	private Position lastPosition;
+	private double lookAngle;
+	
+	List<Observer> observers = new LinkedList<Observer>();
+	
+	SensorData sensorData;
+	
+	/**
+	 * 
+	 * @param environment 
+	 */
+	public MovementAI(Environment environment, HardwareHandler hardwareHandler) {
+		this.hardwareHandler = hardwareHandler;
+		this.environment = environment;
+		hardwareHandler.addObserver(this);
+	}
+
 	
 	/**
 	 * 
@@ -40,6 +59,7 @@ public class MovementAI implements MovementManager, Observer {
 	 * @param observer 
 	 */
 	public void addObserver(Observer observer) {
+		observers.add(observer);
 	}
 
 	/**
@@ -47,16 +67,41 @@ public class MovementAI implements MovementManager, Observer {
 	 * @param observer 
 	 */
 	public void removeObserver(Observer observer) {
+		observers.remove(observer);
 	}
+	
+	private void processMovement(Position position) {
+		
 
-	/**
-	 * 
-	 * @param environment 
-	 */
-	public MovementAI(Environment environment, HardwareHandler hardwareHandler) {
-		this.hardwareHandler = hardwareHandler;
-		this.environment = environment;
-		hardwareHandler.addObserver(this);
+		
+		lookAngle = Math.tan(
+			 	position.z - lastPosition.z /
+				position.x  - lastPosition.x
+			);
+		
+				
+		if(sensorData.frontDistance < 5)
+		{
+			// This probably doesn't work but it might
+			
+			// Turn right 45 degrees
+			double relativeX = targetPoint.position.x - position.x;
+			double relativeZ = targetPoint.position.z - position.z;
+			double ang = Math.toRadians(lookAngle + 45);
+			hardwareHandler.setDestination(
+					new Position(
+							Math.cos(ang) * relativeX - Math.sin(ang) * relativeZ,
+							Math.sin(ang) * relativeX + Math.cos(ang) * relativeZ
+					)
+				);
+		}
+		
+		hardwareHandler.setDestination(targetPoint.position);
+		// Move toward targetPoint
+		
+		
+		// If sensors indicate obstacle, turn away
+		lastPosition = position;
 	}
 
 	/**
@@ -66,16 +111,17 @@ public class MovementAI implements MovementManager, Observer {
 	public void update(UpdateEvent updateEvent) {
 		switch(updateEvent.type) {
 			case PositionUpdate:
-				// Maybe there is no data and we use getCurrentPosition()?
-				Position p = (Position) updateEvent.data;
+				processMovement((Position) updateEvent.data);
 				return;
 			case SensorUpdate:
-				SensorData d = (SensorData) updateEvent.data;
+				sensorData = (SensorData) updateEvent.data;
 				break;
 			default:
 				break;
 		}
 	}
+	
+	
 };
 
 
