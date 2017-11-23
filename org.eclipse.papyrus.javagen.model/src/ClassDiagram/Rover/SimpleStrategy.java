@@ -4,24 +4,73 @@
 
 package ClassDiagram.Rover;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import ClassDiagram.Rover.StrategyHandler;
 import ClassDiagram.Types.Mission;
+import ClassDiagram.Types.Point;
+import ClassDiagram.Types.Position;
+import ClassDiagram.Types.Environment;
 
 /************************************************************/
 /**
  * 
  */
 public class SimpleStrategy implements StrategyHandler {
-	/**
-	 * 
-	 * @param mission 
-	 */
-	public void chooseStrategy(Mission mission) {
-	}
 
 	/**
 	 * 
 	 */
 	public SimpleStrategy() {
+	}
+
+	/**
+	 * Will mutate the given strategy so that the remaining points are in order of 
+	 * 1; closest to position 
+	 * 2; (and onwards) closest point to previous point.
+	 * This simple strategy doesn't use the given environment
+	 * @param mission 
+	 * @param position 
+	 * @param enviroment 
+	 */
+	public void chooseStrategy(Mission mission, Position position, Environment enviroment) {
+		List<Point> remainingPoints = mission.getRemainingPoints();
+		
+		if(remainingPoints.size() < 2) { return; } 
+		else { makeStrategyFor( position, remainingPoints); }
+		
+	}
+	
+	private void makeStrategyFor(Position current, List<Point> goals){
+		LinkedList<Point> sorted = new LinkedList<Point>();
+		
+		while (!goals.isEmpty()) {
+			Point p = closestTo(current, goals);
+			sorted.add(p);
+			goals.remove(p);
+		}
+		while (!sorted.isEmpty()) {
+			goals.add(sorted.poll());
+		}
+	}
+	
+	private Point closestTo(Position current, List<Point> goals) {
+		Point closest = null;
+		double curX =  current.x;
+		double curY =  current.z;
+		double closDist = Double.POSITIVE_INFINITY;
+		
+		for (Point p : goals) {
+			double pX = p.position.x;
+			double pY = p.position.z;
+			double pDist = Math.pow(pX - curX, 2.0) + Math.pow(pY - curY, 2.0) ;
+			if(pDist < closDist) {
+				closDist = pDist;
+				closest = p;
+			}
+		}
+		
+		return closest;
 	}
 };

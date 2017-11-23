@@ -5,15 +5,20 @@
 package ClassDiagram.Rover;
 
 import ClassDiagram.Types.Mission;
+import ClassDiagram.Types.Position;
+import ClassDiagram.Types.Environment;
 
 /************************************************************/
 /**
  * 
  */
 public interface StrategyHandler {
+
 	/**
 	 * 
 	 * @param mission 
+	 * @param position 
+	 * @param enviroment 
 	 */
-	public void chooseStrategy(Mission mission);
+	public void chooseStrategy(Mission mission, Position position, Environment enviroment);
 };

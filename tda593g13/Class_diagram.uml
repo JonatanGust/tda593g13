@@ -234,17 +234,18 @@
       <packagedElement xmi:type="uml:Interface" xmi:id="_sAirIM3xEeek8LApaKUyHw" name="StrategyHandler">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_5KI3QM30Eeek8LApaKUyHw" name="chooseStrategy">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_9qAU0M30Eeek8LApaKUyHw" name="mission" type="_8ov64M3uEeek8LApaKUyHw" direction="inout"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etIqcNBZEeeMzdSKkoEmkA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_lnje4NBZEeeMzdSKkoEmkA" name="enviroment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_v0TQoM3xEeek8LApaKUyHw" name="SimpleStrategy">
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_x77EcM3xEeek8LApaKUyHw" client="_v0TQoM3xEeek8LApaKUyHw" supplier="_sAirIM3xEeek8LApaKUyHw" contract="_sAirIM3xEeek8LApaKUyHw"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_9qAU0c30Eeek8LApaKUyHw" name="chooseStrategy">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9qAU0s30Eeek8LApaKUyHw" name="mission" type="_8ov64M3uEeek8LApaKUyHw" direction="inout">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9qAU0830Eeek8LApaKUyHw" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9qA74M30Eeek8LApaKUyHw" value="1"/>
-          </ownedParameter>
-        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku67kM7EEeeu9fRpFdrWYg" name="SimpleStrategy"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Hz3-QNBaEeeMzdSKkoEmkA" name="chooseStrategy">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-QdBaEeeMzdSKkoEmkA" name="mission" type="_8ov64M3uEeek8LApaKUyHw" direction="inout"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-QtBaEeeMzdSKkoEmkA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-Q9BaEeeMzdSKkoEmkA" name="enviroment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_h1TnANAyEeexUdWYT1mRHA" name="RobotAvatar"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_y8mOYNBOEeeRW8N_DZZYCA" client="_SV58IM31Eeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw"/>
