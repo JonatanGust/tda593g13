@@ -317,29 +317,6 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HAiawM7DEeeu9fRpFdrWYg" value="*"/>
           </ownedParameter>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_-fsvIM-TEeecqo1J0OwUdA" name="validatePosition">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-fsvIc-TEeecqo1J0OwUdA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-fsvIs-TEeecqo1J0OwUdA" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_7GdDsNBJEeeRW8N_DZZYCA" name="validatePosition">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_7GeR0NBJEeeRW8N_DZZYCA" name="position">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7Ge44NBJEeeRW8N_DZZYCA" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7Ge44dBJEeeRW8N_DZZYCA" value="1"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_7Gff8NBJEeeRW8N_DZZYCA" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7GgHANBJEeeRW8N_DZZYCA" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7GgHAdBJEeeRW8N_DZZYCA" value="1"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_7Gm0sNBJEeeRW8N_DZZYCA" name="validatePosition">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_7GnbwNBJEeeRW8N_DZZYCA" name="roverID">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7GnbwdBJEeeRW8N_DZZYCA" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7GnbwtBJEeeRW8N_DZZYCA" value="1"/>
-          </ownedParameter>
-        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_9tXmINBKEeeRW8N_DZZYCA" name="update"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_NNCMkM3vEeek8LApaKUyHw" name="DataManager">
