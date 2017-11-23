@@ -20,7 +20,7 @@ public class Environment {
 	 * 
 	 * @param areas 
 	 */
-	public void Environment(Area[] areas) {
+	public Environment(Area[] areas) {
 	}
 
 	/**
@@ -28,5 +28,6 @@ public class Environment {
 	 * @return 
 	 */
 	public Area[] getAreas() {
+		return areas;
 	}
 };

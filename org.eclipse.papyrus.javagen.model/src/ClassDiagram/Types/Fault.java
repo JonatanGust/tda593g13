@@ -20,6 +20,6 @@ public class Fault {
 	 * 
 	 * @param faultType 
 	 */
-	public void Fault(FaultType faultType) {
+	public Fault(FaultType faultType) {
 	}
 };

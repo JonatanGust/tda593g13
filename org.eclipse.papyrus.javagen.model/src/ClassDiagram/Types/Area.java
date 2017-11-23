@@ -27,7 +27,7 @@ public class Area {
 	 * @param restricted 
 	 * @param locationController 
 	 */
-	public void Area(Boundary boundary, boolean restricted, LocationController locationController) {
+	public Area(Boundary boundary, boolean restricted, LocationController locationController) {
 	}
 
 	/**
@@ -49,6 +49,7 @@ public class Area {
 	 * @return 
 	 */
 	public Boundary getBoundary() {
+		return boundary;
 	}
 
 	/**
@@ -57,6 +58,7 @@ public class Area {
 	 * @return 
 	 */
 	public boolean isRoverInside(int roverID) {
+		return false;
 	}
 
 	/**
@@ -64,5 +66,6 @@ public class Area {
 	 * @return 
 	 */
 	public LocationController getLocationController() {
+		return locationController;
 	}
 };
