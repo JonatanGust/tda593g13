@@ -5,7 +5,6 @@
 package ClassDiagram.CentralStation;
 
 import ClassDiagram.CentralStation.DataManager;
-import ClassDiagram.CentralStation.LocationManager;
 import ClassDiagram.CentralStation.RoverManager;
 import ClassDiagram.Rover.RoverCommunicator;
 import ClassDiagram.Types.Environment;
@@ -17,7 +16,7 @@ import java.awt.Image;
 /**
  * 
  */
-public class RoverLord implements RoverManager, DataManager, LocationManager {
+public class RoverLord implements RoverManager, DataManager {
 	/**
 	 * 
 	 */
@@ -91,5 +90,26 @@ public class RoverLord implements RoverManager, DataManager, LocationManager {
 	 * @param roverID 
 	 */
 	public void validatePosition(Position position, int roverID) {
+	}
+
+	/**
+	 * 
+	 * @param position 
+	 * @param roverID 
+	 */
+	public void validatePosition(undefined position, int roverID) {
+	}
+
+	/**
+	 * 
+	 * @param roverID 
+	 */
+	public void validatePosition(undefined roverID) {
+	}
+
+	/**
+	 * 
+	 */
+	public void update() {
 	}
 };

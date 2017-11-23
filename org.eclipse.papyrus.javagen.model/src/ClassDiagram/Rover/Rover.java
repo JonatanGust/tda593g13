@@ -4,7 +4,6 @@
 
 package ClassDiagram.Rover;
 
-import ClassDiagram.CentralStation.LocationManager;
 import ClassDiagram.Rover.HardwareHandler;
 import ClassDiagram.Rover.MovementAI;
 import ClassDiagram.Rover.MovementManager;
@@ -13,6 +12,7 @@ import ClassDiagram.Rover.Robot;
 import ClassDiagram.Rover.RoverCommunicator;
 import ClassDiagram.Rover.SimpleStrategy;
 import ClassDiagram.Rover.StrategyHandler;
+import ClassDiagram.Types.Environment;
 import ClassDiagram.Types.Fault;
 import ClassDiagram.Types.Mission;
 import ClassDiagram.Types.Position;
@@ -89,9 +89,9 @@ public class Rover implements RoverCommunicator, Observer {
 	 * 
 	 * @param position 
 	 * @param name 
-	 * @param locationManager 
+	 * @param environment 
 	 */
-	public void Rover(Position position, String name, LocationManager locationManager) {
+	public void Rover(Position position, String name, Environment environment) {
 	}
 
 	/**

@@ -5,7 +5,7 @@
 package ClassDiagram.Types;
 
 import ClassDiagram.Types.Boundary;
-import java.util.List;
+import project.LocationController;
 
 /************************************************************/
 /**
@@ -19,18 +19,15 @@ public class Area {
 	/**
 	 * 
 	 */
-	private boolean restricted;
-	/**
-	 * 
-	 */
-	private List<Integer> roversInside;
+	public LocationController locationController;
 
 	/**
 	 * 
 	 * @param boundary 
 	 * @param restricted 
+	 * @param locationController 
 	 */
-	public void Area(Boundary boundary, boolean restricted) {
+	public void Area(Boundary boundary, boolean restricted, LocationController locationController) {
 	}
 
 	/**
@@ -56,16 +53,16 @@ public class Area {
 
 	/**
 	 * 
-	 * @return 
-	 */
-	public boolean isRestricted() {
-	}
-
-	/**
-	 * 
 	 * @param roverID 
 	 * @return 
 	 */
 	public boolean isRoverInside(int roverID) {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public LocationController getLocationController() {
 	}
 };

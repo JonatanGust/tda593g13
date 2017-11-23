@@ -4,10 +4,10 @@
 
 package ClassDiagram.Rover;
 
-import ClassDiagram.CentralStation.LocationManager;
 import ClassDiagram.Rover.HardwareHandler;
 import ClassDiagram.Rover.MovementManager;
 import ClassDiagram.Rover.Observer;
+import ClassDiagram.Types.Environment;
 import ClassDiagram.Types.Point;
 import ClassDiagram.Types.UpdateEvent;
 
@@ -20,10 +20,6 @@ public class MovementAI implements MovementManager, Observer {
 	 * 
 	 */
 	private HardwareHandler hardwareHandler;
-	/**
-	 * 
-	 */
-	public LocationManager locationmanager;
 
 	/**
 	 * 
@@ -48,9 +44,9 @@ public class MovementAI implements MovementManager, Observer {
 
 	/**
 	 * 
-	 * @param locationManager 
+	 * @param environment 
 	 */
-	public void MovementAI(LocationManager locationManager) {
+	public void MovementAI(Environment environment) {
 	}
 
 	/**
