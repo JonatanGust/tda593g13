@@ -17,7 +17,7 @@ public class RewardPointsCalculator {
 	 * 
 	 */
 	private int rewardPoints = 0;
-	private boolean isProcedureA;
+	private boolean isProcedureA = true;
 
 	/**
 	 * 
