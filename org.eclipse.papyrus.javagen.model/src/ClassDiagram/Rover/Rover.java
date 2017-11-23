@@ -95,7 +95,10 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @param name 
 	 * @param environment 
 	 */
-	public void Rover(Position position, String name, Environment environment) {
+	public Rover(Position position, String name, Environment environment) {
+		hardwareHandler = new Robot(position, name);
+		movementmanager = new MovementAI(environment, hardwareHandler);
+		strategyHandler = new SimpleStrategy();
 	}
 
 	/**

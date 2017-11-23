@@ -20,6 +20,7 @@ public class MovementAI implements MovementManager, Observer {
 	 * 
 	 */
 	private HardwareHandler hardwareHandler;
+	private Environment environment;
 
 	/**
 	 * 
@@ -46,7 +47,9 @@ public class MovementAI implements MovementManager, Observer {
 	 * 
 	 * @param environment 
 	 */
-	public MovementAI(Environment environment) {
+	public MovementAI(Environment environment, HardwareHandler hardwareHandler) {
+		this.hardwareHandler = hardwareHandler;
+		this.environment = environment;
 	}
 
 	/**
