@@ -365,7 +365,10 @@
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GUp9UNBREeeRW8N_DZZYCA" name="calculateRewardPoints">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_9arPcNBREeeRW8N_DZZYCA" name="environment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GhAh0NBSEeeRW8N_DZZYCA" name="roverCommunicators" type="_-ZJPkM3wEeek8LApaKUyHw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GhAh0NBSEeeRW8N_DZZYCA" name="roverCommunicators" type="_-ZJPkM3wEeek8LApaKUyHw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vtYfYNBZEeeRW8N_DZZYCA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vti3cNBZEeeRW8N_DZZYCA" value="*"/>
+          </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_eBqlMNBREeeRW8N_DZZYCA" name="getRewardPoints">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_N41D8NBSEeeRW8N_DZZYCA" direction="return">

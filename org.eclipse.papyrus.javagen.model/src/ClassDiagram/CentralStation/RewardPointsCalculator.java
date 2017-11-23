@@ -22,7 +22,7 @@ public class RewardPointsCalculator {
 	 * @param environment 
 	 * @param roverCommunicators 
 	 */
-	public void calculateRewardPoints(Environment environment, RoverCommunicator roverCommunicators) {
+	public void calculateRewardPoints(Environment environment, RoverCommunicator[] roverCommunicators) {
 	}
 
 	/**
@@ -30,5 +30,11 @@ public class RewardPointsCalculator {
 	 * @return 
 	 */
 	public int getRewardPoints() {
+	}
+
+	/**
+	 * 
+	 */
+	public void RewardPointsCalculator() {
 	}
 };
