@@ -33,4 +33,15 @@ public class Position {
 	public Position(Point position) {
 		this(position.getX(), position.getZ());
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o != null && o.getClass() == this.getClass()) {
+			Position p = (Position)o;
+			if (p.x == x && p.z == z) {
+				return true;
+			}
+		}
+		return false;
+	}
 };

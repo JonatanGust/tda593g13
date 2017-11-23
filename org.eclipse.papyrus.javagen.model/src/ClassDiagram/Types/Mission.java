@@ -26,7 +26,7 @@ public class Mission {
 	 * @return 
 	 */
 	public boolean isFinished() {
-		return false;
+		return remainingPoints.isEmpty();
 	}
 
 	/**
@@ -34,6 +34,9 @@ public class Mission {
 	 * @param point 
 	 */
 	public void setPointFinished(Point point) {
+		if (remainingPoints.remove(point)) {
+			finishedPoints.add(point);
+		}
 	}
 
 	/**
@@ -41,6 +44,7 @@ public class Mission {
 	 * @param points 
 	 */
 	public Mission(List<Point> points) {
+		remainingPoints = points;
 	}
 
 	/**
