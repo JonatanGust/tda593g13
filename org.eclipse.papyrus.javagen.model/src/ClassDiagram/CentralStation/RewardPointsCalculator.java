@@ -5,6 +5,7 @@
 package ClassDiagram.CentralStation;
 
 import ClassDiagram.Rover.RoverCommunicator;
+import ClassDiagram.Types.Area;
 import ClassDiagram.Types.Environment;
 
 /************************************************************/
@@ -23,6 +24,13 @@ public class RewardPointsCalculator {
 	 * @param roverCommunicators 
 	 */
 	public void calculateRewardPoints(Environment environment, RoverCommunicator[] roverCommunicators) {
+		for (RoverCommunicator rc : roverCommunicators) {
+			for (Area a : environment.getAreas()) {
+				if (a.getBoundary().contains(rc.getPosition())) {
+					rewardPoints += a.getRewardPoint();
+				}
+			}
+		}
 	}
 
 	/**
@@ -30,6 +38,7 @@ public class RewardPointsCalculator {
 	 * @return 
 	 */
 	public int getRewardPoints() {
+		return rewardPoints;
 	}
 
 	/**

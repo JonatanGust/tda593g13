@@ -5,6 +5,7 @@
 package ClassDiagram.Types;
 
 import ClassDiagram.Types.Boundary;
+import ClassDiagram.Types.RoomType;
 import project.LocationController;
 
 /************************************************************/
@@ -20,28 +21,21 @@ public class Area {
 	 * 
 	 */
 	public LocationController locationController;
+	/**
+	 * 
+	 */
+	public RoomType roomtype;
 
 	/**
 	 * 
 	 * @param boundary 
 	 * @param restricted 
 	 * @param locationController 
+	 * @param type 
+	 * @param isPhysical 
 	 */
-	public Area(Boundary boundary, boolean restricted, LocationController locationController) {
-	}
-	
-	/**
-	 * 
-	 * @param roverID 
-	 */
-	public void addRover(int roverID) {
-	}
-
-	/**
-	 * 
-	 * @param roverID 
-	 */
-	public void removeRover(int roverID) {
+	public void Area(Boundary boundary, boolean restricted, LocationController locationController, RoomType type,
+			boolean isPhysical) {
 	}
 
 	/**
@@ -49,16 +43,6 @@ public class Area {
 	 * @return 
 	 */
 	public Boundary getBoundary() {
-		return boundary;
-	}
-
-	/**
-	 * 
-	 * @param roverID 
-	 * @return 
-	 */
-	public boolean isRoverInside(int roverID) {
-		return false;
 	}
 
 	/**
@@ -66,6 +50,19 @@ public class Area {
 	 * @return 
 	 */
 	public LocationController getLocationController() {
-		return locationController;
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public boolean isPhysical() {
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public int getRewardPoint() {
 	}
 };
