@@ -13,7 +13,7 @@ public class SimulatorMonitor extends AbstractSimulatorMonitor<RobotAvatar> {
 
 	@Override
 	public void update(RobotAvatar robot) {
-		
+		robot.update();
 	}
 
 }

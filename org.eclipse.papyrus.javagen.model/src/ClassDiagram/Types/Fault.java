@@ -21,5 +21,6 @@ public class Fault {
 	 * @param faultType 
 	 */
 	public Fault(FaultType faultType) {
+		this.faultType = faultType;
 	}
 };

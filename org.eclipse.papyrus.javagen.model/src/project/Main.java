@@ -5,11 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 import project.AbstractSimulatorMonitor;
-import project.Point;
 import ClassDiagram.CentralStation.RoverLord;
 import ClassDiagram.Types.*;
-import ClassDiagram.Rover.RoverCommunicator;
-
+import ClassDiagram.Rover.Robot;
+import ClassDiagram.Rover.Rover;
 import simbad.sim.EnvironmentDescription;
 import simbad.sim.HorizontalBoundary;
 import simbad.sim.HorizontalWall;
@@ -51,40 +50,53 @@ public class Main {
 		areas[0] = new Area(
 				new Boundary(5, 5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(2.5, 2.5), 2.5, e)
+				new LocationController(new Point(2.5, 2.5), 2.5, e), null, false
 			);
 		areas[1] = new Area(
 				new Boundary(5, -5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(2.5, -2.5), 2.5, e)
+				new LocationController(new Point(2.5, -2.5), 2.5, e), null, false
 			);
 		areas[2] = new Area(
 				new Boundary(-5, -5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(-2.5, -2.5), 2.5, e)
+				new LocationController(new Point(-2.5, -2.5), 2.5, e), null, false
 			);
 		areas[3] = new Area(
 				new Boundary(-5, 5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(-2.5, 2.5), 2.5, e)
+				new LocationController(new Point(-2.5, 2.5), 2.5, e), null, false
 			);
 
 		Environment env = new Environment(areas);
 
 		Set<RobotAvatar> robots = new HashSet<>();
 
-		RobotAvatar robot1 = new RobotAvatar(new Point(7, -1.5), "Robot 1");
-		RobotAvatar robot2 = new RobotAvatar(new Point(7, -0.5), "Robot 2");
-		RobotAvatar robot3 = new RobotAvatar(new Point(7, 0.5), "Robot 3");
-		RobotAvatar robot4 = new RobotAvatar(new Point(7, 1.5), "Robot 4");
+		Robot robot1 = new Robot(new Position(7, -1.5), "Robot 1");
+		Robot robot2 = new Robot(new Position(7, -0.5), "Robot 2");
+		Robot robot3 = new Robot(new Position(7, 0.5), "Robot 3");
+		Robot robot4 = new Robot(new Position(7, 1.5), "Robot 4");
 
 		robots.add(robot1);
 		robots.add(robot2);
 		robots.add(robot3);
 		robots.add(robot4);
-		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e);
 		
-		RoverLord roverLord = new RoverLord(env, robots.toArray(new RoverCommunicator[robots.size()]));
+		Robot[] robotArray = (Robot[]) robots.toArray();
+		
+		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e);
+				
+		Rover[] rovers = new Rover[4];
+
+		for(int i = 0; i < rovers.length; i++) {
+			rovers[i] = new Rover(
+					new Position(robot1.getPosition()),
+					"Robot " + i,
+					robotArray[i],
+					env
+				);
+		}
+		RoverLord roverLord = new RoverLord(env, rovers);
 	}
 	
 }

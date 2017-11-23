@@ -4,31 +4,25 @@
 
 package ClassDiagram.Types;
 
-import ClassDiagram.Types.Area;
-
 /************************************************************/
 /**
  * 
  */
-public class Environment {
+public enum RoomType {
 	/**
 	 * 
 	 */
-	public Area[] areas;
-
+	Office,
 	/**
 	 * 
-	 * @param areas 
 	 */
-	public Environment(Area[] areas) {
-		this.areas = areas;
-	}
-
+	TeacherRoom,
 	/**
 	 * 
-	 * @return 
 	 */
-	public Area[] getAreas() {
-		return areas;
-	}
+	WifiZone,
+	/**
+	 * 
+	 */
+	EatingSpace;
 };

@@ -5,6 +5,7 @@
 package ClassDiagram.CentralStation;
 
 import ClassDiagram.Rover.RoverCommunicator;
+import ClassDiagram.Types.Area;
 import ClassDiagram.Types.Environment;
 
 /************************************************************/
@@ -16,13 +17,51 @@ public class RewardPointsCalculator {
 	 * 
 	 */
 	private int rewardPoints = 0;
+	private boolean isProcedureA = true;
 
 	/**
 	 * 
 	 * @param environment 
 	 * @param roverCommunicators 
 	 */
-	public void calculateRewardPoints(Environment environment, RoverCommunicator roverCommunicators) {
+	public void calculateRewardPoints(Environment environment, RoverCommunicator[] roverCommunicators) {
+		if (isProcedureA) {
+			procedureA(environment, roverCommunicators);
+		} else {
+			procedureB(environment, roverCommunicators);
+		}
+	}
+	
+	public void procedureA(Environment environment, RoverCommunicator[] roverCommunicators) {
+		boolean existsInLogical = false;
+		for (RoverCommunicator rc : roverCommunicators) {
+			for (Area a : environment.getAreas()) {
+				if (a.isPhysical() && a.getBoundary().contains(rc.getPosition())) {
+					rewardPoints += a.getRewardPoint();
+				} else {
+					existsInLogical = true;
+				}
+			}
+		}
+		if (existsInLogical) {
+			isProcedureA = false;
+		}
+	}
+	
+	public void procedureB(Environment environment, RoverCommunicator[] roverCommunicators) {
+		boolean existsInPhysical = false;
+		for (RoverCommunicator rc : roverCommunicators) {
+			for (Area a : environment.getAreas()) {
+				if (!(a.isPhysical()) && a.getBoundary().contains(rc.getPosition())) {
+					rewardPoints += a.getRewardPoint();
+				} else {
+					existsInPhysical = true;
+				}
+			}
+		}
+		if (existsInPhysical) {
+			isProcedureA = true;
+		}
 	}
 
 	/**
@@ -30,5 +69,12 @@ public class RewardPointsCalculator {
 	 * @return 
 	 */
 	public int getRewardPoints() {
+		return rewardPoints;
+	}
+
+	/**
+	 * 
+	 */
+	public RewardPointsCalculator() {
 	}
 };

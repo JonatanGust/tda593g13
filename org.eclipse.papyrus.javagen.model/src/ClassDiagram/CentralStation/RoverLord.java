@@ -21,11 +21,17 @@ public class RoverLord implements RoverManager, DataManager {
 	/**
 	 * 
 	 */
-	private RoverCommunicator[] roverCommunicator;
+	private RoverCommunicator[] roverCommunicators;
 	/**
 	 * 
 	 */
 	private RewardPointsCalculator rewardPointsCalculator;
+	/**
+	 * 
+	 */
+	private Environment environment;
+	
+	private int lastRewardUpdate;
 
 	/**
 	 * 
@@ -33,7 +39,10 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public Position getPositionOf(int roverID) {
-		return null;
+		if (roverID >= roverCommunicators.length) {
+			return null;
+		}
+		return roverCommunicators[roverID].getPosition();
 	}
 
 	/**
@@ -42,7 +51,10 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public Image getVideoOf(int roverID) {
-		return null;
+		if (roverID >= roverCommunicators.length) {
+			return null;
+		}
+		return roverCommunicators[roverID].getImage();
 	}
 
 	/**
@@ -51,7 +63,10 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public boolean getOperationalStatusOf(int roverID) {
-		return false;
+		if (roverID >= roverCommunicators.length) {
+			return false;
+		}
+		return roverCommunicators[roverID].getOperationalStatus();
 	}
 
 	/**
@@ -60,7 +75,10 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public Mission getMissionOf(int roverID) {
-		return null;
+		if (roverID >= roverCommunicators.length) {
+			return null;
+		}
+		return roverCommunicators[roverID].getMissionStatus();
 	}
 
 	/**
@@ -68,7 +86,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public int getRewardPoints() {
-		return 0;
+		return rewardPointsCalculator.getRewardPoints();
 	}
 
 	/**
@@ -77,6 +95,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @param mission 
 	 */
 	public void changeMissionOf(int roverID, Mission mission) {
+		roverCommunicators[roverID].changeMission(mission);	
 	}
 
 	/**
@@ -84,6 +103,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @param roverID 
 	 */
 	public void abortMissionOf(int roverID) {
+		roverCommunicators[roverID].abortMission();
 	}
 
 	/**
@@ -92,11 +112,20 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @param rovers 
 	 */
 	public RoverLord(Environment environment, RoverCommunicator[] rovers) {
+		this.environment = environment;
+		this.roverCommunicators = rovers;
+		rewardPointsCalculator = new RewardPointsCalculator();
+		lastRewardUpdate = (int) System.currentTimeMillis() / 1000;
 	}
 
 	/**
 	 * 
 	 */
 	public void update() {
+		int currentTime = (int) System.currentTimeMillis() / 1000;
+		if (currentTime - lastRewardUpdate >= 20) {
+			rewardPointsCalculator.calculateRewardPoints(environment, roverCommunicators);
+			lastRewardUpdate = currentTime;
+		}
 	}
 };
