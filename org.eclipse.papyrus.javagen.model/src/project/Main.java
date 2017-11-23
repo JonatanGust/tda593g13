@@ -52,22 +52,22 @@ public class Main {
 		areas[0] = new Area(
 				new Boundary(5, 5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(2.5, 2.5), 2.5, e)
+				new LocationController(new Point(2.5, 2.5), 2.5, e), null, false
 			);
 		areas[1] = new Area(
 				new Boundary(5, -5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(2.5, -2.5), 2.5, e)
+				new LocationController(new Point(2.5, -2.5), 2.5, e), null, false
 			);
 		areas[2] = new Area(
 				new Boundary(-5, -5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(-2.5, -2.5), 2.5, e)
+				new LocationController(new Point(-2.5, -2.5), 2.5, e), null, false
 			);
 		areas[3] = new Area(
 				new Boundary(-5, 5, new Position(0, 0)), 
 				true, 
-				new LocationController(new Point(-2.5, 2.5), 2.5, e)
+				new LocationController(new Point(-2.5, 2.5), 2.5, e), null, false
 			);
 
 		Environment env = new Environment(areas);
@@ -85,9 +85,7 @@ public class Main {
 		robots.add(robot4);
 		
 		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e);
-		
-		System.out.println("!!!!!!!!" + robot1.getPosition().toString());
-		
+				
 		Rover[] rovers = new Rover[4];
 
 		for(int i = 0; i < rovers.length; i++) {
@@ -99,8 +97,6 @@ public class Main {
 				);
 		}
 		RoverLord roverLord = new RoverLord(env, rovers);
-
-
 	}
 	
 }

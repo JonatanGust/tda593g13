@@ -26,6 +26,8 @@ public class Area {
 	 */
 	public RoomType roomtype;
 
+	private boolean physical;
+	
 	/**
 	 * 
 	 * @param boundary 
@@ -34,8 +36,9 @@ public class Area {
 	 * @param type 
 	 * @param isPhysical 
 	 */
-	public void Area(Boundary boundary, boolean restricted, LocationController locationController, RoomType type,
+	public Area(Boundary boundary, boolean restricted, LocationController locationController, RoomType type,
 			boolean isPhysical) {
+		physical = isPhysical;
 	}
 
 	/**
@@ -43,6 +46,7 @@ public class Area {
 	 * @return 
 	 */
 	public Boundary getBoundary() {
+		return boundary;
 	}
 
 	/**
@@ -50,6 +54,7 @@ public class Area {
 	 * @return 
 	 */
 	public LocationController getLocationController() {
+		return locationController;
 	}
 
 	/**
@@ -57,6 +62,7 @@ public class Area {
 	 * @return 
 	 */
 	public boolean isPhysical() {
+		return physical;
 	}
 
 	/**
@@ -64,5 +70,6 @@ public class Area {
 	 * @return 
 	 */
 	public int getRewardPoint() {
+		return 0;
 	}
 };
