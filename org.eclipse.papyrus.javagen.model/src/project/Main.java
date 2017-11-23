@@ -6,8 +6,10 @@ import java.util.Set;
 
 import project.AbstractSimulatorMonitor;
 import project.Point;
-import simbad.sim.AbstractWall;
-import simbad.sim.Boundary;
+import ClassDiagram.CentralStation.RoverLord;
+import ClassDiagram.Types.*;
+import ClassDiagram.Rover.RoverCommunicator;
+
 import simbad.sim.EnvironmentDescription;
 import simbad.sim.HorizontalBoundary;
 import simbad.sim.HorizontalWall;
@@ -43,7 +45,31 @@ public class Main {
 		new HorizontalWall(5f, -5f, -3f, e, c);
 		new HorizontalWall(5f, -2f, 2f, e, c);
 		new HorizontalWall(5f, 3f, 5f, e, c);
+		
+		Area[] areas = new Area[4];
 
+		areas[0] = new Area(
+				new Boundary(5, 5, new Position(0, 0)), 
+				true, 
+				new LocationController(new Point(2.5, 2.5), 2.5, e)
+			);
+		areas[1] = new Area(
+				new Boundary(5, -5, new Position(0, 0)), 
+				true, 
+				new LocationController(new Point(2.5, -2.5), 2.5, e)
+			);
+		areas[2] = new Area(
+				new Boundary(-5, -5, new Position(0, 0)), 
+				true, 
+				new LocationController(new Point(-2.5, -2.5), 2.5, e)
+			);
+		areas[3] = new Area(
+				new Boundary(-5, 5, new Position(0, 0)), 
+				true, 
+				new LocationController(new Point(-2.5, 2.5), 2.5, e)
+			);
+
+		Environment env = new Environment(areas);
 
 		Set<RobotAvatar> robots = new HashSet<>();
 
@@ -57,7 +83,8 @@ public class Main {
 		robots.add(robot3);
 		robots.add(robot4);
 		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e);
-
+		
+		RoverLord roverLord = new RoverLord(env, robots.toArray(new RoverCommunicator[robots.size()]));
 	}
 	
 }
