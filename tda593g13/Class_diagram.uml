@@ -267,7 +267,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OaKcIM3xEeek8LApaKUyHw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OacI8M3xEeek8LApaKUyHw" value="*"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_LcARotBREeeRW8N_DZZYCA" name="rewardPointsCalculator" type="_5lTV0NBQEeeRW8N_DZZYCA" aggregation="composite" association="_Lb_qkNBREeeRW8N_DZZYCA">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_LcARotBREeeRW8N_DZZYCA" name="rewardPointsCalculator" visibility="private" type="_5lTV0NBQEeeRW8N_DZZYCA" aggregation="composite" association="_Lb_qkNBREeeRW8N_DZZYCA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LcA4sNBREeeRW8N_DZZYCA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LcA4sdBREeeRW8N_DZZYCA" value="1"/>
         </ownedAttribute>
@@ -358,8 +358,20 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_5lTV0NBQEeeRW8N_DZZYCA" name="RewardPointsCalculator">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_GUp9UNBREeeRW8N_DZZYCA" name="CalculateRewardPoints"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_eBqlMNBREeeRW8N_DZZYCA" name="getRewardPoints"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jizSgNBREeeRW8N_DZZYCA" name="rewardPoints" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_1Oi7gNBREeeRW8N_DZZYCA"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_GUp9UNBREeeRW8N_DZZYCA" name="calculateRewardPoints">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9arPcNBREeeRW8N_DZZYCA" name="environment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GhAh0NBSEeeRW8N_DZZYCA" name="roverCommunicators" type="_-ZJPkM3wEeek8LApaKUyHw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_eBqlMNBREeeRW8N_DZZYCA" name="getRewardPoints">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_N41D8NBSEeeRW8N_DZZYCA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CfqhYNBUEeeRW8N_DZZYCA" name="RewardPointsCalculator"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_upNK0M-DEee5y9oWZBua7Q" name="Ui">
@@ -526,26 +538,8 @@
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_sIl9QNBJEeeRW8N_DZZYCA" name="locationController" type="_MzRgMNBJEeeRW8N_DZZYCA"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ZvU5cM-lEeex3IThi1054A" name="addRover">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-evAoM-lEeex3IThi1054A" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_bgUV8M-lEeex3IThi1054A" name="removeRover">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AliVEM-mEeex3IThi1054A" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_dCghcM-lEeex3IThi1054A" name="getBoundary">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_EJnf0M-mEeex3IThi1054A" type="_Dls8cM-QEeecqo1J0OwUdA" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_nCAQcM-lEeex3IThi1054A" name="isRoverInside">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_700_IM-lEeex3IThi1054A" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_IlzXQM-mEeex3IThi1054A" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_z9NwINBJEeeRW8N_DZZYCA" name="getLocationController">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_42OtgNBJEeeRW8N_DZZYCA" type="_MzRgMNBJEeeRW8N_DZZYCA" direction="return"/>
