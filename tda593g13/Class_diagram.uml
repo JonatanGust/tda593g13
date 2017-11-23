@@ -78,6 +78,7 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_IX9MoM3yEeek8LApaKUyHw" name="Robot">
+        <generalization xmi:type="uml:Generalization" xmi:id="_t8aiwNAyEeexUdWYT1mRHA" general="_h1TnANAyEeexUdWYT1mRHA"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_MlZdcM3yEeek8LApaKUyHw" client="_IX9MoM3yEeek8LApaKUyHw" supplier="_BFymkM3yEeek8LApaKUyHw" contract="_BFymkM3yEeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_C5QLcM32Eeek8LApaKUyHw" name="addObserver">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_C5QygM32Eeek8LApaKUyHw" name="observer" type="_U2qosM31Eeek8LApaKUyHw">
@@ -254,6 +255,7 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku67kM7EEeeu9fRpFdrWYg" name="SimpleStrategy"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_h1TnANAyEeexUdWYT1mRHA" name="RobotAvatar"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_bO4gIM-DEee5y9oWZBua7Q" name="CentralStation">
       <packagedElement xmi:type="uml:Interface" xmi:id="_NjAckM3vEeek8LApaKUyHw" name="RoverManager">
@@ -686,4 +688,5 @@
   <PapyrusJava:External xmi:id="_tP5fcM-MEeecuuyO-uFmog" name="java.util.List" base_Classifier="_qaXcwM-MEeecuuyO-uFmog"/>
   <PapyrusJava:External xmi:id="_M1YioM-REeecqo1J0OwUdA" name="java.util.List" base_Classifier="_-SW-EM-QEeecqo1J0OwUdA"/>
   <PapyrusJava:External xmi:id="_LqiOMM-TEeecqo1J0OwUdA" name="java.lang.Object" base_Classifier="_JD7YUM-TEeecqo1J0OwUdA"/>
+  <PapyrusJava:External xmi:id="_j2KEcNAyEeexUdWYT1mRHA" name="project.RobotAvatar" base_Classifier="_h1TnANAyEeexUdWYT1mRHA"/>
 </xmi:XMI>

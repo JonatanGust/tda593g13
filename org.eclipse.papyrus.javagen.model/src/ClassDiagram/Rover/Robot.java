@@ -9,12 +9,13 @@ import ClassDiagram.Rover.Observer;
 import ClassDiagram.Types.Position;
 import ClassDiagram.Types.SensorData;
 import java.awt.Image;
+import project.RobotAvatar;
 
 /************************************************************/
 /**
  * 
  */
-public class Robot implements HardwareHandler {
+public class Robot extends RobotAvatar implements HardwareHandler {
 	/**
 	 * 
 	 * @param observer 
