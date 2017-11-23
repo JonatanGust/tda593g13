@@ -17,6 +17,7 @@ public class RewardPointsCalculator {
 	 * 
 	 */
 	private int rewardPoints = 0;
+	private boolean isProcedureA;
 
 	/**
 	 * 
@@ -24,12 +25,42 @@ public class RewardPointsCalculator {
 	 * @param roverCommunicators 
 	 */
 	public void calculateRewardPoints(Environment environment, RoverCommunicator[] roverCommunicators) {
+		if (isProcedureA) {
+			procedureA(environment, roverCommunicators);
+		} else {
+			procedureB(environment, roverCommunicators);
+		}
+	}
+	
+	public void procedureA(Environment environment, RoverCommunicator[] roverCommunicators) {
+		boolean existsInLogical = false;
 		for (RoverCommunicator rc : roverCommunicators) {
 			for (Area a : environment.getAreas()) {
-				if (a.getBoundary().contains(rc.getPosition())) {
+				if (a.isPhysical() && a.getBoundary().contains(rc.getPosition())) {
 					rewardPoints += a.getRewardPoint();
+				} else {
+					existsInLogical = true;
 				}
 			}
+		}
+		if (existsInLogical) {
+			isProcedureA = false;
+		}
+	}
+	
+	public void procedureB(Environment environment, RoverCommunicator[] roverCommunicators) {
+		boolean existsInPhysical = false;
+		for (RoverCommunicator rc : roverCommunicators) {
+			for (Area a : environment.getAreas()) {
+				if (!(a.isPhysical()) && a.getBoundary().contains(rc.getPosition())) {
+					rewardPoints += a.getRewardPoint();
+				} else {
+					existsInPhysical = true;
+				}
+			}
+		}
+		if (existsInPhysical) {
+			isProcedureA = true;
 		}
 	}
 
@@ -44,6 +75,6 @@ public class RewardPointsCalculator {
 	/**
 	 * 
 	 */
-	public void RewardPointsCalculator() {
+	public RewardPointsCalculator() {
 	}
 };
