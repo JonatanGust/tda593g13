@@ -8,21 +8,33 @@ import ClassDiagram.Rover.HardwareHandler;
 import ClassDiagram.Rover.Observer;
 import ClassDiagram.Types.Position;
 import ClassDiagram.Types.SensorData;
+import ClassDiagram.Types.UpdateEvent;
+import ClassDiagram.Types.UpdateEventType;
+
 import java.awt.Image;
+import java.util.LinkedList;
 
 import project.Point;
 import project.RobotAvatar;
+import simbad.sim.RangeSensorBelt;
 
 /************************************************************/
 /**
  * 
  */
 public class Robot extends RobotAvatar implements HardwareHandler {
+	private RangeSensorBelt sonars;
+	private LinkedList<Observer> observers;
+	
+	private SensorData lastSensorData;
+	private Position lastPosition;
+	
 	/**
 	 * 
 	 * @param observer 
 	 */
 	public void addObserver(Observer observer) {
+		observers.add(observer);
 	}
 
 	/**
@@ -30,12 +42,14 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @param observer 
 	 */
 	public void removeObserver(Observer observer) {
+		observers.remove(observer);
 	}
 
 	/**
 	 * 
 	 */
 	public void stop() {
+		setDestination(getPosition());
 	}
 
 	/**
@@ -43,6 +57,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @param position 
 	 */
 	public void setDestination(Position position) {
+		setDestination(new Point(position.x, position.z));
 	}
 
 	/**
@@ -58,7 +73,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @return 
 	 */
 	public Position getCurrentPosition() {
-		return null;
+		return new Position(getPosition().getX(), getPosition().getZ());
 	}
 
 	/**
@@ -66,7 +81,21 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @return 
 	 */
 	public SensorData getSensorData() {
-		return null;
+		SensorData sensorData = new SensorData(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY,
+				Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
+		if (sonars.getFrontQuadrantHits() > 0) {
+			sensorData.frontDistance = sonars.getFrontQuadrantMeasurement();
+		}
+		if (sonars.getRightQuadrantHits() > 0) {
+			sensorData.rightDistance = sonars.getRightQuadrantMeasurement();
+		}
+		if (sonars.getBackQuadrantHits() > 0) {
+			sensorData.backDistance = sonars.getBackQuadrantMeasurement();
+		}
+		if (sonars.getLeftQuadrantHits() > 0) {
+			sensorData.leftDistance = sonars.getLeftQuadrantMeasurement();
+		}
+		return sensorData;
 	}
 
 	/**
@@ -76,5 +105,35 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 */
 	public Robot(Position position, String name) {
 		super(new Point(position.x, position.z), name);
+		
+		this.observers = new LinkedList<Observer>();
+		
+		for (Object o : this.getAgent().getSensorList()) {
+			RangeSensorBelt b = (RangeSensorBelt)o;
+			if (b.getName().equals("sonars")) {
+				this.sonars = b;
+			}
+		}
+	}
+	
+	public void update() {
+		super.update();
+		
+		SensorData currentSensorData = getSensorData();
+		Position currentPosition = getCurrentPosition();
+		
+		if (!currentPosition.equals(lastPosition)) {
+			for (Observer obs : observers) {
+				obs.update(new UpdateEvent(UpdateEventType.PositionUpdate, currentPosition));
+			}
+			lastPosition = currentPosition;
+		}
+		
+		if (!currentSensorData.equals(lastSensorData)) {
+			for (Observer obs : observers) {
+				obs.update(new UpdateEvent(UpdateEventType.SensorUpdate, currentSensorData));
+			}
+			lastSensorData = currentSensorData;
+		}
 	}
 };
