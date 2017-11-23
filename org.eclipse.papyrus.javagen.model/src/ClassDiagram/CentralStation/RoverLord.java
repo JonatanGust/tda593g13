@@ -86,29 +86,6 @@ public class RoverLord implements RoverManager, DataManager {
 
 	/**
 	 * 
-	 * @param position 
-	 * @param roverID 
-	 */
-	public void validatePosition(Position position, int roverID) {
-	}
-
-	/**
-	 * 
-	 * @param position 
-	 * @param roverID 
-	 */
-	public void validatePosition(undefined position, int roverID) {
-	}
-
-	/**
-	 * 
-	 * @param roverID 
-	 */
-	public void validatePosition(undefined roverID) {
-	}
-
-	/**
-	 * 
 	 */
 	public void update() {
 	}
