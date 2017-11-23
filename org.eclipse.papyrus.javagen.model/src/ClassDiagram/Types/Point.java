@@ -21,5 +21,6 @@ public class Point {
 	 * @param position 
 	 */
 	public Point(Position position) {
+		this.position = position;
 	}
 };

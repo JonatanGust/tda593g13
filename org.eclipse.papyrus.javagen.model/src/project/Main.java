@@ -5,9 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 import project.AbstractSimulatorMonitor;
-import project.Point;
 import ClassDiagram.CentralStation.RoverLord;
 import ClassDiagram.Types.*;
+import ClassDiagram.Rover.Robot;
+import ClassDiagram.Rover.Rover;
 import ClassDiagram.Rover.RoverCommunicator;
 
 import simbad.sim.EnvironmentDescription;
@@ -73,18 +74,33 @@ public class Main {
 
 		Set<RobotAvatar> robots = new HashSet<>();
 
-		RobotAvatar robot1 = new RobotAvatar(new Point(7, -1.5), "Robot 1");
-		RobotAvatar robot2 = new RobotAvatar(new Point(7, -0.5), "Robot 2");
-		RobotAvatar robot3 = new RobotAvatar(new Point(7, 0.5), "Robot 3");
-		RobotAvatar robot4 = new RobotAvatar(new Point(7, 1.5), "Robot 4");
+		Robot robot1 = new Robot(new Position(7, -1.5), "Robot 1");
+		Robot robot2 = new Robot(new Position(7, -0.5), "Robot 2");
+		Robot robot3 = new Robot(new Position(7, 0.5), "Robot 3");
+		Robot robot4 = new Robot(new Position(7, 1.5), "Robot 4");
 
 		robots.add(robot1);
 		robots.add(robot2);
 		robots.add(robot3);
 		robots.add(robot4);
+		
 		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e);
 		
-		RoverLord roverLord = new RoverLord(env, robots.toArray(new RoverCommunicator[robots.size()]));
+		System.out.println("!!!!!!!!" + robot1.getPosition().toString());
+		
+		Rover[] rovers = new Rover[4];
+
+		for(int i = 0; i < rovers.length; i++) {
+			rovers[i] = new Rover(
+					new Position(robot1.getPosition()),
+					"Robot 1",
+					robot1,
+					env
+				);
+		}
+		RoverLord roverLord = new RoverLord(env, rovers);
+
+
 	}
 	
 }

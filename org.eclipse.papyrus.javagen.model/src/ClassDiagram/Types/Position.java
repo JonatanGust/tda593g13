@@ -4,6 +4,8 @@
 
 package ClassDiagram.Types;
 
+import project.Point;
+
 /************************************************************/
 /**
  * 
@@ -24,5 +26,11 @@ public class Position {
 	 * @param z 
 	 */
 	public Position(double x, double z) {
+		this.x = x;
+		this.z = z;
+	}
+
+	public Position(Point position) {
+		this(position.getX(), position.getZ());
 	}
 };
