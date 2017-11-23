@@ -153,6 +153,7 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Ii8zQM7EEeeu9fRpFdrWYg" name="MovementAI">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_MwNvsNBKEeeRW8N_DZZYCA" name="environment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vRQy0NBTEeeQsNWlIG9NTw" name="hardwareHandler" type="_BFymkM3yEeek8LApaKUyHw"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_mvjTsM-TEeecqo1J0OwUdA" name="update">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_mvjTsc-TEeecqo1J0OwUdA" name="updateEvent" type="_wWhAQM7KEeeO2p5ASy90lQ"/>

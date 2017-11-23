@@ -29,7 +29,7 @@ public class Area {
 	 */
 	public Area(Boundary boundary, boolean restricted, LocationController locationController) {
 	}
-
+	
 	/**
 	 * 
 	 * @param roverID 
