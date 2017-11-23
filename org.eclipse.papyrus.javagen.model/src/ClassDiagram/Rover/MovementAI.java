@@ -9,7 +9,10 @@ import ClassDiagram.Rover.MovementManager;
 import ClassDiagram.Rover.Observer;
 import ClassDiagram.Types.Environment;
 import ClassDiagram.Types.Point;
+import ClassDiagram.Types.Position;
+import ClassDiagram.Types.SensorData;
 import ClassDiagram.Types.UpdateEvent;
+import ClassDiagram.Types.UpdateEventType;
 
 /************************************************************/
 /**
@@ -22,11 +25,14 @@ public class MovementAI implements MovementManager, Observer {
 	private HardwareHandler hardwareHandler;
 	private Environment environment;
 
+	private Point targetPoint;
+	
 	/**
 	 * 
 	 * @param point 
 	 */
 	public void goToPoint(Point point) {
+		targetPoint = point;
 	}
 
 	/**
@@ -50,6 +56,7 @@ public class MovementAI implements MovementManager, Observer {
 	public MovementAI(Environment environment, HardwareHandler hardwareHandler) {
 		this.hardwareHandler = hardwareHandler;
 		this.environment = environment;
+		hardwareHandler.addObserver(this);
 	}
 
 	/**
@@ -57,5 +64,26 @@ public class MovementAI implements MovementManager, Observer {
 	 * @param updateEvent 
 	 */
 	public void update(UpdateEvent updateEvent) {
+		switch(updateEvent.type) {
+			case PositionUpdate:
+				// Maybe there is no data and we use getCurrentPosition()?
+				Position p = (Position) updateEvent.data;
+				return;
+			case SensorUpdate:
+				SensorData d = (SensorData) updateEvent.data;
+				break;
+			default:
+				break;
+		}
 	}
 };
+
+
+
+
+
+
+
+
+
+
