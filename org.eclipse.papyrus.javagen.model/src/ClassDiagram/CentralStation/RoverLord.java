@@ -5,6 +5,7 @@
 package ClassDiagram.CentralStation;
 
 import ClassDiagram.CentralStation.DataManager;
+import ClassDiagram.CentralStation.RewardPointsCalculator;
 import ClassDiagram.CentralStation.RoverManager;
 import ClassDiagram.Rover.RoverCommunicator;
 import ClassDiagram.Types.Environment;
@@ -21,6 +22,10 @@ public class RoverLord implements RoverManager, DataManager {
 	 * 
 	 */
 	private RoverCommunicator[] roverCommunicator;
+	/**
+	 * 
+	 */
+	private RewardPointsCalculator rewardPointsCalculator;
 
 	/**
 	 * 
