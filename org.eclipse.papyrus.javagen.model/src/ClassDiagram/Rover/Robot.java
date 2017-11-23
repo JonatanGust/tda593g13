@@ -116,6 +116,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 		}
 	}
 	
+	@Override
 	public void update() {
 		super.update();
 		

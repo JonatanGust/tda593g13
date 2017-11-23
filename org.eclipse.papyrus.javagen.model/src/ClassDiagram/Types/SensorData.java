@@ -34,5 +34,21 @@ public class SensorData {
 	 * @param leftDistance 
 	 */
 	public SensorData(double frontDistance, double rightDistance, double backDistance, double leftDistance) {
+		this.frontDistance = frontDistance;
+		this.rightDistance = rightDistance;
+		this.backDistance = backDistance;
+		this.leftDistance = leftDistance;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o != null && o.getClass() == this.getClass()) {
+			SensorData sd = (SensorData)o;
+			if (sd.frontDistance == frontDistance && sd.rightDistance == rightDistance &&
+					sd.backDistance == backDistance && sd.leftDistance == leftDistance) {
+				return true;
+			}
+		}
+		return false;
 	}
 };
