@@ -264,7 +264,7 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_TLa2kM3vEeek8LApaKUyHw" name="RoverLord">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_MCHmsc3xEeek8LApaKUyHw" name="roverCommunicator" visibility="private" type="_-ZJPkM3wEeek8LApaKUyHw" aggregation="shared" association="_MCFxgM3xEeek8LApaKUyHw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MCHmsc3xEeek8LApaKUyHw" name="roverCommunicators" visibility="private" type="_-ZJPkM3wEeek8LApaKUyHw" aggregation="shared" association="_MCFxgM3xEeek8LApaKUyHw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OaKcIM3xEeek8LApaKUyHw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OacI8M3xEeek8LApaKUyHw" value="*"/>
         </ownedAttribute>
@@ -272,6 +272,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LcA4sNBREeeRW8N_DZZYCA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LcA4sdBREeeRW8N_DZZYCA" value="1"/>
         </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NQuAcNBlEeeRW8N_DZZYCA" name="environment" visibility="private" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ZJ3K8M3vEeek8LApaKUyHw" client="_TLa2kM3vEeek8LApaKUyHw" supplier="_NjAckM3vEeek8LApaKUyHw" contract="_NjAckM3vEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_aWIw0M3vEeek8LApaKUyHw" client="_TLa2kM3vEeek8LApaKUyHw" supplier="_NNCMkM3vEeek8LApaKUyHw" contract="_NNCMkM3vEeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_bNKJUM34Eeek8LApaKUyHw" name="getPositionOf">
