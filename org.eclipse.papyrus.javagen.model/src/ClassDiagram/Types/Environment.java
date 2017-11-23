@@ -21,6 +21,7 @@ public class Environment {
 	 * @param areas 
 	 */
 	public Environment(Area[] areas) {
+		this.areas = areas;
 	}
 
 	/**

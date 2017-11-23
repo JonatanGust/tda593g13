@@ -30,7 +30,8 @@ public class Boundary {
 	 * @return 
 	 */
 	public boolean contains(Position position) {
-		return false;
+		return position.x > this.position.x && position.x < this.position.x + width &&
+				position.z > this.position.z && position.z < this.position.z + height;
 	}
 
 	/**
@@ -40,6 +41,9 @@ public class Boundary {
 	 * @param position 
 	 */
 	public Boundary(double width, double height, Position position) {
+		this.width = width;
+		this.height = height;
+		this.position = position;
 	}
 
 	/**

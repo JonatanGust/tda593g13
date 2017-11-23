@@ -27,5 +27,7 @@ public class UpdateEvent {
 	 * @param data 
 	 */
 	public UpdateEvent(UpdateEventType type, Object data) {
+		this.type = type;
+		this.data = data;
 	}
 };
