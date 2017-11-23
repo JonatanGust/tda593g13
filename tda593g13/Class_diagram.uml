@@ -247,6 +247,7 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku67kM7EEeeu9fRpFdrWYg" name="SimpleStrategy"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_h1TnANAyEeexUdWYT1mRHA" name="RobotAvatar"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_y8mOYNBOEeeRW8N_DZZYCA" client="_SV58IM31Eeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_bO4gIM-DEee5y9oWZBua7Q" name="CentralStation">
       <packagedElement xmi:type="uml:Interface" xmi:id="_NjAckM3vEeek8LApaKUyHw" name="RoverManager">
@@ -266,6 +267,10 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_MCHmsc3xEeek8LApaKUyHw" name="roverCommunicator" visibility="private" type="_-ZJPkM3wEeek8LApaKUyHw" aggregation="shared" association="_MCFxgM3xEeek8LApaKUyHw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OaKcIM3xEeek8LApaKUyHw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OacI8M3xEeek8LApaKUyHw" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_LcARotBREeeRW8N_DZZYCA" name="rewardPointsCalculator" type="_5lTV0NBQEeeRW8N_DZZYCA" aggregation="composite" association="_Lb_qkNBREeeRW8N_DZZYCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LcA4sNBREeeRW8N_DZZYCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LcA4sdBREeeRW8N_DZZYCA" value="1"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ZJ3K8M3vEeek8LApaKUyHw" client="_TLa2kM3vEeek8LApaKUyHw" supplier="_NjAckM3vEeek8LApaKUyHw" contract="_NjAckM3vEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_aWIw0M3vEeek8LApaKUyHw" client="_TLa2kM3vEeek8LApaKUyHw" supplier="_NNCMkM3vEeek8LApaKUyHw" contract="_NNCMkM3vEeek8LApaKUyHw"/>
@@ -352,6 +357,10 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           </ownedParameter>
         </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_5lTV0NBQEeeRW8N_DZZYCA" name="RewardPointsCalculator">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_GUp9UNBREeeRW8N_DZZYCA" name="CalculateRewardPoints"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_eBqlMNBREeeRW8N_DZZYCA" name="getRewardPoints"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_upNK0M-DEee5y9oWZBua7Q" name="Ui">
@@ -655,6 +664,12 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fFViUdBJEeeRW8N_DZZYCA" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_fFYlodBJEeeRW8N_DZZYCA" name="area" type="_BYcasM-QEeecqo1J0OwUdA" association="_fFTtINBJEeeRW8N_DZZYCA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Lb_qkNBREeeRW8N_DZZYCA" memberEnd="_LcARotBREeeRW8N_DZZYCA _LcBfwNBREeeRW8N_DZZYCA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LcARoNBREeeRW8N_DZZYCA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LcARodBREeeRW8N_DZZYCA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_LcBfwNBREeeRW8N_DZZYCA" name="roverlord" type="_TLa2kM3vEeek8LApaKUyHw" association="_Lb_qkNBREeeRW8N_DZZYCA"/>
     </packagedElement>
   </uml:Package>
   <PapyrusJava:External xmi:id="_b6RpsM-HEee2sKQ3GKyGHw" name="java.awt.Image" base_Classifier="_nM_xsM3zEeek8LApaKUyHw"/>
