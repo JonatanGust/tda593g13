@@ -46,7 +46,7 @@ public class MovementAI implements MovementManager, Observer {
 	 * 
 	 * @param environment 
 	 */
-	public void MovementAI(Environment environment) {
+	public MovementAI(Environment environment) {
 	}
 
 	/**

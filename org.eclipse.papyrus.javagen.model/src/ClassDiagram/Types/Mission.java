@@ -26,6 +26,7 @@ public class Mission {
 	 * @return 
 	 */
 	public boolean isFinished() {
+		return false;
 	}
 
 	/**
@@ -39,7 +40,7 @@ public class Mission {
 	 * 
 	 * @param points 
 	 */
-	public void Mission(List<Point> points) {
+	public Mission(List<Point> points) {
 	}
 
 	/**
@@ -47,6 +48,7 @@ public class Mission {
 	 * @return 
 	 */
 	public List<Point> getFinishedPoints() {
+		return finishedPoints;
 	}
 
 	/**
@@ -54,5 +56,6 @@ public class Mission {
 	 * @return 
 	 */
 	public List<Point> getRemainingPoints() {
+		return remainingPoints;
 	}
 };

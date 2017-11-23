@@ -9,6 +9,8 @@ import ClassDiagram.Rover.Observer;
 import ClassDiagram.Types.Position;
 import ClassDiagram.Types.SensorData;
 import java.awt.Image;
+
+import project.Point;
 import project.RobotAvatar;
 
 /************************************************************/
@@ -48,6 +50,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @return 
 	 */
 	public Image getImage() {
+		return null;
 	}
 
 	/**
@@ -55,6 +58,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @return 
 	 */
 	public Position getCurrentPosition() {
+		return null;
 	}
 
 	/**
@@ -62,6 +66,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @return 
 	 */
 	public SensorData getSensorData() {
+		return null;
 	}
 
 	/**
@@ -69,6 +74,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @param position 
 	 * @param name 
 	 */
-	public void Robot(Position position, String name) {
+	public Robot(Position position, String name) {
+		super(new Point(position.x, position.z), name);
 	}
 };

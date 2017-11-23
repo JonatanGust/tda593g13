@@ -30,6 +30,7 @@ public class Boundary {
 	 * @return 
 	 */
 	public boolean contains(Position position) {
+		return false;
 	}
 
 	/**
@@ -38,7 +39,7 @@ public class Boundary {
 	 * @param height 
 	 * @param position 
 	 */
-	public void Boundary(double width, double height, Position position) {
+	public Boundary(double width, double height, Position position) {
 	}
 
 	/**
@@ -46,6 +47,7 @@ public class Boundary {
 	 * @return 
 	 */
 	public double getWidth() {
+		return width;
 	}
 
 	/**
@@ -53,6 +55,7 @@ public class Boundary {
 	 * @return 
 	 */
 	public double getHeight() {
+		return height;
 	}
 
 	/**
@@ -60,5 +63,6 @@ public class Boundary {
 	 * @return 
 	 */
 	public Position getPosition() {
+		return position;
 	}
 };

@@ -23,6 +23,6 @@ public class Position {
 	 * @param x 
 	 * @param z 
 	 */
-	public void Position(double x, double z) {
+	public Position(double x, double z) {
 	}
 };

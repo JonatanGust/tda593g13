@@ -49,6 +49,7 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @return 
 	 */
 	public Position getPosition() {
+		return null;
 	}
 
 	/**
@@ -56,6 +57,7 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @return 
 	 */
 	public Image getImage() {
+		return null;
 	}
 
 	/**
@@ -63,6 +65,7 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @return 
 	 */
 	public boolean getOperationalStatus() {
+		return false;
 	}
 
 	/**
@@ -70,6 +73,7 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @return 
 	 */
 	public Mission getMissionStatus() {
+		return null;
 	}
 
 	/**

@@ -26,6 +26,6 @@ public class UpdateEvent {
 	 * @param type 
 	 * @param data 
 	 */
-	public void UpdateEvent(UpdateEventType type, Object data) {
+	public UpdateEvent(UpdateEventType type, Object data) {
 	}
 };

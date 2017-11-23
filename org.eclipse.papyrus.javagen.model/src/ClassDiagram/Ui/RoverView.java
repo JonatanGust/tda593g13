@@ -34,6 +34,6 @@ public class RoverView {
 	 * @param dataManager 
 	 * @param roverManager 
 	 */
-	public void RoverView(DataManager dataManager, RoverManager roverManager) {
+	public RoverView(DataManager dataManager, RoverManager roverManager) {
 	}
 };

@@ -33,6 +33,6 @@ public class SensorData {
 	 * @param backDistance 
 	 * @param leftDistance 
 	 */
-	public void SensorData(double frontDistance, double rightDistance, double backDistance, double leftDistance) {
+	public SensorData(double frontDistance, double rightDistance, double backDistance, double leftDistance) {
 	}
 };

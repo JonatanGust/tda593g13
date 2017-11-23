@@ -20,6 +20,6 @@ public class Point {
 	 * 
 	 * @param position 
 	 */
-	public void Point(Position position) {
+	public Point(Position position) {
 	}
 };
