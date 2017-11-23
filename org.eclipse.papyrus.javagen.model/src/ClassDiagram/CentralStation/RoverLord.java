@@ -28,6 +28,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public Position getPositionOf(int roverID) {
+		return null;
 	}
 
 	/**
@@ -36,6 +37,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public Image getVideoOf(int roverID) {
+		return null;
 	}
 
 	/**
@@ -44,6 +46,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public boolean getOperationalStatusOf(int roverID) {
+		return false;
 	}
 
 	/**
@@ -52,6 +55,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public Mission getMissionOf(int roverID) {
+		return null;
 	}
 
 	/**
@@ -59,6 +63,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @return 
 	 */
 	public int getRewardPoints() {
+		return 0;
 	}
 
 	/**
@@ -81,7 +86,7 @@ public class RoverLord implements RoverManager, DataManager {
 	 * @param environment 
 	 * @param rovers 
 	 */
-	public void RoverLord(Environment environment, RoverCommunicator[] rovers) {
+	public RoverLord(Environment environment, RoverCommunicator[] rovers) {
 	}
 
 	/**
