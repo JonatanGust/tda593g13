@@ -18,13 +18,19 @@ import ClassDiagram.Types.Environment;
  * 
  */
 public class SimpleStrategy implements StrategyHandler {
-
+	
+	private static final SimpleStrategy instance = new SimpleStrategy();
+	
 	/**
 	 * 
 	 */
-	public SimpleStrategy() {
+	private SimpleStrategy() {
 	}
 
+	public static SimpleStrategy getInstance() {
+		return instance;
+	}
+	
 	/**
 	 * Will mutate the given strategy so that the remaining points are in order of 
 	 * 1; closest to position 

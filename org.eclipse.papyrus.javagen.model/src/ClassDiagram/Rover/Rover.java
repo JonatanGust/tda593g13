@@ -16,7 +16,9 @@ import ClassDiagram.Types.Environment;
 import ClassDiagram.Types.Fault;
 import ClassDiagram.Types.Mission;
 import ClassDiagram.Types.Position;
+import ClassDiagram.Types.Point;
 import ClassDiagram.Types.UpdateEvent;
+import ClassDiagram.Types.UpdateEventType;
 import java.awt.Image;
 
 /************************************************************/
@@ -24,48 +26,44 @@ import java.awt.Image;
  * 
  */
 public class Rover implements RoverCommunicator, Observer {
-	/**
-	 * 
-	 */
+
 	private StrategyHandler strategyHandler;
-	/**
-	 * 
-	 */
-	private MovementManager movementmanager;
-	/**
-	 * 
-	 */
+
+	private MovementManager movementManager;
+
 	private HardwareHandler hardwareHandler;
 
+	private Mission mission;
+	
+	private Environment environment;
+	
+	private boolean operational = true;
+	
 	/**
-	 * 
+	 * Chooses strategy for and sets the mission as active
 	 * @param mission 
 	 */
 	public void changeMission(Mission mission) {
+		strategyHandler.chooseStrategy(mission, hardwareHandler.getCurrentPosition(), environment);
+		this.mission = mission;
+		movementManager.goToPoint(mission.getRemainingPoints().get(0));
 	}
 
 	/**
-	 * 
-	 * @return 
+	 * @return Current position of the rover
 	 */
-	public Position getPosition() {
-		return null;
-	}
+	public Position getPosition() { return hardwareHandler.getCurrentPosition(); }
 
 	/**
-	 * 
-	 * @return 
+	 * @return Image from rover
 	 */
-	public Image getImage() {
-		return null;
-	}
+	public Image getImage() { return hardwareHandler.getImage(); }
 
 	/**
-	 * 
 	 * @return 
 	 */
 	public boolean getOperationalStatus() {
-		return false;
+		return operational;
 	}
 
 	/**
@@ -73,20 +71,26 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @return 
 	 */
 	public Mission getMissionStatus() {
-		return null;
+		return mission;
 	}
 
 	/**
 	 * 
 	 */
 	public void abortMission() {
+		mission = null; 
+		//TODO movementManager.stop(); ?
+		movementManager.goToPoint(new Point(hardwareHandler.getCurrentPosition()));
 	}
 
 	/**
 	 * 
 	 * @param fault 
 	 */
-	public void handleFault(Fault fault) {
+	private void handleFault(Fault fault) {
+		operational = false;
+		//TODO movementManager.stop(); ?
+		movementManager.goToPoint(new Point(hardwareHandler.getCurrentPosition()));
 	}
 
 	/**
@@ -95,10 +99,13 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @param name 
 	 * @param environment 
 	 */
-	public Rover(Position position, String name, HardwareHandler hardwareHandler, Environment environment) {
+	public Rover( HardwareHandler hardwareHandler, Environment environment) {
 		this.hardwareHandler = hardwareHandler;
-		movementmanager = new MovementAI(environment, hardwareHandler);
-		strategyHandler = new SimpleStrategy();
+		hardwareHandler.addObserver(this);
+		this.environment = environment;
+		movementManager = new MovementAI(environment, hardwareHandler);
+		movementManager.addObserver(this);
+		strategyHandler = SimpleStrategy.getInstance();
 	}
 
 	/**
@@ -106,5 +113,16 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @param updateEvent 
 	 */
 	public void update(UpdateEvent updateEvent) {
+		if(updateEvent == null){}
+		else if(updateEvent.type == UpdateEventType.PointReachedUpdate){
+			if(updateEvent.data != null) {
+				mission.setPointFinished((Point)updateEvent.data);//casting is fine
+			}
+		} else if(updateEvent.type == UpdateEventType.FaultUpdate) {
+			if(updateEvent.data != null) {
+				handleFault((Fault)updateEvent.data);
+			}
+		}
+		//TODO add more handlings
 	}
 };

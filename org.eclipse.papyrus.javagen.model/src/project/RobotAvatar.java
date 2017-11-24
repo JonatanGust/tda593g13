@@ -10,13 +10,14 @@ public class RobotAvatar extends AbstractRobotSimulator {
 		super(position, name);
 	}
 	
-	public void update() {
-		
-	}
 	
 	@Override
 	public String toString() {
 		return "Robot " + this.getName();
+	}
+
+	public void update() {
+		
 	}
 
 }

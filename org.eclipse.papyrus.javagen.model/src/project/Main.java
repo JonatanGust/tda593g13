@@ -90,8 +90,6 @@ public class Main {
 
 		for(int i = 0; i < rovers.length; i++) {
 			rovers[i] = new Rover(
-					new Position(robot1.getPosition()),
-					"Robot " + i,
 					robotArray[i],
 					env
 				);
