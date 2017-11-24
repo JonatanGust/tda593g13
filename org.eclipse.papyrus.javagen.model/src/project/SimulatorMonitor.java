@@ -7,8 +7,8 @@ import simbad.sim.EnvironmentDescription;
 
 public class SimulatorMonitor extends AbstractSimulatorMonitor<RobotAvatar> {
 
-	public SimulatorMonitor( Set<RobotAvatar> robots, EnvironmentDescription e) {
-		super(robots, e);
+	public SimulatorMonitor( Set<? extends RobotAvatar> robots, EnvironmentDescription e) {
+		super((Set<RobotAvatar>)robots, e);
 	}
 
 	@Override

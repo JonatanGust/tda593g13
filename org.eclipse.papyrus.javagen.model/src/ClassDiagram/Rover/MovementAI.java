@@ -27,8 +27,8 @@ public class MovementAI implements MovementManager, Observer {
 	private HardwareHandler hardwareHandler;
 	private Environment environment;
 
-	private Point targetPoint;
-	private Position lastPosition;
+	private Point targetPoint ;
+	private Position lastPosition = new Position(0.0,0.0);
 	private double lookAngle;
 	
 	List<Observer> observers = new LinkedList<Observer>();
@@ -52,6 +52,7 @@ public class MovementAI implements MovementManager, Observer {
 	 */
 	public void goToPoint(Point point) {
 		targetPoint = point;
+		hardwareHandler.setDestination(targetPoint.position);
 	}
 
 	/**
@@ -80,7 +81,7 @@ public class MovementAI implements MovementManager, Observer {
 			);
 		
 				
-		if(sensorData.frontDistance < 5)
+		if(sensorData != null && sensorData.frontDistance < 5)
 		{
 			// This probably doesn't work but it might
 			
@@ -96,7 +97,10 @@ public class MovementAI implements MovementManager, Observer {
 				);
 		}
 		
-		hardwareHandler.setDestination(targetPoint.position);
+		if(targetPoint != null) {
+			hardwareHandler.setDestination(targetPoint.position);
+		}
+		
 		// Move toward targetPoint
 		
 		

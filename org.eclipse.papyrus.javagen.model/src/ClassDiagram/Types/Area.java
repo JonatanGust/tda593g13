@@ -40,7 +40,7 @@ public class Area {
 	 * @param type 
 	 * @param isPhysical 
 	 */
-	public Area(Boundary boundary, boolean restricted, LocationController locationController, RoomType type,
+	public Area(Boundary boundary, LocationController locationController, RoomType type,
 			boolean isPhysical) {
 		this.boundary = boundary;
 		this.locationController = locationController;
