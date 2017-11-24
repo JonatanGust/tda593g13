@@ -50,19 +50,19 @@ public class Main {
 		
 		areas[0] = new Area(
 				new Boundary(5, 5, new Position(0, 0)), 
-				new LocationController(new Point(2.5, 2.5), 2.5, e), null, false
+				new LocationController(new Point(2.5, 2.5), 2.5, e), RoomType.Office, false
 			);
 		areas[1] = new Area(
 				new Boundary(5, -5, new Position(0, 0)), 
-				new LocationController(new Point(2.5, -2.5), 2.5, e), null, false
+				new LocationController(new Point(2.5, -2.5), 2.5, e), RoomType.Office, false
 			);
 		areas[2] = new Area(
 				new Boundary(-5, -5, new Position(0, 0)), 
-				new LocationController(new Point(-2.5, -2.5), 2.5, e), null, false
+				new LocationController(new Point(-2.5, -2.5), 2.5, e), RoomType.Office, false
 			);
 		areas[3] = new Area(
 				new Boundary(-5, 5, new Position(0, 0)), 
-				new LocationController(new Point(-2.5, 2.5), 2.5, e), null, false
+				new LocationController(new Point(-2.5, 2.5), 2.5, e), RoomType.Office, false
 			);
 
 		Environment env = new Environment(areas);
@@ -70,16 +70,16 @@ public class Main {
 		Set<Robot> robots = new HashSet<>();
 
 		Robot robot1 = new Robot(new Position(7, -2.5), "Robot 1");
-		Robot robot2 = new Robot(new Position(7, -0.5), "Robot 2");
-		Robot robot3 = new Robot(new Position(7, 0.5), "Robot 3");
-		Robot robot4 = new Robot(new Position(7, 1.5), "Robot 4");
+		Robot robot2 = new Robot(new Position(7, -5), "Robot 2");
+		Robot robot3 = new Robot(new Position(7, 5), "Robot 3");
+		Robot robot4 = new Robot(new Position(7, 2.5), "Robot 4");
 
 		robots.add(robot1);
 		robots.add(robot2);
 		robots.add(robot3);
 		robots.add(robot4);
+
 		
-		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e);
 				
 		ArrayList<Rover> rovers = new ArrayList<Rover>(4);
 		
@@ -88,12 +88,24 @@ public class Main {
 		}
 		RoverLord roverLord = new RoverLord(env, rovers.toArray( new Rover[4] ));
 		
-		ArrayList<ClassDiagram.Types.Point> misP = new ArrayList<ClassDiagram.Types.Point>();
-		misP.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-7, -2.5)));
-		rovers.get(0).changeMission(new Mission(misP));
-		rovers.get(1).changeMission(new Mission(misP));
-		rovers.get(2).changeMission(new Mission(misP));
-		rovers.get(3).changeMission(new Mission(misP));
+		
+		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e, roverLord);
+		
+		ArrayList<ClassDiagram.Types.Point> misP1 = new ArrayList<ClassDiagram.Types.Point>();
+		misP1.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(2.5, 2.5)));
+		misP1.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(2.5, -2.5)));
+		misP1.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-2.5, 2.5)));
+		misP1.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-2.5, -2.5)));
+		
+		ArrayList<ClassDiagram.Types.Point> misP2 = new ArrayList<ClassDiagram.Types.Point>();
+		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(2.5, 2.5)));
+		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(2.5, -2.5)));
+		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-2.5, 2.5)));
+		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-2.5, -2.5)));
+		rovers.get(0).changeMission(new Mission(misP1));
+		rovers.get(1).changeMission(new Mission(misP2));
+		rovers.get(2).changeMission(new Mission(misP1));
+		rovers.get(3).changeMission(new Mission(misP2));
 	}
 	
 }

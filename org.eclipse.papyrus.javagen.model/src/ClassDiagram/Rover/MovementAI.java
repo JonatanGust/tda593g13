@@ -106,7 +106,19 @@ public class MovementAI implements MovementManager, Observer {
 		
 		// If sensors indicate obstacle, turn away
 		lastPosition = position;
+		
+		double curX =  position.x;
+		double curY =  position.z;
+		double targetX = targetPoint.position.x;
+		double targetY = targetPoint.position.z;
+		double dist = Math.pow(targetX - curX, 2.0) + Math.pow(targetY - curY, 2.0) ;
+		if(dist < 0.1) {
+			for(Observer o : observers) {
+				o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
+			}
+		}
 	}
+	
 
 	/**
 	 * 

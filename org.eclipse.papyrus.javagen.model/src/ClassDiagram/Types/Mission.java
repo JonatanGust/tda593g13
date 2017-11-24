@@ -5,6 +5,8 @@
 package ClassDiagram.Types;
 
 import ClassDiagram.Types.Point;
+
+import java.util.LinkedList;
 import java.util.List;
 
 /************************************************************/
@@ -15,7 +17,7 @@ public class Mission {
 	/**
 	 * 
 	 */
-	private List<Point> finishedPoints;
+	private List<Point> finishedPoints = new LinkedList<Point>();
 	/**
 	 * 
 	 */

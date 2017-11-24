@@ -117,6 +117,9 @@ public class Rover implements RoverCommunicator, Observer {
 		else if(updateEvent.type == UpdateEventType.PointReachedUpdate){
 			if(updateEvent.data != null) {
 				mission.setPointFinished((Point)updateEvent.data);//casting is fine
+				if(!mission.isFinished()) {
+					movementManager.goToPoint(mission.getRemainingPoints().get(0));
+				}
 			}
 		} else if(updateEvent.type == UpdateEventType.FaultUpdate) {
 			if(updateEvent.data != null) {

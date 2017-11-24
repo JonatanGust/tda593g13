@@ -50,11 +50,14 @@ public class SimpleStrategy implements StrategyHandler {
 	
 	private void makeStrategyFor(Position current, List<Point> goals){
 		LinkedList<Point> sorted = new LinkedList<Point>();
-		
+		Point p1 = closestTo(current, goals);
+		sorted.add(p1);
+		goals.remove(p1);
 		while (!goals.isEmpty()) {
-			Point p = closestTo(current, goals);
-			sorted.add(p);
-			goals.remove(p);
+			Point p2 = closestTo(p1.position, goals);
+			sorted.add(p2);
+			goals.remove(p2);
+			p1 = p2;
 		}
 		while (!sorted.isEmpty()) {
 			goals.add(sorted.poll());
