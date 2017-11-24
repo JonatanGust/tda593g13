@@ -219,7 +219,7 @@
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_VzA00M34Eeek8LApaKUyHw" name="abortMission"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_mBA_UM66EeesO-dB23-pgQ" name="handleFault">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mBA_UM66EeesO-dB23-pgQ" name="handleFault" visibility="private">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_4WuLUM66EeesO-dB23-pgQ" name="fault" type="_3aZF8M66EeesO-dB23-pgQ"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_UInEQM7DEeeu9fRpFdrWYg" name="Rover" visibility="public">
@@ -507,6 +507,7 @@
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_p6OZkM-LEeecuuyO-uFmog" name="PositionUpdate"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_tzS84M-LEeecuuyO-uFmog" name="SensorUpdate"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6QFNsM-LEeecuuyO-uFmog" name="PointReachedUpdate"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Nd_18ND-EeeaF4H3-BRbcQ" name="FaultUpdate"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_qaXcwM-MEeecuuyO-uFmog" name="List&lt;Point>"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_w-vd0M-OEeecqo1J0OwUdA" name="Environment">

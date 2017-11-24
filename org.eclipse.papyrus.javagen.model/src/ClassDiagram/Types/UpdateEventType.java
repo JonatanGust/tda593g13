@@ -4,7 +4,6 @@
 
 package ClassDiagram.Types;
 
-/************************************************************/
 /**
  * 
  */
@@ -20,5 +19,9 @@ public enum UpdateEventType {
 	/**
 	 * 
 	 */
-	PointReachedUpdate;
+	PointReachedUpdate,
+	/**
+	 *  The data will be a Fault object
+	 */
+	FaultUpdate;
 };

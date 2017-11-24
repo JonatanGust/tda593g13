@@ -900,6 +900,10 @@
             <element xmi:type="uml:EnumerationLiteral" href="Class_diagram.uml#_6QFNsM-LEeecuuyO-uFmog"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_6Rnewc-LEeecuuyO-uFmog"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_NfRoUND-EeeaF4H3-BRbcQ" type="EnumerationLiteral_LiteralLabel">
+            <element xmi:type="uml:EnumerationLiteral" href="Class_diagram.uml#_Nd_18ND-EeeaF4H3-BRbcQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_NfRoUdD-EeeaF4H3-BRbcQ"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_nANfgc-LEeecuuyO-uFmog"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_nANfgs-LEeecuuyO-uFmog"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_nANfg8-LEeecuuyO-uFmog"/>
