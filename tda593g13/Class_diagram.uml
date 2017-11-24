@@ -553,9 +553,6 @@
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_XHZN4M-lEeex3IThi1054A" name="Area">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ww5XoM-lEeex3IThi1054A" name="boundary" type="_Dls8cM-QEeecqo1J0OwUdA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zC7EoM-lEeex3IThi1054A" name="restricted">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_sIl9QNBJEeeRW8N_DZZYCA" name="locationController" type="_MzRgMNBJEeeRW8N_DZZYCA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_guMxANBeEeeRW8N_DZZYCA" name="type" type="_18Xp0NBcEeeRW8N_DZZYCA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_lh3UUNBeEeeRW8N_DZZYCA" name="isPhysical">
