@@ -239,15 +239,25 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_v0TQoM3xEeek8LApaKUyHw" name="SimpleStrategy">
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_x77EcM3xEeek8LApaKUyHw" client="_v0TQoM3xEeek8LApaKUyHw" supplier="_sAirIM3xEeek8LApaKUyHw" contract="_sAirIM3xEeek8LApaKUyHw"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku67kM7EEeeu9fRpFdrWYg" name="SimpleStrategy"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku67kM7EEeeu9fRpFdrWYg" name="SimpleStrategy" visibility="private"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Hz3-QNBaEeeMzdSKkoEmkA" name="chooseStrategy">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-QdBaEeeMzdSKkoEmkA" name="mission" type="_8ov64M3uEeek8LApaKUyHw" direction="inout"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-QtBaEeeMzdSKkoEmkA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-Q9BaEeeMzdSKkoEmkA" name="enviroment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_chibsNEAEeeaF4H3-BRbcQ" name="getInstance">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_l-VtUNEAEeeaF4H3-BRbcQ" type="_v0TQoM3xEeek8LApaKUyHw" direction="return"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_h1TnANAyEeexUdWYT1mRHA" name="RobotAvatar"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_y8mOYNBOEeeRW8N_DZZYCA" client="_SV58IM31Eeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aQEk0ND_EeeaF4H3-BRbcQ" name="SimplestStrategy">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_mPHwwND_EeeaF4H3-BRbcQ" client="_aQEk0ND_EeeaF4H3-BRbcQ" supplier="_sAirIM3xEeek8LApaKUyHw" contract="_sAirIM3xEeek8LApaKUyHw"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_elOAIND_EeeaF4H3-BRbcQ" name="SimplestStrategy" visibility="private"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_nLk8gNEAEeeaF4H3-BRbcQ" name="getInstance">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_uNtigNEAEeeaF4H3-BRbcQ" type="_aQEk0ND_EeeaF4H3-BRbcQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_bO4gIM-DEee5y9oWZBua7Q" name="CentralStation">
       <packagedElement xmi:type="uml:Interface" xmi:id="_NjAckM3vEeek8LApaKUyHw" name="RoverManager">
