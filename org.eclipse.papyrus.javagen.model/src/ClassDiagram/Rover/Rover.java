@@ -92,7 +92,7 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @param fault 
 	 */
 	private void handleFault(Fault fault) {
-		//TODO movementManager.stop();
+		//TODO movementManager.stop(); ?
 		movementManager.goToPoint(new Point(hardwareHandler.getCurrentPosition()));
 	}
 
@@ -121,6 +121,11 @@ public class Rover implements RoverCommunicator, Observer {
 			if(updateEvent.data != null) {
 				mission.setPointFinished((Point)updateEvent.data);//casting is fine
 			}
-		}//TODO add more handlings
+		} else if(updateEvent.type == UpdateEventType.FaultUpdate) {
+			if(updateEvent.data != null) {
+				handleFault((Fault)updateEvent.data);
+			}
+		}
+		//TODO add more handlings
 	}
 };
