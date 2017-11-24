@@ -18,7 +18,7 @@ public enum UpdateEventType {
 	 */
 	SensorUpdate,
 	/**
-	 * 
+	 * Will be used by MovementManager(s) to report a job well done to it's rover
 	 */
 	PointReachedUpdate;
 };

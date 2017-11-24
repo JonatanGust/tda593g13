@@ -18,7 +18,7 @@ public interface StrategyHandler {
 	 * 
 	 * @param mission 
 	 * @param position 
-	 * @param enviroment 
+	 * @param environment 
 	 */
-	public void chooseStrategy(Mission mission, Position position, Environment enviroment);
+	public void chooseStrategy(Mission mission, Position position, Environment environment);
 };
