@@ -4,7 +4,6 @@
 
 package ClassDiagram.Types;
 
-/************************************************************/
 /**
  * 
  */
@@ -20,5 +19,9 @@ public enum UpdateEventType {
 	/**
 	 * Will be used by MovementManager(s) to report a job well done to it's rover
 	 */
-	PointReachedUpdate;
+	PointReachedUpdate,
+	/**
+	 *  The data will be a Fault object
+	 */
+	FaultUpdate;
 };

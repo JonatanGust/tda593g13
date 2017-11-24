@@ -45,7 +45,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_1LE_oM7DEeeu9fRpFdrWYg" client="_b-6akM3xEeek8LApaKUyHw" supplier="_HopPkM3yEeek8LApaKUyHw"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_28oc0M7DEeeu9fRpFdrWYg" client="_b-6akM3xEeek8LApaKUyHw" supplier="_v0TQoM3xEeek8LApaKUyHw"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_6yzdIM7DEeeu9fRpFdrWYg" client="_b-6akM3xEeek8LApaKUyHw" supplier="_IX9MoM3yEeek8LApaKUyHw"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_nbMhcM-CEee5y9oWZBua7Q" name="Rover">
       <packagedElement xmi:type="uml:Interface" xmi:id="_SV58IM31Eeek8LApaKUyHw" name="Observable">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_0WNYwM31Eeek8LApaKUyHw" name="addObserver">
@@ -131,6 +130,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_HopPkM3yEeek8LApaKUyHw" name="MovementAI">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_OP7Fkc3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" association="_OP53cM3yEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_SkucAND6EeeaF4H3-BRbcQ" name="environment" visibility="private" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_MLZCAM3yEeek8LApaKUyHw" client="_HopPkM3yEeek8LApaKUyHw" supplier="_9apxkM3xEeek8LApaKUyHw" contract="_9apxkM3xEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_liDn8M31Eeek8LApaKUyHw" client="_HopPkM3yEeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw" contract="_U2qosM31Eeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_PtcFEc31Eeek8LApaKUyHw" name="goToPoint">
@@ -183,6 +183,8 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_yjy8wM3xEeek8LApaKUyHw" name="strategyHandler" visibility="private" type="_sAirIM3xEeek8LApaKUyHw" association="_yjxHkM3xEeek8LApaKUyHw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_NbD6Ic3yEeek8LApaKUyHw" name="movementmanager" visibility="private" type="_9apxkM3xEeek8LApaKUyHw" aggregation="composite" association="_NbCE8M3yEeek8LApaKUyHw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_OsY_Ic3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" aggregation="composite" association="_OsXxAM3yEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GO-AQND6EeeaF4H3-BRbcQ" name="environment" visibility="private" type="_w-vd0M-OEeecqo1J0OwUdA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_L05uAND6EeeaF4H3-BRbcQ" name="mission" visibility="private" type="_8ov64M3uEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_gWh7EM3xEeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_-ZJPkM3wEeek8LApaKUyHw" contract="_-ZJPkM3wEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_E1fZMM33Eeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw" contract="_U2qosM31Eeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_oObkEc30Eeek8LApaKUyHw" name="changeMission">
@@ -217,14 +219,11 @@
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_VzA00M34Eeek8LApaKUyHw" name="abortMission"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_mBA_UM66EeesO-dB23-pgQ" name="handleFault">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mBA_UM66EeesO-dB23-pgQ" name="handleFault" visibility="private">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_4WuLUM66EeesO-dB23-pgQ" name="fault" type="_3aZF8M66EeesO-dB23-pgQ"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_UInEQM7DEeeu9fRpFdrWYg" name="Rover" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oUa2QM7DEeeu9fRpFdrWYg" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_r9o_sM7DEeeu9fRpFdrWYg" name="name">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_YFkuEND9EeeaF4H3-BRbcQ" name="hardwareHandler" type="_BFymkM3yEeek8LApaKUyHw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_HX1VwNBKEeeRW8N_DZZYCA" name="environment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_1UEGAM-TEeecqo1J0OwUdA" name="update">
@@ -240,15 +239,25 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_v0TQoM3xEeek8LApaKUyHw" name="SimpleStrategy">
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_x77EcM3xEeek8LApaKUyHw" client="_v0TQoM3xEeek8LApaKUyHw" supplier="_sAirIM3xEeek8LApaKUyHw" contract="_sAirIM3xEeek8LApaKUyHw"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku67kM7EEeeu9fRpFdrWYg" name="SimpleStrategy"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku67kM7EEeeu9fRpFdrWYg" name="SimpleStrategy" visibility="private"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Hz3-QNBaEeeMzdSKkoEmkA" name="chooseStrategy">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-QdBaEeeMzdSKkoEmkA" name="mission" type="_8ov64M3uEeek8LApaKUyHw" direction="inout"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-QtBaEeeMzdSKkoEmkA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hz3-Q9BaEeeMzdSKkoEmkA" name="enviroment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_chibsNEAEeeaF4H3-BRbcQ" name="getInstance">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_l-VtUNEAEeeaF4H3-BRbcQ" type="_v0TQoM3xEeek8LApaKUyHw" direction="return"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_h1TnANAyEeexUdWYT1mRHA" name="RobotAvatar"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_y8mOYNBOEeeRW8N_DZZYCA" client="_SV58IM31Eeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aQEk0ND_EeeaF4H3-BRbcQ" name="SimplestStrategy">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_mPHwwND_EeeaF4H3-BRbcQ" client="_aQEk0ND_EeeaF4H3-BRbcQ" supplier="_sAirIM3xEeek8LApaKUyHw" contract="_sAirIM3xEeek8LApaKUyHw"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_elOAIND_EeeaF4H3-BRbcQ" name="SimplestStrategy" visibility="private"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_nLk8gNEAEeeaF4H3-BRbcQ" name="getInstance">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_uNtigNEAEeeaF4H3-BRbcQ" type="_aQEk0ND_EeeaF4H3-BRbcQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_bO4gIM-DEee5y9oWZBua7Q" name="CentralStation">
       <packagedElement xmi:type="uml:Interface" xmi:id="_NjAckM3vEeek8LApaKUyHw" name="RoverManager">
@@ -508,6 +517,7 @@
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_p6OZkM-LEeecuuyO-uFmog" name="PositionUpdate"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_tzS84M-LEeecuuyO-uFmog" name="SensorUpdate"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6QFNsM-LEeecuuyO-uFmog" name="PointReachedUpdate"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Nd_18ND-EeeaF4H3-BRbcQ" name="FaultUpdate"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_qaXcwM-MEeecuuyO-uFmog" name="List&lt;Point>"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_w-vd0M-OEeecqo1J0OwUdA" name="Environment">
