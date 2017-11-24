@@ -40,32 +40,26 @@ public class Rover implements RoverCommunicator, Observer {
 	private boolean operational = true;
 	
 	/**
-	 * 
+	 * Chooses strategy for and sets the mission as active
 	 * @param mission 
 	 */
 	public void changeMission(Mission mission) {
 		strategyHandler.chooseStrategy(mission, hardwareHandler.getCurrentPosition(), environment);
 		this.mission = mission;
+		movementManager.goToPoint(mission.getRemainingPoints().get(0));
 	}
 
 	/**
-	 * 
-	 * @return 
+	 * @return Current position of the rover
 	 */
-	public Position getPosition() {
-		return hardwareHandler.getCurrentPosition();
-	}
+	public Position getPosition() { return hardwareHandler.getCurrentPosition(); }
 
 	/**
-	 * 
-	 * @return 
+	 * @return Image from rover
 	 */
-	public Image getImage() {
-		return hardwareHandler.getImage();
-	}
+	public Image getImage() { return hardwareHandler.getImage(); }
 
 	/**
-	 * 
 	 * @return 
 	 */
 	public boolean getOperationalStatus() {
