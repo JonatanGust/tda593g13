@@ -179,6 +179,10 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_HoqdtM3yEeek8LApaKUyHw" y="15"/>
         </children>
         <children xmi:type="notation:BasicCompartment" xmi:id="_Hoqdtc3yEeek8LApaKUyHw" type="Class_AttributeCompartment">
+          <children xmi:type="notation:Shape" xmi:id="_SmevgND6EeeaF4H3-BRbcQ" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="Class_diagram.uml#_SkucAND6EeeaF4H3-BRbcQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_SmevgdD6EeeaF4H3-BRbcQ"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_Hoqdts3yEeek8LApaKUyHw"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_Hoqdt83yEeek8LApaKUyHw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_HoqduM3yEeek8LApaKUyHw"/>
@@ -259,6 +263,14 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_b-7otM3xEeek8LApaKUyHw" y="15"/>
         </children>
         <children xmi:type="notation:BasicCompartment" xmi:id="_b-7otc3xEeek8LApaKUyHw" type="Class_AttributeCompartment">
+          <children xmi:type="notation:Shape" xmi:id="_GQvh4ND6EeeaF4H3-BRbcQ" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="Class_diagram.uml#_GO-AQND6EeeaF4H3-BRbcQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_GQvh4dD6EeeaF4H3-BRbcQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_L3g9IND6EeeaF4H3-BRbcQ" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="Class_diagram.uml#_L05uAND6EeeaF4H3-BRbcQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_L3g9IdD6EeeaF4H3-BRbcQ"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_b-7ots3xEeek8LApaKUyHw"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_b-7ot83xEeek8LApaKUyHw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_b-7ouM3xEeek8LApaKUyHw"/>

@@ -131,6 +131,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_HopPkM3yEeek8LApaKUyHw" name="MovementAI">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_OP7Fkc3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" association="_OP53cM3yEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_SkucAND6EeeaF4H3-BRbcQ" name="environment" visibility="private" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_MLZCAM3yEeek8LApaKUyHw" client="_HopPkM3yEeek8LApaKUyHw" supplier="_9apxkM3xEeek8LApaKUyHw" contract="_9apxkM3xEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_liDn8M31Eeek8LApaKUyHw" client="_HopPkM3yEeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw" contract="_U2qosM31Eeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_PtcFEc31Eeek8LApaKUyHw" name="goToPoint">
@@ -183,6 +184,8 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_yjy8wM3xEeek8LApaKUyHw" name="strategyHandler" visibility="private" type="_sAirIM3xEeek8LApaKUyHw" association="_yjxHkM3xEeek8LApaKUyHw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_NbD6Ic3yEeek8LApaKUyHw" name="movementmanager" visibility="private" type="_9apxkM3xEeek8LApaKUyHw" aggregation="composite" association="_NbCE8M3yEeek8LApaKUyHw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_OsY_Ic3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" aggregation="composite" association="_OsXxAM3yEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GO-AQND6EeeaF4H3-BRbcQ" name="environment" visibility="private" type="_w-vd0M-OEeecqo1J0OwUdA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_L05uAND6EeeaF4H3-BRbcQ" name="mission" visibility="private" type="_8ov64M3uEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_gWh7EM3xEeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_-ZJPkM3wEeek8LApaKUyHw" contract="_-ZJPkM3wEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_E1fZMM33Eeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw" contract="_U2qosM31Eeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_oObkEc30Eeek8LApaKUyHw" name="changeMission">
