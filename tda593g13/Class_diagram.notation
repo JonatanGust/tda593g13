@@ -1575,21 +1575,6 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_29_HsM7DEeeu9fRpFdrWYg" id="(0.9698795180722891,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_29_Hsc7DEeeu9fRpFdrWYg" id="(0.0,0.2)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_6y2gcM7DEeeu9fRpFdrWYg" type="Usage_Edge" source="_b-7osM3xEeek8LApaKUyHw" target="_IX9zsM3yEeek8LApaKUyHw">
-    <children xmi:type="notation:DecorationNode" xmi:id="_6y2gc87DEeeu9fRpFdrWYg" type="Usage_NameLabel">
-      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_cm8lsM7HEeeu9fRpFdrWYg" name="IS_UPDATED_POSITION" booleanValue="true"/>
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_6y2gdM7DEeeu9fRpFdrWYg" x="-1" y="38"/>
-    </children>
-    <children xmi:type="notation:DecorationNode" xmi:id="_6y2gdc7DEeeu9fRpFdrWYg" type="Usage_StereotypeLabel">
-      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_cncU8M7HEeeu9fRpFdrWYg" name="IS_UPDATED_POSITION" booleanValue="true"/>
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_6y2gds7DEeeu9fRpFdrWYg" x="-1" y="58"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_6y2gcc7DEeeu9fRpFdrWYg"/>
-    <element xmi:type="uml:Usage" href="Class_diagram.uml#_6yzdIM7DEeeu9fRpFdrWYg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6y2gcs7DEeeu9fRpFdrWYg" points="[560, 572, -643984, -643984]$[780, 840, -643984, -643984]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_60OZcM7DEeeu9fRpFdrWYg" id="(0.6485943775100401,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_60OZcc7DEeeu9fRpFdrWYg" id="(0.15034965034965034,0.0)"/>
-  </edges>
   <edges xmi:type="notation:Connector" xmi:id="_MR9tgM-GEee2sKQ3GKyGHw" type="Association_Edge" source="_DWAUkM-FEee2sKQ3GKyGHw" target="_BQ8skM-FEee2sKQ3GKyGHw">
     <children xmi:type="notation:DecorationNode" xmi:id="_MR-UkM-GEee2sKQ3GKyGHw" type="Association_StereotypeLabel">
       <styles xmi:type="notation:BooleanValueStyle" xmi:id="_KIepwM-MEeecuuyO-uFmog" name="IS_UPDATED_POSITION" booleanValue="true"/>
