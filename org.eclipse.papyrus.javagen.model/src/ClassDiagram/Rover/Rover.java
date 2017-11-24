@@ -37,6 +37,8 @@ public class Rover implements RoverCommunicator, Observer {
 	
 	private Environment environment;
 	
+	private boolean operational = true;
+	
 	/**
 	 * 
 	 * @param mission 
@@ -67,7 +69,7 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @return 
 	 */
 	public boolean getOperationalStatus() {
-		return true;//TODO hardwareHandler.getOperationalStatus();
+		return operational;
 	}
 
 	/**
@@ -92,6 +94,7 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @param fault 
 	 */
 	private void handleFault(Fault fault) {
+		operational = false;
 		//TODO movementManager.stop(); ?
 		movementManager.goToPoint(new Point(hardwareHandler.getCurrentPosition()));
 	}
