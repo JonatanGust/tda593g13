@@ -128,4 +128,8 @@ public class RoverLord implements RoverManager, DataManager {
 			lastRewardUpdate = currentTime;
 		}
 	}
+	
+	public RoverCommunicator[] getRoverCommunicators() {
+		return roverCommunicators;
+	}
 };

@@ -8,6 +8,7 @@ import java.util.Set;
 import project.AbstractSimulatorMonitor;
 import ClassDiagram.CentralStation.RoverLord;
 import ClassDiagram.Types.*;
+import ClassDiagram.Ui.RoverView;
 import ClassDiagram.Rover.Robot;
 import ClassDiagram.Rover.Rover;
 import simbad.sim.EnvironmentDescription;
@@ -87,6 +88,8 @@ public class Main {
 			rovers.add(new Rover(r, env));
 		}
 		RoverLord roverLord = new RoverLord(env, rovers.toArray( new Rover[4] ));
+		
+		RoverView roverView = new RoverView(roverLord, roverLord);
 		
 		
 		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e, roverLord);

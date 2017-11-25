@@ -7,33 +7,114 @@ package ClassDiagram.Ui;
 import ClassDiagram.CentralStation.DataManager;
 import ClassDiagram.CentralStation.RoverManager;
 import ClassDiagram.Types.Mission;
+import ClassDiagram.Types.Position;
+import ClassDiagram.Types.Point;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /************************************************************/
 /**
  * 
  */
 public class RoverView {
-	/**
-	 * 
-	 */
+	
+	private JFrame guiFrame;
+	
 	private DataManager dataManager;
 	/**
 	 * 
 	 */
+	
 	private RoverManager roverManager;
-
-	/**
-	 * 
-	 * @param mission 
-	 */
-	public void changeMission(Mission mission) {
-	}
-
+	
 	/**
 	 * 
 	 * @param dataManager 
 	 * @param roverManager 
 	 */
 	public RoverView(DataManager dataManager, RoverManager roverManager) {
+		this.dataManager = dataManager;
+		this.roverManager = roverManager;
+		
+		guiFrame = new JFrame("RoverView");
+		guiFrame.setSize(700, 400);
+		guiFrame.setLocationRelativeTo(null);
+		guiFrame.getContentPane().setLayout(new FlowLayout());
+		guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel roverSelectText = new JLabel("Select rover:");
+		
+		JComboBox<Integer> roverDropDown = new JComboBox<Integer>();
+		for(int i = 0; i < dataManager.getRoverCommunicators().length; i++) {
+			roverDropDown.addItem(i);
+		}
+		
+		JButton statusButton = new JButton("Get status");
+		statusButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				JLabel statusText = new JLabel(getStatus((int) roverDropDown.getSelectedItem()));
+				guiFrame.add(statusText);
+				guiFrame.setVisible(true);
+			  }
+		});
+		
+		JButton changeMissionButton = new JButton("Change mission");
+		changeMissionButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				String input = JOptionPane.showInputDialog(guiFrame, 
+						"Enter the points of the mission in any format you like. \n (Just make sure that the coordinates have spaces on both sides "
+						+ "since my scanner is kinda shitty)");
+				Scanner sc = new Scanner(input);
+				ArrayList<Point> missionPoints = new ArrayList<Point>();
+				while(sc.hasNext()) {
+					if(sc.hasNextDouble()) {
+						double d1 = sc.nextDouble();
+						while(!sc.hasNextDouble()) {
+							sc.next();
+						}
+						double d2 = sc.nextDouble();
+						missionPoints.add(new Point(new Position(d1, d2)));
+					} else {
+						sc.next();
+					}
+				}
+				changeMission((int) roverDropDown.getSelectedItem(), new Mission(missionPoints));
+			  }
+		});
+		
+		guiFrame.add(roverSelectText);
+		guiFrame.add(roverDropDown);
+		guiFrame.add(statusButton);
+		guiFrame.add(changeMissionButton);
+		guiFrame.setVisible(true);
 	}
+	
+
+	/**
+	 * 
+	 * @param mission 
+	 */
+	public void changeMission(int roverID, Mission mission) {
+		roverManager.changeMissionOf(roverID, mission);
+	}
+	
+	public String getStatus(int roverID) {
+		if(dataManager.getOperationalStatusOf(roverID)) {
+			Position p = dataManager.getPositionOf(roverID);
+			Image i = dataManager.getVideoOf(roverID); //todo
+			Mission m = dataManager.getMissionOf(roverID);
+			int rp = dataManager.getRewardPoints();
+			return "<html>This rover is currently operational and located at position (" + p.x + ", " + p.z + "). "
+					+ "<br>It has finished " + m.getFinishedPoints().size() + 
+					" of the " + (m.getFinishedPoints().size()+m.getRemainingPoints().size()) +
+					" points in its mission. <br>The current amount of reward points is " + rp + ".<html>";
+		}
+		return "This rover is currently not operational";
+	}
+
+	
 };
