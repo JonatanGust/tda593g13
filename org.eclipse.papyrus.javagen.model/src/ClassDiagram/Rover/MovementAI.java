@@ -7,6 +7,7 @@ package ClassDiagram.Rover;
 import ClassDiagram.Rover.HardwareHandler;
 import ClassDiagram.Rover.MovementManager;
 import ClassDiagram.Rover.Observer;
+import ClassDiagram.Types.Area;
 import ClassDiagram.Types.Environment;
 import ClassDiagram.Types.Point;
 import ClassDiagram.Types.Position;
@@ -31,7 +32,9 @@ public class MovementAI implements MovementManager, Observer {
 	private Position lastPosition = new Position(0.0,0.0);
 	private double lookAngle;
 	
-	List<Observer> observers = new LinkedList<Observer>();
+	private List<Observer> observers = new LinkedList<Observer>();
+	
+	private HashMap<Area, Boolean> acquiredArea = new HashMap<Area, Boolean>();
 	
 	SensorData sensorData;
 	
@@ -43,6 +46,10 @@ public class MovementAI implements MovementManager, Observer {
 		this.hardwareHandler = hardwareHandler;
 		this.environment = environment;
 		hardwareHandler.addObserver(this);
+		
+		for (Area a : environment.getAreas()) {
+			acquiredArea.put(a, false);
+		}
 	}
 
 	
@@ -115,6 +122,26 @@ public class MovementAI implements MovementManager, Observer {
 		if(dist < 0.1) {
 			for(Observer o : observers) {
 				o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
+			}
+		}
+		
+		for (Area a : environment.getAreas()) {
+			if (a.getLocationController() != null) {
+				if (a.getBoundary().contains(position)) {
+					if (acquiredArea.get(a) || a.getLocationController().tryAcquire((Robot)hardwareHandler)) {
+						System.out.println("acquired");
+						acquiredArea.put(a, true);
+						hardwareHandler.setDestination(targetPoint.position);
+					} else {
+						System.out.println("denied");
+						hardwareHandler.stop();									
+					}
+				} else {
+					if (acquiredArea.get(a)) {
+						acquiredArea.put(a, false);
+						a.getLocationController().release((Robot)hardwareHandler);
+					}
+				}
 			}
 		}
 	}

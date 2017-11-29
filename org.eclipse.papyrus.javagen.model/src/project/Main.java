@@ -8,6 +8,7 @@ import java.util.Set;
 import project.AbstractSimulatorMonitor;
 import ClassDiagram.CentralStation.RoverLord;
 import ClassDiagram.Types.*;
+import ClassDiagram.Ui.RoverView;
 import ClassDiagram.Rover.Robot;
 import ClassDiagram.Rover.Rover;
 import simbad.sim.EnvironmentDescription;
@@ -53,15 +54,15 @@ public class Main {
 				new LocationController(new Point(2.5, 2.5), 2.5, e), RoomType.Office, false
 			);
 		areas[1] = new Area(
-				new Boundary(5, -5, new Position(0, 0)), 
+				new Boundary(5, 5, new Position(0, -5)), 
 				new LocationController(new Point(2.5, -2.5), 2.5, e), RoomType.Office, false
 			);
 		areas[2] = new Area(
-				new Boundary(-5, -5, new Position(0, 0)), 
+				new Boundary(5, 5, new Position(-5, -5)), 
 				new LocationController(new Point(-2.5, -2.5), 2.5, e), RoomType.Office, false
 			);
 		areas[3] = new Area(
-				new Boundary(-5, 5, new Position(0, 0)), 
+				new Boundary(5, 5, new Position(-5, 0)), 
 				new LocationController(new Point(-2.5, 2.5), 2.5, e), RoomType.Office, false
 			);
 
@@ -69,7 +70,7 @@ public class Main {
 
 		Set<Robot> robots = new HashSet<>();
 
-		Robot robot1 = new Robot(new Position(7, -2.5), "Robot 1");
+		Robot robot1 = new Robot(new Position(8, -2.5), "Robot 1");
 		Robot robot2 = new Robot(new Position(7, -5), "Robot 2");
 		Robot robot3 = new Robot(new Position(7, 5), "Robot 3");
 		Robot robot4 = new Robot(new Position(7, 2.5), "Robot 4");
@@ -88,6 +89,8 @@ public class Main {
 		}
 		RoverLord roverLord = new RoverLord(env, rovers.toArray( new Rover[4] ));
 		
+		RoverView roverView = new RoverView(roverLord, roverLord);
+		
 		
 		AbstractSimulatorMonitor controller = new SimulatorMonitor(robots, e, roverLord);
 		
@@ -99,9 +102,9 @@ public class Main {
 		
 		ArrayList<ClassDiagram.Types.Point> misP2 = new ArrayList<ClassDiagram.Types.Point>();
 		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(2.5, 2.5)));
-		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(2.5, -2.5)));
 		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-2.5, 2.5)));
-		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-2.5, -2.5)));
+		misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-7, 2.5)));
+		//misP2.add(new ClassDiagram.Types.Point(new ClassDiagram.Types.Position(-2.5, -2.5)));
 		rovers.get(0).changeMission(new Mission(misP1));
 		rovers.get(1).changeMission(new Mission(misP2));
 		rovers.get(2).changeMission(new Mission(misP1));

@@ -4,6 +4,7 @@
 
 package ClassDiagram.CentralStation;
 
+import ClassDiagram.Rover.RoverCommunicator;
 import ClassDiagram.Types.Mission;
 import ClassDiagram.Types.Position;
 import java.awt.Image;
@@ -46,4 +47,6 @@ public interface DataManager {
 	 * @return 
 	 */
 	public int getRewardPoints();
+	
+	public RoverCommunicator[] getRoverCommunicators();
 };
