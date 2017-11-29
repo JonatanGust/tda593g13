@@ -123,12 +123,12 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 		SensorData currentSensorData = getSensorData();
 		Position currentPosition = getCurrentPosition();
 		
-		if (!currentPosition.equals(lastPosition)) {
+		//if (!currentPosition.equals(lastPosition)) {
 			for (Observer obs : observers) {
 				obs.update(new UpdateEvent(UpdateEventType.PositionUpdate, currentPosition));
 			}
 			lastPosition = currentPosition;
-		}
+		//}
 		
 		if (!currentSensorData.equals(lastSensorData)) {
 			for (Observer obs : observers) {

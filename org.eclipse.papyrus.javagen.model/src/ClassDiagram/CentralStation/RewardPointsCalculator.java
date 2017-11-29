@@ -32,7 +32,7 @@ public class RewardPointsCalculator {
 		}
 	}
 	
-	public void procedureA(Environment environment, RoverCommunicator[] roverCommunicators) {
+	private void procedureA(Environment environment, RoverCommunicator[] roverCommunicators) {
 		boolean existsInLogical = false;
 		for (RoverCommunicator rc : roverCommunicators) {
 			for (Area a : environment.getAreas()) {
@@ -48,7 +48,7 @@ public class RewardPointsCalculator {
 		}
 	}
 	
-	public void procedureB(Environment environment, RoverCommunicator[] roverCommunicators) {
+	private void procedureB(Environment environment, RoverCommunicator[] roverCommunicators) {
 		boolean existsInPhysical = false;
 		for (RoverCommunicator rc : roverCommunicators) {
 			for (Area a : environment.getAreas()) {

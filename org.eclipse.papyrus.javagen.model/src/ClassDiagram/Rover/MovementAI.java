@@ -36,7 +36,7 @@ public class MovementAI implements MovementManager, Observer {
 	
 	private HashMap<Area, Boolean> acquiredArea = new HashMap<Area, Boolean>();
 	
-	SensorData sensorData;
+	private SensorData sensorData;
 	
 	/**
 	 * 
