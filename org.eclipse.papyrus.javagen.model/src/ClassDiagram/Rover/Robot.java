@@ -12,6 +12,7 @@ import ClassDiagram.Types.UpdateEvent;
 import ClassDiagram.Types.UpdateEventType;
 
 import java.awt.Image;
+import java.io.Console;
 import java.util.LinkedList;
 
 import project.Point;
@@ -81,10 +82,31 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 	 * @return 
 	 */
 	public SensorData getSensorData() {
+		
 		SensorData sensorData = new SensorData(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY,
 				Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
 		if (sonars.getFrontQuadrantHits() > 0) {
-			sensorData.frontDistance = sonars.getFrontQuadrantMeasurement();
+			// Front quadrant measurement has a flawed implementation, needs special case:
+			double rightPortion = sonars.getQuadrantMeasurement(0, Math.PI / 4);
+			double leftPortion = sonars.getQuadrantMeasurement(7*Math.PI / 4, Math.PI * 2);
+
+			int validValues = 
+					(Double.isInfinite(rightPortion) ? 0 : 1) +
+					(Double.isInfinite(leftPortion) ? 0 : 1);
+					
+			if(validValues == 0) 
+			{
+				sensorData.frontDistance = Double.POSITIVE_INFINITY;
+			}
+			
+			else
+			{
+				double avg = 
+						(Double.isInfinite(rightPortion) ? 0 : rightPortion) +
+						(Double.isInfinite(leftPortion) ? 0 : leftPortion);
+				
+				sensorData.frontDistance = avg / validValues;
+			}
 		}
 		if (sonars.getRightQuadrantHits() > 0) {
 			sensorData.rightDistance = sonars.getRightQuadrantMeasurement();
@@ -95,6 +117,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 		if (sonars.getLeftQuadrantHits() > 0) {
 			sensorData.leftDistance = sonars.getLeftQuadrantMeasurement();
 		}
+		
 		return sensorData;
 	}
 
@@ -110,6 +133,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 		
 		for (Object o : this.getAgent().getSensorList()) {
 			RangeSensorBelt b = (RangeSensorBelt)o;
+			
 			if (b.getName().equals("sonars")) {
 				this.sonars = b;
 			}
