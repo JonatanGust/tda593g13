@@ -51,4 +51,9 @@ public class SensorData {
 		}
 		return false;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("NWSE=[%f,%f,%f,%f]", frontDistance, leftDistance, backDistance, rightDistance);
+	}
 };
