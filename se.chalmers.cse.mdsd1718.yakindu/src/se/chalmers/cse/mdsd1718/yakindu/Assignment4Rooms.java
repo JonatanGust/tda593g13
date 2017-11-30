@@ -11,7 +11,7 @@ public class Assignment4Rooms {
 	private boolean locked[] = new boolean[10];
 	
 	public boolean tryAcquire(long n) {
-		int m = (int) n;
+		int m = (int) n - 1;
 		if (locked[m]) {
 			return false;
 		} else {
@@ -21,7 +21,7 @@ public class Assignment4Rooms {
 	}
 
 	public void release(long n) {
-		int m = (int) n;
+		int m = (int) n - 1;
 		locked[m] = false;
 	}
 }
