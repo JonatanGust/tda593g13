@@ -80,6 +80,9 @@ public class MovementAI implements MovementManager, Observer {
 	
 	private void processMovement(Position position) {
 		
+		double xSpeed = position.x - lastPosition.x;
+		double zSpeed = position.z - lastPosition.z;
+		Position nextPos = new Position(position.x + xSpeed, position.z + zSpeed);
 
 		
 		lookAngle = Math.tan(
@@ -105,35 +108,35 @@ public class MovementAI implements MovementManager, Observer {
 		}
 		
 		if(targetPoint != null) {
-			hardwareHandler.setDestination(targetPoint.position);
+			hardwareHandler.setDestination(targetPoint.position);	
+			
+			lastPosition = position;
+			
+			double curX =  position.x;
+			double curY =  position.z;
+			double targetX = targetPoint.position.x;
+			double targetY = targetPoint.position.z;
+			double dist = Math.pow(targetX - curX, 2.0) + Math.pow(targetY - curY, 2.0) ;
+			if(dist < 0.1) {
+				for(Observer o : observers) {
+					o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
+				}
+			}
+		
 		}
 		
 		// Move toward targetPoint
 		
 		
 		// If sensors indicate obstacle, turn away
-		lastPosition = position;
-		
-		double curX =  position.x;
-		double curY =  position.z;
-		double targetX = targetPoint.position.x;
-		double targetY = targetPoint.position.z;
-		double dist = Math.pow(targetX - curX, 2.0) + Math.pow(targetY - curY, 2.0) ;
-		if(dist < 0.1) {
-			for(Observer o : observers) {
-				o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
-			}
-		}
-		
+
 		for (Area a : environment.getAreas()) {
 			if (a.getLocationController() != null) {
-				if (a.getBoundary().contains(position)) {
+				if (a.getBoundary().contains(nextPos)) {
 					if (acquiredArea.get(a) || a.getLocationController().tryAcquire((Robot)hardwareHandler)) {
-						System.out.println("acquired");
 						acquiredArea.put(a, true);
 						hardwareHandler.setDestination(targetPoint.position);
 					} else {
-						System.out.println("denied");
 						hardwareHandler.stop();									
 					}
 				} else {

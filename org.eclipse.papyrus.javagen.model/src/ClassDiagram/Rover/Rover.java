@@ -105,7 +105,7 @@ public class Rover implements RoverCommunicator, Observer {
 		this.environment = environment;
 		movementManager = new MovementAI(environment, hardwareHandler);
 		movementManager.addObserver(this);
-		strategyHandler = SimpleStrategy.getInstance();
+		strategyHandler = SimplestStrategy.getInstance();
 	}
 
 	/**
