@@ -31,6 +31,8 @@ public class MovementAI implements MovementManager, Observer {
 	private Point targetPoint ;
 	private Position lastPosition = new Position(0.0,0.0);
 	private double lookAngle;
+	private Position nextPosition;
+	private boolean hasStopped = true;
 	
 	private List<Observer> observers = new LinkedList<Observer>();
 	
@@ -45,6 +47,7 @@ public class MovementAI implements MovementManager, Observer {
 	public MovementAI(Environment environment, HardwareHandler hardwareHandler) {
 		this.hardwareHandler = hardwareHandler;
 		this.environment = environment;
+		nextPosition = hardwareHandler.getCurrentPosition();
 		hardwareHandler.addObserver(this);
 		
 		for (Area a : environment.getAreas()) {
@@ -60,6 +63,7 @@ public class MovementAI implements MovementManager, Observer {
 	public void goToPoint(Point point) {
 		targetPoint = point;
 		hardwareHandler.setDestination(targetPoint.position);
+		hasStopped = false;
 	}
 
 	/**
@@ -80,9 +84,7 @@ public class MovementAI implements MovementManager, Observer {
 	
 	private void processMovement(Position position) {
 		
-		double xSpeed = position.x - lastPosition.x;
-		double zSpeed = position.z - lastPosition.z;
-		Position nextPos = new Position(position.x + xSpeed, position.z + zSpeed);
+		
 
 		
 		lookAngle = Math.tan(
@@ -107,11 +109,7 @@ public class MovementAI implements MovementManager, Observer {
 				);
 		}
 		
-		if(targetPoint != null) {
-			hardwareHandler.setDestination(targetPoint.position);	
-			
-			lastPosition = position;
-			
+		if(targetPoint != null) {			
 			double curX =  position.x;
 			double curY =  position.z;
 			double targetX = targetPoint.position.x;
@@ -129,20 +127,32 @@ public class MovementAI implements MovementManager, Observer {
 		
 		
 		// If sensors indicate obstacle, turn away
+		if (!hasStopped) {
+			double xSpeed = (position.x - lastPosition.x) * 2;
+			double zSpeed = (position.z - lastPosition.z) * 2;
+			nextPosition = new Position(position.x + xSpeed, position.z + zSpeed);
+			lastPosition = position;
+		}
 
 		for (Area a : environment.getAreas()) {
 			if (a.getLocationController() != null) {
-				if (a.getBoundary().contains(nextPos)) {
-					if (acquiredArea.get(a) || a.getLocationController().tryAcquire((Robot)hardwareHandler)) {
+				if (acquiredArea.get(a) && !a.getBoundary().contains(position) &&
+						!a.getBoundary().contains(nextPosition)) {
+					acquiredArea.put(a, false);
+					a.getLocationController().release((Robot)hardwareHandler);
+				}
+				if (a.getBoundary().contains(nextPosition)) {
+					if (acquiredArea.get(a)) {
+						hardwareHandler.setDestination(targetPoint.position);
+						hasStopped = false;
+					} else if (a.getLocationController().tryAcquire((Robot)hardwareHandler)) {
 						acquiredArea.put(a, true);
 						hardwareHandler.setDestination(targetPoint.position);
+						hasStopped = false;
+					
 					} else {
+						hasStopped = true;
 						hardwareHandler.stop();									
-					}
-				} else {
-					if (acquiredArea.get(a)) {
-						acquiredArea.put(a, false);
-						a.getLocationController().release((Robot)hardwareHandler);
 					}
 				}
 			}
