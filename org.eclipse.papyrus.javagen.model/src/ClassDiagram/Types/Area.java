@@ -4,10 +4,8 @@
 
 package ClassDiagram.Types;
 
-import java.util.HashMap;
 
 import ClassDiagram.Types.Boundary;
-import ClassDiagram.Types.RoomType;
 import project.LocationController;
 
 /************************************************************/
@@ -26,11 +24,12 @@ public class Area {
 	/**
 	 * 
 	 */
-	public RoomType roomType;
+	private String roomType;
 
 	private boolean physical;
 	
-	static private HashMap<RoomType, Integer> rewardPointsPerType = null;
+	private int rewardPoint;
+	
 	
 	/**
 	 * 
@@ -40,20 +39,13 @@ public class Area {
 	 * @param type 
 	 * @param isPhysical 
 	 */
-	public Area(Boundary boundary, LocationController locationController, RoomType type,
-			boolean isPhysical) {
+	public Area(Boundary boundary, LocationController locationController, String type,
+			boolean isPhysical, int rewardPoint) {
 		this.boundary = boundary;
 		this.locationController = locationController;
 		this.roomType = type;
 		this.physical = isPhysical;
-		
-		if (rewardPointsPerType == null) {
-			rewardPointsPerType = new HashMap<RoomType, Integer>();
-			rewardPointsPerType.put(RoomType.Office, 1);
-			rewardPointsPerType.put(RoomType.EatingSpace, 1);
-			rewardPointsPerType.put(RoomType.TeacherRoom, 1);
-			rewardPointsPerType.put(RoomType.WifiZone, 1);
-		}
+		this.rewardPoint = rewardPoint;	
 	}
 
 	/**
@@ -85,6 +77,10 @@ public class Area {
 	 * @return 
 	 */
 	public int getRewardPoint() {
-		return rewardPointsPerType.get(roomType);
+		return rewardPoint;
+	}
+	
+	public String getRoomType() {
+		return roomType;
 	}
 };

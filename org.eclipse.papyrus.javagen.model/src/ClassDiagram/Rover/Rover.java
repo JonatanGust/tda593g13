@@ -8,9 +8,7 @@ import ClassDiagram.Rover.HardwareHandler;
 import ClassDiagram.Rover.MovementAI;
 import ClassDiagram.Rover.MovementManager;
 import ClassDiagram.Rover.Observer;
-import ClassDiagram.Rover.Robot;
 import ClassDiagram.Rover.RoverCommunicator;
-import ClassDiagram.Rover.SimpleStrategy;
 import ClassDiagram.Rover.StrategyHandler;
 import ClassDiagram.Types.Environment;
 import ClassDiagram.Types.Fault;
@@ -99,13 +97,13 @@ public class Rover implements RoverCommunicator, Observer {
 	 * @param name 
 	 * @param environment 
 	 */
-	public Rover( HardwareHandler hardwareHandler, Environment environment) {
+	public Rover( HardwareHandler hardwareHandler, Environment environment, StrategyHandler strategy) {
 		this.hardwareHandler = hardwareHandler;
 		hardwareHandler.addObserver(this);
 		this.environment = environment;
 		movementManager = new MovementAI(environment, hardwareHandler);
 		movementManager.addObserver(this);
-		strategyHandler = SimplestStrategy.getInstance();
+		strategyHandler = strategy;
 	}
 
 	/**

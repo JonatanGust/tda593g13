@@ -44,7 +44,6 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_OsaNQM3yEeek8LApaKUyHw" name="rover" type="_b-6akM3xEeek8LApaKUyHw" association="_OsXxAM3yEeek8LApaKUyHw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_1LE_oM7DEeeu9fRpFdrWYg" client="_b-6akM3xEeek8LApaKUyHw" supplier="_HopPkM3yEeek8LApaKUyHw"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_28oc0M7DEeeu9fRpFdrWYg" client="_b-6akM3xEeek8LApaKUyHw" supplier="_v0TQoM3xEeek8LApaKUyHw"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_nbMhcM-CEee5y9oWZBua7Q" name="Rover">
       <packagedElement xmi:type="uml:Interface" xmi:id="_SV58IM31Eeek8LApaKUyHw" name="Observable">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_0WNYwM31Eeek8LApaKUyHw" name="addObserver">
@@ -185,6 +184,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_OsY_Ic3yEeek8LApaKUyHw" name="hardwareHandler" visibility="private" type="_BFymkM3yEeek8LApaKUyHw" aggregation="composite" association="_OsXxAM3yEeek8LApaKUyHw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_GO-AQND6EeeaF4H3-BRbcQ" name="environment" visibility="private" type="_w-vd0M-OEeecqo1J0OwUdA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_L05uAND6EeeaF4H3-BRbcQ" name="mission" visibility="private" type="_8ov64M3uEeek8LApaKUyHw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GZ3e4NjgEeemE4TvGO1e0w" name="strategy" visibility="private" type="_sAirIM3xEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_gWh7EM3xEeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_-ZJPkM3wEeek8LApaKUyHw" contract="_-ZJPkM3wEeek8LApaKUyHw"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_E1fZMM33Eeek8LApaKUyHw" client="_b-6akM3xEeek8LApaKUyHw" supplier="_U2qosM31Eeek8LApaKUyHw" contract="_U2qosM31Eeek8LApaKUyHw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_oObkEc30Eeek8LApaKUyHw" name="changeMission">
@@ -225,6 +225,7 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_UInEQM7DEeeu9fRpFdrWYg" name="Rover" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_YFkuEND9EeeaF4H3-BRbcQ" name="hardwareHandler" type="_BFymkM3yEeek8LApaKUyHw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_HX1VwNBKEeeRW8N_DZZYCA" name="environment" type="_w-vd0M-OEeecqo1J0OwUdA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Bu1TINjgEeemE4TvGO1e0w" name="strategy" type="_sAirIM3xEeek8LApaKUyHw"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_1UEGAM-TEeecqo1J0OwUdA" name="update">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_1UEGAc-TEeecqo1J0OwUdA" name="updateEvent" type="_wWhAQM7KEeeO2p5ASy90lQ"/>
@@ -588,16 +589,17 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fFX-kNBJEeeRW8N_DZZYCA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fFYloNBJEeeRW8N_DZZYCA" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_eA9kItBdEeeRW8N_DZZYCA" name="roomtype" type="_18Xp0NBcEeeRW8N_DZZYCA" association="_eA89ENBdEeeRW8N_DZZYCA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eA9kI9BdEeeRW8N_DZZYCA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eA-LMNBdEeeRW8N_DZZYCA" value="1"/>
-        </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_XHZN4M-lEeex3IThi1054A" name="Area">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ww5XoM-lEeex3IThi1054A" name="boundary" type="_Dls8cM-QEeecqo1J0OwUdA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_sIl9QNBJEeeRW8N_DZZYCA" name="locationController" type="_MzRgMNBJEeeRW8N_DZZYCA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_guMxANBeEeeRW8N_DZZYCA" name="type" type="_18Xp0NBcEeeRW8N_DZZYCA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_guMxANBeEeeRW8N_DZZYCA" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_lh3UUNBeEeeRW8N_DZZYCA" name="isPhysical">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oRJ-4NjfEeemE4TvGO1e0w" name="rewardPoint">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_dCghcM-lEeex3IThi1054A" name="getBoundary">
@@ -614,6 +616,11 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_lS0oMNBdEeeRW8N_DZZYCA" name="getRewardPoint">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ufJ04NBdEeeRW8N_DZZYCA" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xBjdgNjfEeemE4TvGO1e0w" name="getRoomType">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_2foPwNjfEeemE4TvGO1e0w" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
@@ -660,12 +667,6 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_JD7YUM-TEeecqo1J0OwUdA" name="Object"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_YeGUYM-gEeex3IThi1054A" client="_qaXcwM-MEeecuuyO-uFmog" supplier="_PV5HwM31Eeek8LApaKUyHw"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_MzRgMNBJEeeRW8N_DZZYCA" name="LocationController"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_18Xp0NBcEeeRW8N_DZZYCA" name="RoomType">
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9zohANBcEeeRW8N_DZZYCA" name="Office"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CKd-YNBdEeeRW8N_DZZYCA" name="TeacherRoom"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_GqbikNBdEeeRW8N_DZZYCA" name="WifiZone"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KelJoNBdEeeRW8N_DZZYCA" name="EatingSpace"/>
-      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_MQwMkM-GEee2sKQ3GKyGHw" memberEnd="_MQz28M-GEee2sKQ3GKyGHw _MRDHgM-GEee2sKQ3GKyGHw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MQyBwM-GEee2sKQ3GKyGHw" source="org.eclipse.papyrus">
@@ -742,12 +743,12 @@
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_LcBfwNBREeeRW8N_DZZYCA" name="roverlord" type="_TLa2kM3vEeek8LApaKUyHw" association="_Lb_qkNBREeeRW8N_DZZYCA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_eA89ENBdEeeRW8N_DZZYCA" memberEnd="_eA9kItBdEeeRW8N_DZZYCA _eA-LMdBdEeeRW8N_DZZYCA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eA9kINBdEeeRW8N_DZZYCA" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eA9kIdBdEeeRW8N_DZZYCA" key="nature" value="UML_Nature"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0rsCYNjeEeemE4TvGO1e0w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0r3okNjeEeemE4TvGO1e0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_eA-LMdBdEeeRW8N_DZZYCA" name="area" type="_BYcasM-QEeecqo1J0OwUdA" association="_eA89ENBdEeeRW8N_DZZYCA"/>
-    </packagedElement>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
   </uml:Package>
   <PapyrusJava:External xmi:id="_b6RpsM-HEee2sKQ3GKyGHw" name="java.awt.Image" base_Classifier="_nM_xsM3zEeek8LApaKUyHw"/>
   <PapyrusJava:External xmi:id="_tP5fcM-MEeecuuyO-uFmog" name="java.util.List" base_Classifier="_qaXcwM-MEeecuuyO-uFmog"/>

@@ -11,6 +11,7 @@ import ClassDiagram.Types.*;
 import ClassDiagram.Ui.RoverView;
 import ClassDiagram.Rover.Robot;
 import ClassDiagram.Rover.Rover;
+import ClassDiagram.Rover.SimplestStrategy;
 import simbad.sim.EnvironmentDescription;
 import simbad.sim.HorizontalBoundary;
 import simbad.sim.HorizontalWall;
@@ -51,19 +52,19 @@ public class Main {
 		
 		areas[0] = new Area(
 				new Boundary(5, 5, new Position(0, 0)), 
-				new LocationController(new Point(2.5, 2.5), 2.75, e), RoomType.Office, false
+				new LocationController(new Point(2.5, 2.5), 2.75, e), "Office", false, 1
 			);
 		areas[1] = new Area(
 				new Boundary(5, 5, new Position(0, -5)), 
-				new LocationController(new Point(2.5, -2.5), 2.75, e), RoomType.Office, false
+				new LocationController(new Point(2.5, -2.5), 2.75, e), "Office", false, 1
 			);
 		areas[2] = new Area(
 				new Boundary(5, 5, new Position(-5, -5)), 
-				new LocationController(new Point(-2.5, -2.5), 2.75, e), RoomType.Office, false
+				new LocationController(new Point(-2.5, -2.5), 2.75, e), "Office", false, 1
 			);
 		areas[3] = new Area(
 				new Boundary(5, 5, new Position(-5, 0)), 
-				new LocationController(new Point(-2.5, 2.5), 2.75, e), RoomType.Office, false
+				new LocationController(new Point(-2.5, 2.5), 2.75, e), "Office", false, 1
 			);
 
 		Environment env = new Environment(areas);
@@ -85,7 +86,7 @@ public class Main {
 		ArrayList<Rover> rovers = new ArrayList<Rover>(4);
 		
 		for (Robot r : robots) {
-			rovers.add(new Rover(r, env));
+			rovers.add(new Rover(r, env, SimplestStrategy.getInstance()));
 		}
 		RoverLord roverLord = new RoverLord(env, rovers.toArray( new Rover[4] ));
 		
