@@ -23,7 +23,7 @@ import java.util.*;
  */
 public class MovementAI implements MovementManager, Observer {
 	private enum RoverState {
-		NORMAL, AVOIDING_OBSTACLE, WAITING_FOR_ROOM
+		NORMAL, AVOIDING_OBSTACLE, WAITING_FOR_ROOM, ENTERING_ROOM
 	}
 	
 	/**
@@ -98,6 +98,9 @@ public class MovementAI implements MovementManager, Observer {
 			break;
 		case WAITING_FOR_ROOM:
 			handleRoomAccess();
+			break;
+		case ENTERING_ROOM:
+			handleRoomEntry(position);
 			break;
 		default:
 			// check if point is reached
@@ -206,7 +209,24 @@ public class MovementAI implements MovementManager, Observer {
 		if (waitedArea.getLocationController().tryAcquire((Robot)hardwareHandler)) {
 			acquiredArea.put(waitedArea,  true);
 			hardwareHandler.setDestination(targetPoint.position);
+			roverState = RoverState.ENTERING_ROOM;
+		}
+	}
+	
+	private double wakeupTime = Double.POSITIVE_INFINITY;
+	private void handleRoomEntry(Position position) {
+		double time = hardwareHandler.getLifeTime();
+		
+		if (wakeupTime == Double.POSITIVE_INFINITY &&
+				waitedArea.getBoundary().contains(position)) {
+			// stop and set the timer if we have just entered the room
+			hardwareHandler.stop();
+			wakeupTime = time + 2;
+		} else if (time >= wakeupTime) {
+			// resume mission if wait is done
 			roverState = RoverState.NORMAL;
+			hardwareHandler.setDestination(targetPoint.position);
+			wakeupTime = Double.POSITIVE_INFINITY;
 		}
 	}
 

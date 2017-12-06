@@ -68,6 +68,11 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_z_fh4M31Eeek8LApaKUyHw" name="getSensorData">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_U1K-cM32Eeek8LApaKUyHw" type="_UpsuQM32Eeek8LApaKUyHw" direction="return"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_tv5iwNqQEeeBKoglCQDEJA" name="getLifeTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VwuMNqQEeeBKoglCQDEJA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_IX9MoM3yEeek8LApaKUyHw" name="Robot">
         <generalization xmi:type="uml:Generalization" xmi:id="_t8aiwNAyEeexUdWYT1mRHA" general="_h1TnANAyEeexUdWYT1mRHA"/>
@@ -113,6 +118,16 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ut00sM7EEeeu9fRpFdrWYg" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_XDTeUM7EEeeu9fRpFdrWYg" name="name">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_tySIYNqQEeeBKoglCQDEJA" name="Operation1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_vt6HkNqQEeeBKoglCQDEJA" name="getLifetime"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1xCHoNqQEeeBKoglCQDEJA" name="getLifeTime"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_4V6fMNqQEeeBKoglCQDEJA" name="getLifeTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_4V6fMdqQEeeBKoglCQDEJA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4V6fMtqQEeeBKoglCQDEJA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4V6fM9qQEeeBKoglCQDEJA" value="1"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
@@ -498,6 +513,12 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_O082kM-lEeex3IThi1054A" name="z">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_6eSg8NqQEeeBKoglCQDEJA" name="distanceTo">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9pobkNqQEeeBKoglCQDEJA" name="p" type="_d4h8sM3zEeek8LApaKUyHw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-4Hn8NqQEeeBKoglCQDEJA" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
           </ownedParameter>
         </ownedOperation>

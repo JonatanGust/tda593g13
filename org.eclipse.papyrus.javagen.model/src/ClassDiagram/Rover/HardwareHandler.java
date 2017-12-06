@@ -42,4 +42,10 @@ public interface HardwareHandler extends Observable {
 	 * @return 
 	 */
 	public SensorData getSensorData();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public double getLifeTime();
 };
