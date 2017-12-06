@@ -136,6 +136,7 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 			
 			if (b.getName().equals("sonars")) {
 				this.sonars = b;
+				this.sonars.setUpdateOnEachFrame(true);
 			}
 		}
 	}

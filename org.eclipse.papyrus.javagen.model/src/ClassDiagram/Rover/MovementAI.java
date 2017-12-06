@@ -39,6 +39,8 @@ public class MovementAI implements MovementManager, Observer {
 	private HashMap<Area, Boolean> acquiredArea = new HashMap<Area, Boolean>();
 	
 	private SensorData sensorData;
+
+	private boolean avoidingObstacle = false;
 	
 	/**
 	 * 
@@ -83,80 +85,113 @@ public class MovementAI implements MovementManager, Observer {
 	}
 	
 	private void processMovement(Position position) {
-		
-		
 
+		boolean inFront = false;
+		boolean toSide = false;
 		
-		lookAngle = Math.tan(
-			 	position.z - lastPosition.z /
-				position.x  - lastPosition.x
-			);
+		// Cannot do anything safely without sensor data, so we return
+		if(sensorData == null) return;
+
+		/*
+		 * If wall in front
+		 * 		Rotate the current velocity 90 degrees and remove the smaller component, axis-aligning it.
+		 * Else if wall to the left
+		 * 		Move forward
+		 * Else
+		 * 		Move toward point
+		 * 
+		 */
 		
+		Position lookDirection = new Position(position.x  - lastPosition.x, position.z - lastPosition.z);
+		
+		// Normalize look dir
+		double len = Math.sqrt(lookDirection.x * lookDirection.x + lookDirection.z * lookDirection.z);
+		lookDirection.x /= len;
+		lookDirection.z /= len;
+
+        //lookDirection.x *= 100;
+        //lookDirection.z *= 100;
+
+		// Angle code appears to be working correctly, but setting the destination causes strange behaviors
+		if(avoidingObstacle) {
+			// If something is in front, keep turning right
+			if(sensorData.frontDistance < 5) {
+
+				// Turn right (very slowly, speed up once bugs are fixed)
+				double angle = Math.toRadians(1);
 				
-		if(sensorData != null && sensorData.frontDistance < 5)
-		{
-			// This probably doesn't work but it might
-			
-			// Turn right 45 degrees
-			double relativeX = targetPoint.position.x - position.x;
-			double relativeZ = targetPoint.position.z - position.z;
-			double ang = Math.toRadians(lookAngle + 45);
-			hardwareHandler.setDestination(
-					new Position(
-							Math.cos(ang) * relativeX - Math.sin(ang) * relativeZ,
-							Math.sin(ang) * relativeX + Math.cos(ang) * relativeZ
-					)
-				);
+	            lookDirection =
+	                    new Position(
+	                            Math.cos(angle) * lookDirection.x - Math.sin(angle) * lookDirection.z,
+	                            Math.sin(angle) * lookDirection.x + Math.cos(angle) * lookDirection.z
+	                    );
+				
+				hardwareHandler.setDestination(new Position(lookDirection.x + position.x, lookDirection.z + position.z));
+				
+				inFront = true;
+			}
+			// If nothing is in front, but something is on the left, move forward
+			else if(sensorData.leftDistance < 5) {
+
+				hardwareHandler.setDestination(new Position(lookDirection.x + position.x, lookDirection.z + position.z));
+				toSide = true;
+			}
+			// If nothing is detected, we've avoided the obstacle
+			else
+			{
+				avoidingObstacle = false;
+			}
 		}
-		
-		if(targetPoint != null) {			
-			double curX =  position.x;
-			double curY =  position.z;
-			double targetX = targetPoint.position.x;
-			double targetY = targetPoint.position.z;
-			double dist = Math.pow(targetX - curX, 2.0) + Math.pow(targetY - curY, 2.0) ;
-			if(dist < 0.1) {
-				for(Observer o : observers) {
-					o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
+		else {
+			if(sensorData.frontDistance < 5) {
+				avoidingObstacle = true;
+			}
+			else {
+				// Move toward target
+				if(targetPoint != null) {
+					hardwareHandler.setDestination(targetPoint.position);	
+					
+					lastPosition = position;
+					
+					double curX =  position.x;
+					double curY =  position.z;
+					double targetX = targetPoint.position.x;
+					double targetY = targetPoint.position.z;
+					double dist = Math.pow(targetX - curX, 2.0) + Math.pow(targetY - curY, 2.0) ;
+					if(dist < 0.1) {
+						for(Observer o : observers) {
+							o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
+						}
+					}
+				
 				}
 			}
-		
-		}
-		
-		// Move toward targetPoint
-		
-		
-		// If sensors indicate obstacle, turn away
-		if (!hasStopped) {
-			double xSpeed = (position.x - lastPosition.x) * 2;
-			double zSpeed = (position.z - lastPosition.z) * 2;
-			nextPosition = new Position(position.x + xSpeed, position.z + zSpeed);
-			lastPosition = position;
-		}
 
-		for (Area a : environment.getAreas()) {
-			if (a.getLocationController() != null) {
-				if (acquiredArea.get(a) && !a.getBoundary().contains(position) &&
-						!a.getBoundary().contains(nextPosition)) {
-					acquiredArea.put(a, false);
-					a.getLocationController().release((Robot)hardwareHandler);
-				}
-				if (a.getBoundary().contains(nextPosition)) {
-					if (acquiredArea.get(a)) {
-						hardwareHandler.setDestination(targetPoint.position);
-						hasStopped = false;
-					} else if (a.getLocationController().tryAcquire((Robot)hardwareHandler)) {
-						acquiredArea.put(a, true);
-						hardwareHandler.setDestination(targetPoint.position);
-						hasStopped = false;
-					
-					} else {
-						hasStopped = true;
-						hardwareHandler.stop();									
+			for (Area a : environment.getAreas()) {
+				if (a.getLocationController() != null) {
+					if (acquiredArea.get(a) && !a.getBoundary().contains(position) &&
+							!a.getBoundary().contains(nextPosition)) {
+						acquiredArea.put(a, false);
+						a.getLocationController().release((Robot)hardwareHandler);
+					}
+					if (a.getBoundary().contains(nextPosition)) {
+						if (acquiredArea.get(a)) {
+							hardwareHandler.setDestination(targetPoint.position);
+							hasStopped = false;
+						} else if (a.getLocationController().tryAcquire((Robot)hardwareHandler)) {
+							acquiredArea.put(a, true);
+							hardwareHandler.setDestination(targetPoint.position);
+							hasStopped = false;
+						} else {
+							hasStopped = true;
+							hardwareHandler.stop();									
+						}
 					}
 				}
 			}
 		}
+		
+		lastPosition = position;
 	}
 	
 
