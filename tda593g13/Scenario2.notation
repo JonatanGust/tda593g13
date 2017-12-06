@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_9RQeANpzEeeJorxV3UTcDg" type="PapyrusUMLSequenceDiagram" name="Scenario2" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_9RQeAdpzEeeJorxV3UTcDg" type="Interaction_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_9RQeAtpzEeeJorxV3UTcDg" type="Interaction_NameLabel"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_9RQeA9pzEeeJorxV3UTcDg" type="Interaction_SubfragmentCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_SztS0Np0EeeJorxV3UTcDg" type="Lifeline_Shape">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Szt54Np0EeeJorxV3UTcDg" type="Lifeline_NameLabel"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Szw9Mtp0EeeJorxV3UTcDg" type="compartment_shape_display">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_Szw9M9p0EeeJorxV3UTcDg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Szw9NNp0EeeJorxV3UTcDg"/>
+        </children>
+        <element xmi:type="uml:Lifeline" href="Scenario2.uml#_SzqPgNp0EeeJorxV3UTcDg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SztS0dp0EeeJorxV3UTcDg" x="174" y="10" height="700"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_T_phgNp0EeeJorxV3UTcDg" type="Lifeline_Shape">
+        <children xmi:type="notation:DecorationNode" xmi:id="_T_phgtp0EeeJorxV3UTcDg" type="Lifeline_NameLabel"/>
+        <element xmi:type="uml:Lifeline" href="Scenario2.uml#_T_l3INp0EeeJorxV3UTcDg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T_phgdp0EeeJorxV3UTcDg" x="334" y="10" height="700"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VxD0wNp0EeeJorxV3UTcDg" type="Lifeline_Shape">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VxEb0Np0EeeJorxV3UTcDg" type="Lifeline_NameLabel"/>
+        <element xmi:type="uml:Lifeline" href="Scenario2.uml#_Vw_jUNp0EeeJorxV3UTcDg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VxD0wdp0EeeJorxV3UTcDg" x="514" y="10" height="700"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Az9TQNp1EeeJorxV3UTcDg" type="Lifeline_Shape">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Az9TQtp1EeeJorxV3UTcDg" type="Lifeline_NameLabel"/>
+        <element xmi:type="uml:Lifeline" href="Scenario2.uml#_Az5o4Np1EeeJorxV3UTcDg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Az9TQdp1EeeJorxV3UTcDg" x="14" y="10" height="700"/>
+      </children>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9RQeBNpzEeeJorxV3UTcDg"/>
+    </children>
+    <element xmi:type="uml:Interaction" href="Scenario2.uml#_8QrKwNpzEeeJorxV3UTcDg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9RQeBdpzEeeJorxV3UTcDg"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_9RQeBtpzEeeJorxV3UTcDg" name="diagram_compatibility_version" stringValue="1.3.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_9RQeB9pzEeeJorxV3UTcDg"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_9RQeCNpzEeeJorxV3UTcDg" diagramKindId="org.eclipse.papyrus.uml.diagram.sequence">
+    <owner xmi:type="uml:Package" href="Scenario2.uml#_Bam5ANp0EeeJorxV3UTcDg"/>
+  </styles>
+  <element xmi:type="uml:Interaction" href="Scenario2.uml#_8QrKwNpzEeeJorxV3UTcDg"/>
+</notation:Diagram>

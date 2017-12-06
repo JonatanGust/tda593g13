@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_nLQmUNpqEeeJorxV3UTcDg" name="Scenario1">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_Lds6INpqEeeJorxV3UTcDg" name="Interaction1">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_u_1cQNpyEeeJorxV3UTcDg" name="Rover" coveredBy="_D6WHUNpzEeeJorxV3UTcDg _XkjWMNp1EeeJorxV3UTcDg _j8BUENpzEeeJorxV3UTcDg _j8BUEdpzEeeJorxV3UTcDg _j8ywINpzEeeJorxV3UTcDg _j8yJENpzEeeJorxV3UTcDg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_wfdb8NpyEeeJorxV3UTcDg" name="GPS" coveredBy="_D6WHUNpzEeeJorxV3UTcDg _XkivIdp1EeeJorxV3UTcDg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_XkivIdp1EeeJorxV3UTcDg" name="Message1SendEvent" covered="_wfdb8NpyEeeJorxV3UTcDg" message="_XkivINp1EeeJorxV3UTcDg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_XkjWMNp1EeeJorxV3UTcDg" name="Message1ReceiveEvent" covered="_u_1cQNpyEeeJorxV3UTcDg" message="_XkivINp1EeeJorxV3UTcDg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_j8BUENpzEeeJorxV3UTcDg" name="Message1SendEvent" covered="_u_1cQNpyEeeJorxV3UTcDg" message="_j7_e4NpzEeeJorxV3UTcDg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_j8BUEdpzEeeJorxV3UTcDg" name="Message1ReceiveEvent" covered="_u_1cQNpyEeeJorxV3UTcDg" message="_j7_e4NpzEeeJorxV3UTcDg"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_j8ywINpzEeeJorxV3UTcDg" name="BehaviorExecutionSpecification2Finish" covered="_u_1cQNpyEeeJorxV3UTcDg" execution="_j8yJENpzEeeJorxV3UTcDg"/>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_D6TEANpzEeeJorxV3UTcDg" interactionOperator="opt">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_D6WHUNpzEeeJorxV3UTcDg" name="InteractionOperand1" covered="_wfdb8NpyEeeJorxV3UTcDg _u_1cQNpyEeeJorxV3UTcDg">
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_D6WHUdpzEeeJorxV3UTcDg" name="guard">
+          <specification xmi:type="uml:LiteralString" xmi:id="_fr9NENpzEeeJorxV3UTcDg" value="position inside newly entered room"/>
+        </guard>
+      </operand>
+    </fragment>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_j8yJENpzEeeJorxV3UTcDg" name="BehaviorExecutionSpecification2" covered="_u_1cQNpyEeeJorxV3UTcDg" finish="_j8ywINpzEeeJorxV3UTcDg" start="_j8BUENpzEeeJorxV3UTcDg"/>
+    <message xmi:type="uml:Message" xmi:id="_j7_e4NpzEeeJorxV3UTcDg" name="wait 2 sec" receiveEvent="_j8BUEdpzEeeJorxV3UTcDg" sendEvent="_j8BUENpzEeeJorxV3UTcDg"/>
+    <message xmi:type="uml:Message" xmi:id="_XkivINp1EeeJorxV3UTcDg" name="Position Update" messageSort="asynchCall" receiveEvent="_XkjWMNp1EeeJorxV3UTcDg" sendEvent="_XkivIdp1EeeJorxV3UTcDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Duration" xmi:id="_v2o2gdp0EeeJorxV3UTcDg" name="MinDuration1">
+    <expr xmi:type="uml:LiteralInteger" xmi:id="_v2qEoNp0EeeJorxV3UTcDg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Duration" xmi:id="_v2pdkNp0EeeJorxV3UTcDg" name="MaxDuration1">
+    <expr xmi:type="uml:LiteralInteger" xmi:id="_v2qEodp0EeeJorxV3UTcDg"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q_EPINpqEeeJorxV3UTcDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q_EPIdpqEeeJorxV3UTcDg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q_E2MNpqEeeJorxV3UTcDg" source="duplicatedProfile"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+  </profileApplication>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_q_GEUNpqEeeJorxV3UTcDg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q_GEUdpqEeeJorxV3UTcDg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q_GrYNpqEeeJorxV3UTcDg" source="duplicatedProfile"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+  </profileApplication>
+</uml:Package>
