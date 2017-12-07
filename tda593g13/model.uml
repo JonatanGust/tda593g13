@@ -7,6 +7,27 @@
     <packagedElement xmi:type="uml:Package" href="Class_diagram.uml#_CmSDkM3fEeesA5480aNfQQ"/>
     <packagedElement xmi:type="uml:Package" href="Scenario1.uml#_nLQmUNpqEeeJorxV3UTcDg"/>
     <packagedElement xmi:type="uml:Package" href="Scenario2.uml#_Bam5ANp0EeeJorxV3UTcDg"/>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_8Msq0NtREee45o5G4Q0HPQ" name="Interaction1">
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_98d_UNtREee45o5G4Q0HPQ" name="CentralStation" coveredBy="_M10ZMNtSEee45o5G4Q0HPQ _VhVX0NtSEee45o5G4Q0HPQ _cn3VoNtSEee45o5G4Q0HPQ _WvudkNtSEee45o5G4Q0HPQ _fPhUYNtSEee45o5G4Q0HPQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_-oQHQNtREee45o5G4Q0HPQ" name="Rover1" coveredBy="_VhVX0dtSEee45o5G4Q0HPQ _cn2ukNtSEee45o5G4Q0HPQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_JzXU0NtSEee45o5G4Q0HPQ" name="Rover2" coveredBy="_WvudkdtSEee45o5G4Q0HPQ _fPgtUNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_M10ZMNtSEee45o5G4Q0HPQ" name="Message1ReceiveEvent" covered="_98d_UNtREee45o5G4Q0HPQ" message="_M1zyINtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VhVX0NtSEee45o5G4Q0HPQ" name="Message1SendEvent" covered="_98d_UNtREee45o5G4Q0HPQ" message="_VhUwwNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VhVX0dtSEee45o5G4Q0HPQ" name="Message1ReceiveEvent" covered="_-oQHQNtREee45o5G4Q0HPQ" message="_VhUwwNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cn2ukNtSEee45o5G4Q0HPQ" name="Message3SendEvent" covered="_-oQHQNtREee45o5G4Q0HPQ" message="_cn2HgNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cn3VoNtSEee45o5G4Q0HPQ" name="Message3ReceiveEvent" covered="_98d_UNtREee45o5G4Q0HPQ" message="_cn2HgNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WvudkNtSEee45o5G4Q0HPQ" name="Message2SendEvent" covered="_98d_UNtREee45o5G4Q0HPQ" message="_Wvt2gNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WvudkdtSEee45o5G4Q0HPQ" name="Message2ReceiveEvent" covered="_JzXU0NtSEee45o5G4Q0HPQ" message="_Wvt2gNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fPgtUNtSEee45o5G4Q0HPQ" name="Message4SendEvent" covered="_JzXU0NtSEee45o5G4Q0HPQ" message="_fPgGQNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fPhUYNtSEee45o5G4Q0HPQ" name="Message4ReceiveEvent" covered="_98d_UNtREee45o5G4Q0HPQ" message="_fPgGQNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ddgkMNtSEee45o5G4Q0HPQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ddgkMdtSEee45o5G4Q0HPQ"/>
+      <message xmi:type="uml:Message" xmi:id="_M1zyINtSEee45o5G4Q0HPQ" name="update()" messageSort="asynchCall" receiveEvent="_M10ZMNtSEee45o5G4Q0HPQ"/>
+      <message xmi:type="uml:Message" xmi:id="_VhUwwNtSEee45o5G4Q0HPQ" name="getCurrentPosition()" receiveEvent="_VhVX0dtSEee45o5G4Q0HPQ" sendEvent="_VhVX0NtSEee45o5G4Q0HPQ"/>
+      <message xmi:type="uml:Message" xmi:id="_Wvt2gNtSEee45o5G4Q0HPQ" name="Message2" receiveEvent="_WvudkdtSEee45o5G4Q0HPQ" sendEvent="_WvudkNtSEee45o5G4Q0HPQ"/>
+      <message xmi:type="uml:Message" xmi:id="_cn2HgNtSEee45o5G4Q0HPQ" name="position = getCurrentPosition" messageSort="reply" receiveEvent="_cn3VoNtSEee45o5G4Q0HPQ" sendEvent="_cn2ukNtSEee45o5G4Q0HPQ"/>
+      <message xmi:type="uml:Message" xmi:id="_fPgGQNtSEee45o5G4Q0HPQ" name="Message4" messageSort="reply" receiveEvent="_fPhUYNtSEee45o5G4Q0HPQ" sendEvent="_fPgtUNtSEee45o5G4Q0HPQ"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Uu0-YM-BEee5y9oWZBua7Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UvEO8M-BEee5y9oWZBua7Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
