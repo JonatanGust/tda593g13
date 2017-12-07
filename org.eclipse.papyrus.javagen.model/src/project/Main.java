@@ -53,19 +53,19 @@ public class Main {
 		Area[] areas = new Area[4];
 		
 		areas[0] = new Area(
-				new Boundary(5, 5, new Position(0, 0)), 
+				new RectangularBoundary(5, 5, new Position(0, 0)), 
 				new LocationController(new Point(2.5, 2.5), 2.75, e), "Office", false, 1
 			);
 		areas[1] = new Area(
-				new Boundary(5, 5, new Position(0, -5)), 
+				new RectangularBoundary(5, 5, new Position(0, -5)), 
 				new LocationController(new Point(2.5, -2.5), 2.75, e), "Office", false, 1
 			);
 		areas[2] = new Area(
-				new Boundary(5, 5, new Position(-5, -5)), 
+				new RectangularBoundary(5, 5, new Position(-5, -5)), 
 				new LocationController(new Point(-2.5, -2.5), 2.75, e), "Office", false, 1
 			);
 		areas[3] = new Area(
-				new Boundary(5, 5, new Position(-5, 0)), 
+				new RectangularBoundary(5, 5, new Position(-5, 0)), 
 				new LocationController(new Point(-2.5, 2.5), 2.75, e), "Office", false, 1
 			);
 
@@ -162,27 +162,27 @@ public class Main {
 		Area[] areas = new Area[5];
 
 		areas[0] = new Area(
-				new Boundary(5, 5, new Position(-10.0, -7.5)),
+				new RectangularBoundary(5, 5, new Position(-10.0, -7.5)),
 				new LocationController(new Point(-7.5, -5.0), 2.75, e), "Surgery", false, 2
 			);
 
 		areas[1] = new Area(
-				new Boundary(5, 5, new Position(-5.0, -7.5)),
+				new RectangularBoundary(5, 5, new Position(-5.0, -7.5)),
 				new LocationController(new Point(-2.5, -5.0), 2.75, e), "Surgery", false, 2
 			);
 
 		areas[2] = new Area(
-				new Boundary(5, 5, new Position(0.0, -7.5)),
+				new RectangularBoundary(5, 5, new Position(0.0, -7.5)),
 				new LocationController(new Point(2.5, -5.0), 2.75, e), "Surgery", false, 2
 			);
 
 		areas[3] = new Area(
-				new Boundary(5, 5, new Position(5.0, -7.5)),
+				new RectangularBoundary(5, 5, new Position(5.0, -7.5)),
 				new LocationController(new Point(7.5, -5.0), 2.75, e), "Surgery", false, 2
 			);
 
 		areas[4] = new Area(
-				new Boundary(5, 5, new Position(-5.0, 2.5)),
+				new RectangularBoundary(5, 5, new Position(-5.0, 2.5)),
 				new LocationController(new Point(-2.5, 5.0), 2.75, e), "Surgery", false, 2
 			);
 
