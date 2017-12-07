@@ -23,7 +23,7 @@ public class CircularBoundary extends Boundary {
 	 * @return 
 	 */
 	public boolean contains(Position position) {
-		return true;//TODO todo
+		return this.position.distanceTo(position) <= radius;
 	}
 
 	/**

@@ -645,40 +645,18 @@
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_Dls8cM-QEeecqo1J0OwUdA" name="Boundary">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_JscRMM-QEeecqo1J0OwUdA" name="width" visibility="private" aggregation="shared">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_N7NXsM-QEeecqo1J0OwUdA" name="height" visibility="private">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_P3WUQM-QEeecqo1J0OwUdA" name="position" visibility="private" type="_d4h8sM3zEeek8LApaKUyHw" association="_P3SC0M-QEeecqo1J0OwUdA">
+      <packagedElement xmi:type="uml:Class" xmi:id="_Dls8cM-QEeecqo1J0OwUdA" name="Boundary" isAbstract="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_P3WUQM-QEeecqo1J0OwUdA" name="position" visibility="protected" type="_d4h8sM3zEeek8LApaKUyHw" association="_P3SC0M-QEeecqo1J0OwUdA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P3W7UM-QEeecqo1J0OwUdA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P3W7Uc-QEeecqo1J0OwUdA" value="1"/>
         </ownedAttribute>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_-8uEgM-iEeex3IThi1054A" name="contains">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bBVwYM-kEeex3IThi1054A" name="Boundary">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_wn1XsM-kEeex3IThi1054A" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-8uEgM-iEeex3IThi1054A" name="contains" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_El4FYM-jEeex3IThi1054A" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_fFf-0M-jEeex3IThi1054A" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_bBVwYM-kEeex3IThi1054A" name="Boundary">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_qfxNQM-kEeex3IThi1054A" name="width">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_sCoHIM-kEeex3IThi1054A" name="height">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_wn1XsM-kEeex3IThi1054A" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_c7RGcM-kEeex3IThi1054A" name="getWidth">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_DdnK4M-lEeex3IThi1054A" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_dRpmIM-kEeex3IThi1054A" name="getHeight">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_FiRxUM-lEeex3IThi1054A" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_diNKoM-kEeex3IThi1054A" name="getPosition" visibility="public">
@@ -688,6 +666,58 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_JD7YUM-TEeecqo1J0OwUdA" name="Object"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_YeGUYM-gEeex3IThi1054A" client="_qaXcwM-MEeecuuyO-uFmog" supplier="_PV5HwM31Eeek8LApaKUyHw"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_MzRgMNBJEeeRW8N_DZZYCA" name="LocationController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_TjOJsNtwEeeUmZ13TqFowA" name="RectangularBoundary">
+        <generalization xmi:type="uml:Generalization" xmi:id="_Jn898NtxEeeUmZ13TqFowA" general="_Dls8cM-QEeecqo1J0OwUdA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TjOJsdtwEeeUmZ13TqFowA" name="width" visibility="private" aggregation="shared">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TjOJsttwEeeUmZ13TqFowA" name="height" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_TjOJtttwEeeUmZ13TqFowA" name="contains">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TjOJt9twEeeUmZ13TqFowA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TjOJuNtwEeeUmZ13TqFowA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_TjOJudtwEeeUmZ13TqFowA" name="RectangularBoundary">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TjOJuttwEeeUmZ13TqFowA" name="width">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TjOJu9twEeeUmZ13TqFowA" name="height">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TjOJvNtwEeeUmZ13TqFowA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_TjOJvdtwEeeUmZ13TqFowA" name="getWidth">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TjOJvttwEeeUmZ13TqFowA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_TjOJv9twEeeUmZ13TqFowA" name="getHeight">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TjOJwNtwEeeUmZ13TqFowA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_YHN5UNtwEeeUmZ13TqFowA" name="CircularBoundary">
+        <generalization xmi:type="uml:Generalization" xmi:id="_KHZTANtxEeeUmZ13TqFowA" general="_Dls8cM-QEeecqo1J0OwUdA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_FDc4ANtxEeeUmZ13TqFowA" name="radius" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_YHN5VttwEeeUmZ13TqFowA" name="contains">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_YHN5V9twEeeUmZ13TqFowA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_YHN5WNtwEeeUmZ13TqFowA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_YHN5WdtwEeeUmZ13TqFowA" name="CircularBoundary">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_YHN5W9twEeeUmZ13TqFowA" name="radius">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_YHN5XNtwEeeUmZ13TqFowA" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_MQwMkM-GEee2sKQ3GKyGHw" memberEnd="_MQz28M-GEee2sKQ3GKyGHw _MRDHgM-GEee2sKQ3GKyGHw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MQyBwM-GEee2sKQ3GKyGHw" source="org.eclipse.papyrus">
