@@ -11,14 +11,14 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6cN99pzEeeJorxV3UTcDg" x="5" y="5"/>
             </children>
             <element xmi:type="uml:InteractionOperand" href="Scenario1.uml#_D6WHUNpzEeeJorxV3UTcDg"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6cN9dpzEeeJorxV3UTcDg" width="341"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6cN9dpzEeeJorxV3UTcDg" width="321"/>
           </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_D6cN8dpzEeeJorxV3UTcDg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_D6cN8tpzEeeJorxV3UTcDg"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6cN89pzEeeJorxV3UTcDg"/>
         </children>
         <element xmi:type="uml:CombinedFragment" href="Scenario1.uml#_D6TEANpzEeeJorxV3UTcDg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6bm4dpzEeeJorxV3UTcDg" x="294" y="120" width="341" height="221"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6bm4dpzEeeJorxV3UTcDg" x="294" y="120" width="321" height="221"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_u__0UNpyEeeJorxV3UTcDg" type="Lifeline_Shape">
         <children xmi:type="notation:DecorationNode" xmi:id="_vAAbYNpyEeeJorxV3UTcDg" type="Lifeline_NameLabel"/>
