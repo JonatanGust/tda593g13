@@ -17,7 +17,7 @@ public class RewardPointsCalculator {
 	 * 
 	 */
 	private int rewardPoints = 0;
-	private boolean isProcedureA = true;
+	private boolean wasProcedureA = true;
 
 	/**
 	 * 
@@ -25,42 +25,28 @@ public class RewardPointsCalculator {
 	 * @param roverCommunicators 
 	 */
 	public void calculateRewardPoints(Environment environment, RoverCommunicator[] roverCommunicators) {
-		if (isProcedureA) {
-			procedureA(environment, roverCommunicators);
-		} else {
-			procedureB(environment, roverCommunicators);
-		}
-	}
-	
-	private void procedureA(Environment environment, RoverCommunicator[] roverCommunicators) {
-		boolean existsInLogical = false;
+		boolean inPhysical = false;
+		boolean inLogical = false;
+		int physicalPoints = 0;
+		int logicalPoints = 0;
 		for (RoverCommunicator rc : roverCommunicators) {
 			for (Area a : environment.getAreas()) {
 				if (a.isPhysical() && a.getBoundary().contains(rc.getPosition())) {
-					rewardPoints += a.getRewardPoint();
-				} else {
-					existsInLogical = true;
+					physicalPoints += a.getRewardPoint();
+					inPhysical = true;		
+				}
+				if (!a.isPhysical() && a.getBoundary().contains(rc.getPosition())) {
+					logicalPoints += a.getRewardPoint();
+					inLogical = true;		
 				}
 			}
 		}
-		if (existsInLogical) {
-			isProcedureA = false;
-		}
-	}
-	
-	private void procedureB(Environment environment, RoverCommunicator[] roverCommunicators) {
-		boolean existsInPhysical = false;
-		for (RoverCommunicator rc : roverCommunicators) {
-			for (Area a : environment.getAreas()) {
-				if (!(a.isPhysical()) && a.getBoundary().contains(rc.getPosition())) {
-					rewardPoints += a.getRewardPoint();
-				} else {
-					existsInPhysical = true;
-				}
-			}
-		}
-		if (existsInPhysical) {
-			isProcedureA = true;
+		if ((wasProcedureA && inLogical) || (!wasProcedureA && !inPhysical)) {
+			rewardPoints += logicalPoints;
+			wasProcedureA = false;
+		} else {
+			rewardPoints += physicalPoints;
+			wasProcedureA = true;
 		}
 	}
 

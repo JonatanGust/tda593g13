@@ -8,7 +8,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_0O8X4MSZEeeEO62YmYOaFA" name="RoverUI" visibility="private">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_R7QPwMSaEeeEO62YmYOaFA" name="showInterface"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_vh22UMScEeeNkM-fDIrCNA" name="showData"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vh22UMScEeeNkM-fDIrCNA" name="getStatus">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_y0_L8Nv-EeeKapJzUqGp9w" name="roverID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_9sjS0MU-EeeAY7_lVUhDDw" name="changeMission">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_c6lx8Mt7Eee4lOItTkPZDg" name="rover">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -71,9 +75,8 @@
       <packagedElement xmi:type="uml:Component" xmi:id="_FjCRsMShEeeNkM-fDIrCNA" name="RoverHardware">
         <generalization xmi:type="uml:Generalization" xmi:id="_H5kEMMShEeeNkM-fDIrCNA" general="_yUdkAMSgEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_4soncMt5Eee4lOItTkPZDg" client="_FjCRsMShEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_gEDSsMt6Eee4lOItTkPZDg" client="_FjCRsMShEeeNkM-fDIrCNA" supplier="_uy1w8MVcEeecVOrCacIQRQ"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_yUdkAMSgEeeNkM-fDIrCNA" name="HardwareHandler">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_yUdkAMSgEeeNkM-fDIrCNA" name="HardwareHandler" visibility="private">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_3jOH4MSgEeeNkM-fDIrCNA" name="setDestination">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_g1N3oMt_Eee4lOItTkPZDg" name="position" type="_fl8BEMt_Eee4lOItTkPZDg"/>
         </ownedOperation>
@@ -81,11 +84,16 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_3Dl7oMVbEeecVOrCacIQRQ" name="getImage">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oHxfQMt_Eee4lOItTkPZDg" name="image" type="_nYqWgMt_Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_0efdgMSeEeeNkM-fDIrCNA" name="getCurrentLocation">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_0efdgMSeEeeNkM-fDIrCNA" name="getCurrentPosition">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_vI4xkMt_Eee4lOItTkPZDg" name="position" type="_fl8BEMt_Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Ln07IMSgEeeNkM-fDIrCNA" name="getSensorData">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_1NmGAMt_Eee4lOItTkPZDg" name="sensorData" type="_0_y6kMt_Eee4lOItTkPZDg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Q9yoANv-EeeKapJzUqGp9w" name="getLifeTime" concurrency="guarded">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_XX6LwNv-EeeKapJzUqGp9w" name="lifetime" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_H2uS8MSeEeeNkM-fDIrCNA" name="MissionHandler">
@@ -93,10 +101,12 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_fCd9EMt-Eee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Nw4kQMSeEeeNkM-fDIrCNA" name="abortMission"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_QEj3EMSeEeeNkM-fDIrCNA" name="missionStatus"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_QEj3EMSeEeeNkM-fDIrCNA" name="getMissionStatus" visibility="public"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_Tcwh8MSeEeeNkM-fDIrCNA" name="MissionPlanner">
+      <packagedElement xmi:type="uml:Component" xmi:id="_Tcwh8MSeEeeNkM-fDIrCNA" name="Rover">
         <generalization xmi:type="uml:Generalization" xmi:id="_WgFwEMSeEeeNkM-fDIrCNA" general="_H2uS8MSeEeeNkM-fDIrCNA"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_vGhTQMSeEeeNkM-fDIrCNA" general="_gcu_YMSeEeeNkM-fDIrCNA"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_39Im8Nv9EeeKapJzUqGp9w" general="_TYmM4MVdEeecVOrCacIQRQ"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_wT8IoMSeEeeNkM-fDIrCNA" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_gcu_YMSeEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_wUCMAMVeEeecVOrCacIQRQ" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
       </packagedElement>
@@ -105,32 +115,7 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_pNlxAMSeEeeNkM-fDIrCNA" name="mission" type="_EaicMMt-Eee4lOItTkPZDg"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_rwNewMSeEeeNkM-fDIrCNA" name="StrategyPlanner">
-        <generalization xmi:type="uml:Generalization" xmi:id="_vGhTQMSeEeeNkM-fDIrCNA" general="_gcu_YMSeEeeNkM-fDIrCNA"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_Ypi0AMVbEeecVOrCacIQRQ" name="StateContainer">
-        <generalization xmi:type="uml:Generalization" xmi:id="_1aKqQMVcEeecVOrCacIQRQ" general="_uy1w8MVcEeecVOrCacIQRQ"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_qNGKUMVbEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_ufMRoMVbEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_yUdkAMSgEeeNkM-fDIrCNA"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_ShDWUMVcEeecVOrCacIQRQ" client="_Ypi0AMVbEeecVOrCacIQRQ" supplier="_ApAWsMVcEeecVOrCacIQRQ"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_ApAWsMVcEeecVOrCacIQRQ" name="FaultHandler">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_CjWjgMVcEeecVOrCacIQRQ" name="HandleFault" isQuery="true">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GNt8cMVcEeecVOrCacIQRQ" name="fault" type="_8tRZEMt-Eee4lOItTkPZDg"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_IH7mYMVcEeecVOrCacIQRQ" name="FaultResolver">
-        <generalization xmi:type="uml:Generalization" xmi:id="_NYWXIMVcEeecVOrCacIQRQ" general="_ApAWsMVcEeecVOrCacIQRQ"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_b3P18MhXEeeTH8jU0S3H5Q" client="_IH7mYMVcEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_uy1w8MVcEeecVOrCacIQRQ" name="StateHandler">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_y-M-IMVcEeecVOrCacIQRQ" name="sendRoverState"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_eKKSAMVdEeecVOrCacIQRQ" name="Communicator">
-        <generalization xmi:type="uml:Generalization" xmi:id="_iJ428MVdEeecVOrCacIQRQ" general="_TYmM4MVdEeecVOrCacIQRQ"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_i421wMVdEeecVOrCacIQRQ" client="_eKKSAMVdEeecVOrCacIQRQ" supplier="_uy1w8MVcEeecVOrCacIQRQ"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_TYmM4MVdEeecVOrCacIQRQ" name="DataCommunicator">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_TYmM4MVdEeecVOrCacIQRQ" name="RoverCommunicator">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_mP4NQMSfEeeNkM-fDIrCNA" name="changeMission">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_VZDLwMt-Eee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg"/>
         </ownedOperation>
@@ -146,8 +131,6 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oOKlsMuAEee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Usage" xmi:id="_WXAtcMYbEeepsMJMafenNg" client="_eKKSAMVdEeecVOrCacIQRQ" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
-      <packagedElement xmi:type="uml:Usage" xmi:id="_8n3IAM7IEeeCfKbzkzCauA" client="_ZRrcAMSgEeeNkM-fDIrCNA" supplier="_YWrAIM7DEee7r9bWW8p0SA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_h6Im8MSdEeeNkM-fDIrCNA" name="RoverManager">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_kW4WMMSdEeeNkM-fDIrCNA" name="changeMissionOf">
@@ -165,19 +148,7 @@
     <packagedElement xmi:type="uml:Component" xmi:id="_83dJAMSdEeeNkM-fDIrCNA" name="CentralStation">
       <generalization xmi:type="uml:Generalization" xmi:id="__HEbMMSdEeeNkM-fDIrCNA" general="_h6Im8MSdEeeNkM-fDIrCNA"/>
       <generalization xmi:type="uml:Generalization" xmi:id="_VU37AMYbEeepsMJMafenNg" general="_2ntesMScEeeNkM-fDIrCNA"/>
-      <generalization xmi:type="uml:Generalization" xmi:id="_veHc0M7DEee7r9bWW8p0SA" general="_YWrAIM7DEee7r9bWW8p0SA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="__uUlMMVdEeecVOrCacIQRQ" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_TYmM4MVdEeecVOrCacIQRQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_YWrAIM7DEee7r9bWW8p0SA" name="LocationManager" visibility="public">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_gMFdMM7DEee7r9bWW8p0SA" name="validatePosition" concurrency="guarded">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5HE7IM7DEee7r9bWW8p0SA" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jhNwgM7EEeembKjRYDRBgQ" name="position" type="_fl8BEMt_Eee4lOItTkPZDg"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UhJOIM7FEeembKjRYDRBgQ" name="roverID">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:DataType" xmi:id="_EaicMMt-Eee4lOItTkPZDg" name="Mission"/>
