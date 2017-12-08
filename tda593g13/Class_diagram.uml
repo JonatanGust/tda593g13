@@ -794,6 +794,27 @@
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_LcBfwNBREeeRW8N_DZZYCA" name="roverlord" type="_TLa2kM3vEeek8LApaKUyHw" association="_Lb_qkNBREeeRW8N_DZZYCA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_JaCWINwTEee8EoLUlOGgmQ" name="PhysicalDevices">
+      <packagedElement xmi:type="uml:Class" xmi:id="_MkQ2cNwTEee8EoLUlOGgmQ" name="MultipleLocationController">
+        <generalization xmi:type="uml:Generalization" xmi:id="_j41JINwTEee8EoLUlOGgmQ" general="_M-MZYNwTEee8EoLUlOGgmQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nuP7gNwTEee8EoLUlOGgmQ" name="numberOfSlots" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_vmMvMNwTEee8EoLUlOGgmQ" name="MultipleLocationController">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_3tqlkNwTEee8EoLUlOGgmQ" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_61yNENwTEee8EoLUlOGgmQ" name="radius">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="__nQYANwTEee8EoLUlOGgmQ" name="wd" type="_BKWicNwUEee8EoLUlOGgmQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RO-coNwUEee8EoLUlOGgmQ" name="numberOfSlots">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_M-MZYNwTEee8EoLUlOGgmQ" name="LocationController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_BKWicNwUEee8EoLUlOGgmQ" name="EnvironmentDescription"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_IrD60NwUEee8EoLUlOGgmQ" client="_MkQ2cNwTEee8EoLUlOGgmQ" supplier="_BKWicNwUEee8EoLUlOGgmQ"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0rsCYNjeEeemE4TvGO1e0w">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0r3okNjeEeemE4TvGO1e0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
@@ -806,4 +827,6 @@
   <PapyrusJava:External xmi:id="_LqiOMM-TEeecqo1J0OwUdA" name="java.lang.Object" base_Classifier="_JD7YUM-TEeecqo1J0OwUdA"/>
   <PapyrusJava:External xmi:id="_j2KEcNAyEeexUdWYT1mRHA" name="project.RobotAvatar" base_Classifier="_h1TnANAyEeexUdWYT1mRHA"/>
   <PapyrusJava:External xmi:id="_ZWfJINBJEeeRW8N_DZZYCA" name="project.LocationController" base_Classifier="_MzRgMNBJEeeRW8N_DZZYCA"/>
+  <PapyrusJava:External xmi:id="_PX-7QNwTEee8EoLUlOGgmQ" name="project.LocationController" base_Classifier="_M-MZYNwTEee8EoLUlOGgmQ"/>
+  <PapyrusJava:External xmi:id="_DLD18NwUEee8EoLUlOGgmQ" name="simbad.sim.EnvironmentDescription" base_Classifier="_BKWicNwUEee8EoLUlOGgmQ"/>
 </xmi:XMI>
