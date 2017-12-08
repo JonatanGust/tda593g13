@@ -4,43 +4,43 @@
 
 package ClassDiagram.Types;
 
+import ClassDiagram.Types.Boundary;
 import ClassDiagram.Types.Position;
 
 /************************************************************/
 /**
  * 
  */
-public abstract class Boundary {
-	
+public class CircularBoundary extends Boundary {
 	/**
 	 * 
 	 */
-	protected Position position;
+	private double radius;
 
 	/**
 	 * 
 	 * @param position 
 	 * @return 
 	 */
-	public abstract boolean contains(Position position);
+	public boolean contains(Position position) {
+		return this.position.distanceTo(position) <= radius;
+	}
 
 	/**
 	 * 
-	 * @param width 
-	 * @param height 
+	 * @param radius 
 	 * @param position 
 	 */
-	public Boundary(Position position) {
-		this.position = position;
+	public CircularBoundary(double radius, Position position) {
+		super(position);
+		this.radius = radius;
 	}
 
 	/**
 	 * 
 	 * @return 
 	 */
-	public Position getPosition() {
-		return position;
+	public double getRadius() {
+		return radius;
 	}
-
-	
 };

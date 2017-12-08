@@ -22,6 +22,10 @@ import java.util.*;
  * 
  */
 public class MovementAI implements MovementManager, Observer {
+	private enum RoverState {
+		NORMAL, AVOIDING_OBSTACLE, WAITING_FOR_ROOM, ENTERING_ROOM
+	}
+	
 	/**
 	 * 
 	 */
@@ -29,18 +33,11 @@ public class MovementAI implements MovementManager, Observer {
 	private Environment environment;
 
 	private Point targetPoint ;
-	private Position lastPosition = new Position(0.0,0.0);
-	private double lookAngle;
-	private Position nextPosition;
-	private boolean hasStopped = true;
-	
+	private Position lastPosition;
 	private List<Observer> observers = new LinkedList<Observer>();
-	
-	private HashMap<Area, Boolean> acquiredArea = new HashMap<Area, Boolean>();
-	
 	private SensorData sensorData;
-
-	private boolean avoidingObstacle = false;
+	private RoverState roverState = RoverState.NORMAL;
+	
 	
 	/**
 	 * 
@@ -49,7 +46,6 @@ public class MovementAI implements MovementManager, Observer {
 	public MovementAI(Environment environment, HardwareHandler hardwareHandler) {
 		this.hardwareHandler = hardwareHandler;
 		this.environment = environment;
-		nextPosition = hardwareHandler.getCurrentPosition();
 		hardwareHandler.addObserver(this);
 		
 		for (Area a : environment.getAreas()) {
@@ -65,7 +61,6 @@ public class MovementAI implements MovementManager, Observer {
 	public void goToPoint(Point point) {
 		targetPoint = point;
 		hardwareHandler.setDestination(targetPoint.position);
-		hasStopped = false;
 	}
 
 	/**
@@ -85,7 +80,45 @@ public class MovementAI implements MovementManager, Observer {
 	}
 	
 	private void processMovement(Position position) {
-
+		if (lastPosition == null) {
+			lastPosition = position;
+		}
+		
+		if (roverState == RoverState.NORMAL) {
+			if (checkObstacle(position)) {
+				roverState = RoverState.AVOIDING_OBSTACLE;
+			} else if (checkRoomAccess(position)) {
+				roverState = RoverState.WAITING_FOR_ROOM;
+			}
+		}
+		
+		switch (roverState) {
+		case AVOIDING_OBSTACLE:
+			handleObstacle(position);
+			break;
+		case WAITING_FOR_ROOM:
+			handleRoomAccess();
+			break;
+		case ENTERING_ROOM:
+			handleRoomEntry(position);
+			break;
+		default:
+			// check if point is reached
+			if(position.distanceTo(targetPoint.position) < 0.1) {
+				for(Observer o : observers) {
+					o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
+				}
+			}
+		}
+		
+		lastPosition = position;
+	}
+	
+	private boolean checkObstacle(Position position) {
+		return sensorData != null && sensorData.frontDistance < 5;
+	}
+	
+	private void handleObstacle(Position position) {
 		boolean inFront = false;
 		boolean toSide = false;
 		
@@ -113,87 +146,89 @@ public class MovementAI implements MovementManager, Observer {
         //lookDirection.z *= 100;
 
 		// Angle code appears to be working correctly, but setting the destination causes strange behaviors
-		if(avoidingObstacle) {
-			// If something is in front, keep turning right
-			if(sensorData.frontDistance < 5) {
+		// If something is in front, keep turning right
+		if(sensorData.frontDistance < 5) {
 
-				// Turn right (very slowly, speed up once bugs are fixed)
-				double angle = Math.toRadians(1);
-				
-	            lookDirection =
-	                    new Position(
-	                            Math.cos(angle) * lookDirection.x - Math.sin(angle) * lookDirection.z,
-	                            Math.sin(angle) * lookDirection.x + Math.cos(angle) * lookDirection.z
-	                    );
-				
-				hardwareHandler.setDestination(new Position(lookDirection.x + position.x, lookDirection.z + position.z));
-				
-				inFront = true;
-			}
-			// If nothing is in front, but something is on the left, move forward
-			else if(sensorData.leftDistance < 5) {
-
-				hardwareHandler.setDestination(new Position(lookDirection.x + position.x, lookDirection.z + position.z));
-				toSide = true;
-			}
-			// If nothing is detected, we've avoided the obstacle
-			else
-			{
-				avoidingObstacle = false;
-			}
+			// Turn right (very slowly, speed up once bugs are fixed)
+			double angle = Math.toRadians(1);
+			
+            lookDirection =
+                    new Position(
+                            Math.cos(angle) * lookDirection.x - Math.sin(angle) * lookDirection.z,
+                            Math.sin(angle) * lookDirection.x + Math.cos(angle) * lookDirection.z
+                    );
+			
+			hardwareHandler.setDestination(new Position(lookDirection.x + position.x, lookDirection.z + position.z));
+			
+			inFront = true;
 		}
-		else {
-			if(sensorData.frontDistance < 5) {
-				avoidingObstacle = true;
-			}
-			else {
-				// Move toward target
-				if(targetPoint != null) {
-					hardwareHandler.setDestination(targetPoint.position);	
-					
-					lastPosition = position;
-					
-					double curX =  position.x;
-					double curY =  position.z;
-					double targetX = targetPoint.position.x;
-					double targetY = targetPoint.position.z;
-					double dist = Math.pow(targetX - curX, 2.0) + Math.pow(targetY - curY, 2.0) ;
-					if(dist < 0.1) {
-						for(Observer o : observers) {
-							o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
-						}
-					}
-				
-				}
-			}
+		// If nothing is in front, but something is on the left, move forward
+		else if(sensorData.leftDistance < 5) {
 
-			for (Area a : environment.getAreas()) {
-				if (a.getLocationController() != null) {
-					if (acquiredArea.get(a) && !a.getBoundary().contains(position) &&
-							!a.getBoundary().contains(nextPosition)) {
-						acquiredArea.put(a, false);
-						a.getLocationController().release((Robot)hardwareHandler);
-					}
-					if (a.getBoundary().contains(nextPosition)) {
-						if (acquiredArea.get(a)) {
-							hardwareHandler.setDestination(targetPoint.position);
-							hasStopped = false;
-						} else if (a.getLocationController().tryAcquire((Robot)hardwareHandler)) {
-							acquiredArea.put(a, true);
-							hardwareHandler.setDestination(targetPoint.position);
-							hasStopped = false;
-						} else {
-							hasStopped = true;
-							hardwareHandler.stop();									
-						}
-					}
-				}
-			}
+			hardwareHandler.setDestination(new Position(lookDirection.x + position.x, lookDirection.z + position.z));
+			toSide = true;
 		}
+		// If nothing is detected, we've avoided the obstacle
+		else
+		{
+			roverState = RoverState.NORMAL;
+			hardwareHandler.setDestination(targetPoint.position);
+		}
+	}
+
+	private HashMap<Area, Boolean> acquiredArea = new HashMap<Area, Boolean>();
+	private Area waitedArea;
+	private boolean checkRoomAccess(Position position) {
+		// guess next position
+		Position nextPosition = new Position(
+				position.x + (position.x - lastPosition.x) * 2,
+				position.z + (position.z - lastPosition.z) * 2
+			);
 		
-		lastPosition = position;
+		for (Area a : environment.getAreas()) {
+			if (a.getLocationController() != null) {
+				// have we left a?
+				if (acquiredArea.get(a) && !a.getBoundary().contains(position) &&
+						!a.getBoundary().contains(nextPosition)) {
+					acquiredArea.put(a, false);
+					a.getLocationController().release((Robot)hardwareHandler);
+				}
+				
+				// are we about to move into a?
+				if (!acquiredArea.get(a) && a.getBoundary().contains(nextPosition)) {
+					waitedArea = a;
+					hardwareHandler.stop();
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 	
+	private void handleRoomAccess() {
+		if (waitedArea.getLocationController().tryAcquire((Robot)hardwareHandler)) {
+			acquiredArea.put(waitedArea,  true);
+			hardwareHandler.setDestination(targetPoint.position);
+			roverState = RoverState.ENTERING_ROOM;
+		}
+	}
+	
+	private double wakeupTime = Double.POSITIVE_INFINITY;
+	private void handleRoomEntry(Position position) {
+		double time = hardwareHandler.getLifeTime();
+		
+		if (wakeupTime == Double.POSITIVE_INFINITY &&
+				waitedArea.getBoundary().contains(position)) {
+			// stop and set the timer if we have just entered the room
+			hardwareHandler.stop();
+			wakeupTime = time + 2;
+		} else if (time >= wakeupTime) {
+			// resume mission if wait is done
+			roverState = RoverState.NORMAL;
+			hardwareHandler.setDestination(targetPoint.position);
+			wakeupTime = Double.POSITIVE_INFINITY;
+		}
+	}
 
 	/**
 	 * 

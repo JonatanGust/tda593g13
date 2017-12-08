@@ -162,4 +162,8 @@ public class Robot extends RobotAvatar implements HardwareHandler {
 			lastSensorData = currentSensorData;
 		}
 	}
+	
+	public double getLifeTime() {
+		return getAgent().getLifeTime();
+	}
 };

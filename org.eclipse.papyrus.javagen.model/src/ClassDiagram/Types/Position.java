@@ -44,4 +44,8 @@ public class Position {
 		}
 		return false;
 	}
+	
+	public double distanceTo(Position p) {
+		return Math.sqrt((p.x-x)*(p.x-x) + (p.z-z)*(p.z-z));
+	}
 };
