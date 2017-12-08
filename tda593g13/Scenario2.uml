@@ -18,7 +18,7 @@
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_128UkNtPEee45o5G4Q0HPQ" name="Message1ReceiveEvent" covered="_Az5o4Np1EeeJorxV3UTcDg" message="_1254UNtPEee45o5G4Q0HPQ"/>
     <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_bVNF0NtQEee45o5G4Q0HPQ" name="BehaviorExecutionSpecification1" covered="_Vw_jUNp0EeeJorxV3UTcDg" finish="_g16VUNtQEee45o5G4Q0HPQ" start="_bUkModtQEee45o5G4Q0HPQ"/>
     <fragment xmi:type="uml:CombinedFragment" xmi:id="_0iJ2cNtQEee45o5G4Q0HPQ" name="CombinedFragment1" interactionOperator="loop">
-      <operand xmi:type="uml:InteractionOperand" xmi:id="_0iMSsNtQEee45o5G4Q0HPQ" name="InteractionOperand1" covered="_Vw_jUNp0EeeJorxV3UTcDg _Az5o4Np1EeeJorxV3UTcDg _T_l3INp0EeeJorxV3UTcDg _SzqPgNp0EeeJorxV3UTcDg">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_0iMSsNtQEee45o5G4Q0HPQ" name="InteractionOperand1" covered="_SzqPgNp0EeeJorxV3UTcDg _T_l3INp0EeeJorxV3UTcDg _Vw_jUNp0EeeJorxV3UTcDg _Az5o4Np1EeeJorxV3UTcDg">
         <guard xmi:type="uml:InteractionConstraint" xmi:id="_0iMSsdtQEee45o5G4Q0HPQ" name="guard">
           <specification xmi:type="uml:LiteralString" xmi:id="_-qkQ4NtQEee45o5G4Q0HPQ" value="points remaining in mission"/>
         </guard>
