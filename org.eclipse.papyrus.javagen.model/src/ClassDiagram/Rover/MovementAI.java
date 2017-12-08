@@ -86,7 +86,7 @@ public class MovementAI implements MovementManager, Observer {
 		
 		if (roverState == RoverState.NORMAL) {
 			if (checkObstacle(position)) {
-				roverState = RoverState.AVOIDING_OBSTACLE;
+				//roverState = RoverState.AVOIDING_OBSTACLE;
 			} else if (checkRoomAccess(position)) {
 				roverState = RoverState.WAITING_FOR_ROOM;
 			}

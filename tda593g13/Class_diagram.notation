@@ -1305,6 +1305,10 @@
             <element xmi:type="uml:Property" href="Class_diagram.uml#_nuP7gNwTEee8EoLUlOGgmQ"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_nvTEYdwTEee8EoLUlOGgmQ"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_PzrG0NwVEee8EoLUlOGgmQ" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="Class_diagram.uml#_Pyxu8NwVEee8EoLUlOGgmQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_PzrG0dwVEee8EoLUlOGgmQ"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_MldJRtwTEee8EoLUlOGgmQ"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_MldJR9wTEee8EoLUlOGgmQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_MldJSNwTEee8EoLUlOGgmQ"/>
@@ -1401,7 +1405,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JeXchdwTEee8EoLUlOGgmQ"/>
     </children>
     <element xmi:type="uml:Package" href="Class_diagram.uml#_JaCWINwTEee8EoLUlOGgmQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JeXcgdwTEee8EoLUlOGgmQ" x="120" y="400" width="781" height="341"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JeXcgdwTEee8EoLUlOGgmQ" x="120" y="400" width="901" height="341"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_Uv8-sc3fEeesA5480aNfQQ" name="diagram_compatibility_version" stringValue="1.3.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_Uv8-ss3fEeesA5480aNfQQ"/>

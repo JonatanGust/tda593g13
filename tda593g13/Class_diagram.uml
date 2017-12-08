@@ -800,6 +800,9 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_nuP7gNwTEee8EoLUlOGgmQ" name="numberOfSlots" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Pyxu8NwVEee8EoLUlOGgmQ" name="usedSlots" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_vmMvMNwTEee8EoLUlOGgmQ" name="MultipleLocationController">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_3tqlkNwTEee8EoLUlOGgmQ" name="position" type="_d4h8sM3zEeek8LApaKUyHw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_61yNENwTEee8EoLUlOGgmQ" name="radius">

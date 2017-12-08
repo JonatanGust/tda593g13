@@ -3,10 +3,10 @@ package project;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
 import project.AbstractSimulatorMonitor;
 import ClassDiagram.CentralStation.RoverLord;
+import ClassDiagram.PhysicalDevices.MultipleLocationController;
 import ClassDiagram.Types.*;
 import ClassDiagram.Ui.RoverView;
 import ClassDiagram.Rover.Robot;
@@ -50,7 +50,7 @@ public class Main {
 		new HorizontalWall(5f, -2f, 2f, e, c);
 		new HorizontalWall(5f, 3f, 5f, e, c);
 		
-		Area[] areas = new Area[4];
+		Area[] areas = new Area[5];
 		
 		areas[0] = new Area(
 				new RectangularBoundary(5, 5, new Position(0, 0)), 
@@ -67,6 +67,10 @@ public class Main {
 		areas[3] = new Area(
 				new RectangularBoundary(5, 5, new Position(-5, 0)), 
 				new LocationController(new Point(-2.5, 2.5), 2.75, e), "Office", false, 1
+			);
+		areas[4] = new Area(
+				new RectangularBoundary(11, 11, new Position(-5.5, -5.5)),
+				new MultipleLocationController(new Position(0, 0), 6.5, e, 3), "Lock", true, 0
 			);
 
 		Environment env = new Environment(areas);
