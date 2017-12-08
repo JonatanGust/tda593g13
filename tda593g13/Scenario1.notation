@@ -8,7 +8,7 @@
           <children xmi:type="notation:Shape" xmi:id="_D6cN9NpzEeeJorxV3UTcDg" type="InteractionOperand_Shape">
             <children xmi:type="notation:DecorationNode" xmi:id="_D6cN9tpzEeeJorxV3UTcDg" type="InteractionOperand_Guard">
               <element xmi:type="uml:InteractionConstraint" href="Scenario1.uml#_D6WHUdpzEeeJorxV3UTcDg"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6cN99pzEeeJorxV3UTcDg" x="5" y="5"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6cN99pzEeeJorxV3UTcDg" x="34" y="4"/>
             </children>
             <element xmi:type="uml:InteractionOperand" href="Scenario1.uml#_D6WHUNpzEeeJorxV3UTcDg"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D6cN9dpzEeeJorxV3UTcDg" width="321"/>
