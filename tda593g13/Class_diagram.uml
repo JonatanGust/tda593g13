@@ -610,6 +610,18 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fFX-kNBJEeeRW8N_DZZYCA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fFYloNBJEeeRW8N_DZZYCA" value="1"/>
         </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jSRDwN5VEeeWE81Jdc7zWA" name="rewardPoint" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mpVtQN5VEeeWE81Jdc7zWA" name="type" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_pt1ZAN5VEeeWE81Jdc7zWA" name="requiresWaiting" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NU-QkN5WEeeWE81Jdc7zWA" name="isPhysical" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_XHZN4M-lEeex3IThi1054A" name="Area">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ww5XoM-lEeex3IThi1054A" name="boundary" type="_Dls8cM-QEeecqo1J0OwUdA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_sIl9QNBJEeeRW8N_DZZYCA" name="locationController" type="_MzRgMNBJEeeRW8N_DZZYCA"/>
@@ -621,6 +633,9 @@
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oRJ-4NjfEeemE4TvGO1e0w" name="rewardPoint">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_MSanYN5WEeeWE81Jdc7zWA" name="requiresWaiting">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_dCghcM-lEeex3IThi1054A" name="getBoundary">
@@ -642,6 +657,11 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_xBjdgNjfEeemE4TvGO1e0w" name="getRoomType">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_2foPwNjfEeemE4TvGO1e0w" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5RbNQN5WEeeWE81Jdc7zWA" name="requiresWaiting" concurrency="guarded">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_F40LkN5XEeeWE81Jdc7zWA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>

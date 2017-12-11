@@ -54,23 +54,28 @@ public class Main {
 		
 		areas[0] = new Area(
 				new RectangularBoundary(5, 5, new Position(0, 0)), 
-				new LocationController(new Point(2.5, 2.5), 2.75, e), "Office", false, 1
+				new LocationController(new Point(2.5, 2.5), 2.75, e), 
+				"Office", false, 1, true
 			);
 		areas[1] = new Area(
 				new RectangularBoundary(5, 5, new Position(0, -5)), 
-				new LocationController(new Point(2.5, -2.5), 2.75, e), "Office", false, 1
+				new LocationController(new Point(2.5, -2.5), 2.75, e), 
+				"Office", false, 1, true
 			);
 		areas[2] = new Area(
 				new RectangularBoundary(5, 5, new Position(-5, -5)), 
-				new LocationController(new Point(-2.5, -2.5), 2.75, e), "Office", false, 1
+				new LocationController(new Point(-2.5, -2.5), 2.75, e), 
+				"Office", false, 1, true
 			);
 		areas[3] = new Area(
 				new RectangularBoundary(5, 5, new Position(-5, 0)), 
-				new LocationController(new Point(-2.5, 2.5), 2.75, e), "Office", false, 1
+				new LocationController(new Point(-2.5, 2.5), 2.75, e), 
+				"Office", false, 1, true
 			);
 		areas[4] = new Area(
 				new RectangularBoundary(11, 11, new Position(-5.5, -5.5)),
-				new MultipleLocationController(new Position(0, 0), 6.5, e, 3), "Lock", true, 0
+				new MultipleLocationController(new Position(0, 0), 6.5, e, 3), 
+				"Lock", true, 0, false
 			);
 
 		Environment env = new Environment(areas);
@@ -163,32 +168,49 @@ public class Main {
 		new HorizontalWall(0.0f, 2.4f, 4.0f, e, blue);
 		new HorizontalWall(0.0f, 6.0f, 7.6f, e, blue);
 
-		Area[] areas = new Area[5];
+		Area[] areas = new Area[7];
 
 		areas[0] = new Area(
 				new RectangularBoundary(5, 5, new Position(-10.0, -7.5)),
-				new LocationController(new Point(-7.5, -5.0), 2.75, e), "Surgery", false, 2
+				new LocationController(new Point(-7.5, -5.0), 2.75, e), 
+				"Surgery room", true, 20, true
 			);
 
 		areas[1] = new Area(
 				new RectangularBoundary(5, 5, new Position(-5.0, -7.5)),
-				new LocationController(new Point(-2.5, -5.0), 2.75, e), "Surgery", false, 2
+				new LocationController(new Point(-2.5, -5.0), 2.75, e), 
+				"Surgery room", true, 20, true
 			);
 
 		areas[2] = new Area(
 				new RectangularBoundary(5, 5, new Position(0.0, -7.5)),
-				new LocationController(new Point(2.5, -5.0), 2.75, e), "Surgery", false, 2
+				new LocationController(new Point(2.5, -5.0), 2.75, e), 
+				"Surgery room", true, 20, true
 			);
 
 		areas[3] = new Area(
 				new RectangularBoundary(5, 5, new Position(5.0, -7.5)),
-				new LocationController(new Point(7.5, -5.0), 2.75, e), "Surgery", false, 2
+				new LocationController(new Point(7.5, -5.0), 2.75, e), 
+				"Surgery room", true, 20, true
 			);
 
 		areas[4] = new Area(
 				new RectangularBoundary(5, 5, new Position(-5.0, 2.5)),
-				new LocationController(new Point(-2.5, 5.0), 2.75, e), "Surgery", false, 2
+				new LocationController(new Point(-2.5, 5.0), 2.75, e), 
+				"Consulting room", true, 10, true
 			);
+		
+		areas[5] = new Area(
+				new CircularBoundary(5, new Position(-5.0, 2.5)),
+				null, 
+				"Wifi zone", false, 10, false
+				);
+		
+		areas[6] = new Area(
+				new RectangularBoundary(5, 5, new Position(-5.0, 2.5)),
+				null, 
+				"Eating area", false, 20, false
+				);
 
 
 		Environment env = new Environment(areas);

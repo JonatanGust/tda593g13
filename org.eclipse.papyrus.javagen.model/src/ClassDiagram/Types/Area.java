@@ -26,9 +26,11 @@ public class Area {
 	 */
 	private String roomType;
 
-	private boolean physical;
+	private boolean isPhysical;
 	
 	private int rewardPoint;
+	
+	private boolean requiresWaiting;
 	
 	
 	/**
@@ -40,12 +42,13 @@ public class Area {
 	 * @param isPhysical 
 	 */
 	public Area(Boundary boundary, LocationController locationController, String type,
-			boolean isPhysical, int rewardPoint) {
+			boolean isPhysical, int rewardPoint, boolean requiresWaiting) {
 		this.boundary = boundary;
 		this.locationController = locationController;
 		this.roomType = type;
-		this.physical = isPhysical;
-		this.rewardPoint = rewardPoint;	
+		this.isPhysical = isPhysical;
+		this.rewardPoint = rewardPoint;
+		this.requiresWaiting = requiresWaiting;
 	}
 
 	/**
@@ -69,7 +72,7 @@ public class Area {
 	 * @return 
 	 */
 	public boolean isPhysical() {
-		return physical;
+		return isPhysical;
 	}
 
 	/**
@@ -82,5 +85,9 @@ public class Area {
 	
 	public String getRoomType() {
 		return roomType;
+	}
+	
+	public boolean requiresWaiting() {
+		return requiresWaiting;
 	}
 };

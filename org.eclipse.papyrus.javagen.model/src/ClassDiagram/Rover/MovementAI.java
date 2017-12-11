@@ -104,7 +104,7 @@ public class MovementAI implements MovementManager, Observer {
 			break;
 		default:
 			// check if point is reached
-			if(position.distanceTo(targetPoint.position) < 0.1) {
+			if(position.distanceTo(targetPoint.position) < 0.2) {
 				for(Observer o : observers) {
 					o.update(new UpdateEvent(UpdateEventType.PointReachedUpdate,targetPoint));
 				}
@@ -217,7 +217,9 @@ public class MovementAI implements MovementManager, Observer {
 	private void handleRoomEntry(Position position) {
 		double time = hardwareHandler.getLifeTime();
 		
-		if (wakeupTime == Double.POSITIVE_INFINITY &&
+		if (!waitedArea.requiresWaiting()) {
+			roverState = RoverState.NORMAL;
+		} else if (wakeupTime == Double.POSITIVE_INFINITY &&
 				waitedArea.getBoundary().contains(position)) {
 			// stop and set the timer if we have just entered the room
 			hardwareHandler.stop();
