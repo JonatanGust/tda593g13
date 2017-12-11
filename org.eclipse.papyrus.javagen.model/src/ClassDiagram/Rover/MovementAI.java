@@ -181,8 +181,8 @@ public class MovementAI implements MovementManager, Observer {
 	private boolean checkRoomAccess(Position position) {
 		// guess next position
 		Position nextPosition = new Position(
-				position.x + (position.x - lastPosition.x) * 2,
-				position.z + (position.z - lastPosition.z) * 2
+				position.x + (position.x - lastPosition.x),
+				position.z + (position.z - lastPosition.z)
 			);
 		
 		for (Area a : environment.getAreas()) {
