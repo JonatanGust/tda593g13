@@ -38,6 +38,13 @@ public class MovementAI implements MovementManager, Observer {
 	private SensorData sensorData;
 	private RoverState roverState = RoverState.NORMAL;
 	
+	// used for waiting when entering a room
+	private double wakeupTime = Double.POSITIVE_INFINITY;
+	private Area enteredArea; // must be set when roverState==ENTERING_ROOM
+	
+	// used for locking areas
+	private HashMap<Area, Boolean> acquiredArea = new HashMap<Area, Boolean>();
+	private Area waitedArea; // must be set when roverState==WAITING_FOR_ROOM
 	
 	/**
 	 * 
@@ -89,6 +96,8 @@ public class MovementAI implements MovementManager, Observer {
 				//roverState = RoverState.AVOIDING_OBSTACLE;
 			} else if (checkRoomAccess(position)) {
 				roverState = RoverState.WAITING_FOR_ROOM;
+			} else if (checkRoomEntry(position)) {
+				roverState = RoverState.ENTERING_ROOM;
 			}
 		}
 		
@@ -97,7 +106,7 @@ public class MovementAI implements MovementManager, Observer {
 			handleObstacle(position);
 			break;
 		case WAITING_FOR_ROOM:
-			handleRoomAccess();
+			handleRoomAccess(position);
 			break;
 		case ENTERING_ROOM:
 			handleRoomEntry(position);
@@ -176,13 +185,11 @@ public class MovementAI implements MovementManager, Observer {
 		}
 	}
 
-	private HashMap<Area, Boolean> acquiredArea = new HashMap<Area, Boolean>();
-	private Area waitedArea;
 	private boolean checkRoomAccess(Position position) {
 		// guess next position
 		Position nextPosition = new Position(
-				position.x + (position.x - lastPosition.x),
-				position.z + (position.z - lastPosition.z)
+				position.x + (position.x - lastPosition.x) * 3.5,
+				position.z + (position.z - lastPosition.z) * 3.5
 			);
 		
 		for (Area a : environment.getAreas()) {
@@ -205,21 +212,41 @@ public class MovementAI implements MovementManager, Observer {
 		return false;
 	}
 	
-	private void handleRoomAccess() {
+	private void handleRoomAccess(Position position) {
 		if (waitedArea.getLocationController().tryAcquire((Robot)hardwareHandler)) {
 			acquiredArea.put(waitedArea,  true);
 			hardwareHandler.setDestination(targetPoint.position);
-			roverState = RoverState.ENTERING_ROOM;
+			
+			if (waitedArea.requiresWaiting()) {
+				enteredArea = waitedArea;
+				roverState = RoverState.ENTERING_ROOM;
+			} else {
+				roverState = RoverState.NORMAL;
+			}
 		}
 	}
 	
-	private double wakeupTime = Double.POSITIVE_INFINITY;
+	private boolean checkRoomEntry(Position position) {
+		// guess next position
+		Position nextPosition = new Position(
+				position.x + (position.x - lastPosition.x) * 3.5,
+				position.z + (position.z - lastPosition.z) * 3.5
+			);
+		
+		for (Area a : environment.getAreas()) {
+			if (a.requiresWaiting() && !a.getBoundary().contains(position) &&
+					a.getBoundary().contains(nextPosition)) {
+				enteredArea = a;
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	private void handleRoomEntry(Position position) {
 		double time = hardwareHandler.getLifeTime();
 		
-		if (!waitedArea.requiresWaiting()) {
-			roverState = RoverState.NORMAL;
-		} else if (wakeupTime == Double.POSITIVE_INFINITY &&
+		if (wakeupTime == Double.POSITIVE_INFINITY &&
 				waitedArea.getBoundary().contains(position)) {
 			// stop and set the timer if we have just entered the room
 			hardwareHandler.stop();
