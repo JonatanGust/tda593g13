@@ -8,6 +8,29 @@
     <packagedElement xmi:type="uml:Package" href="Scenario1.uml#_nLQmUNpqEeeJorxV3UTcDg"/>
     <packagedElement xmi:type="uml:Package" href="Scenario2.uml#_Bam5ANp0EeeJorxV3UTcDg"/>
     <packagedElement xmi:type="uml:Package" href="Scenario3.uml#_pnsA0Nv8EeeN8vq5qNv2PA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yCpnkOAFEeeQ-OD4O0LGZQ" name="Logical bounderies">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JWpSgOAGEeeQ-OD4O0LGZQ">
+        <general xmi:type="uml:Class" href="Domain_model.uml#_rcckQMB3Eeel9pEGYVsbnw"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ybK1QOAFEeeQ-OD4O0LGZQ" name="Physical bounderies">
+      <generalization xmi:type="uml:Generalization" xmi:id="_KS7UkOAGEeeQ-OD4O0LGZQ">
+        <general xmi:type="uml:Class" href="Domain_model.uml#_rcckQMB3Eeel9pEGYVsbnw"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_XEMAkOAGEeeQ-OD4O0LGZQ" memberEnd="_XEMnouAGEeeQ-OD4O0LGZQ _XEN1weAGEeeQ-OD4O0LGZQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XEMnoOAGEeeQ-OD4O0LGZQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XEMnoeAGEeeQ-OD4O0LGZQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_XEN1weAGEeeQ-OD4O0LGZQ" name="knows about" association="_XEMAkOAGEeeQ-OD4O0LGZQ">
+        <type xmi:type="uml:Class" href="Domain_model.uml#_oV5qEMB3Eeel9pEGYVsbnw"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_XEMnouAGEeeQ-OD4O0LGZQ" name="contains" association="_XEMAkOAGEeeQ-OD4O0LGZQ">
+        <type xmi:type="uml:Class" href="Domain_model.uml#_omRaoMByEeel9pEGYVsbnw"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XENOsOAGEeeQ-OD4O0LGZQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XEN1wOAGEeeQ-OD4O0LGZQ" value="*"/>
+      </ownedEnd>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Uu0-YM-BEee5y9oWZBua7Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UvEO8M-BEee5y9oWZBua7Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
