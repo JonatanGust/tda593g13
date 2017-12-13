@@ -105,9 +105,9 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_Tcwh8MSeEeeNkM-fDIrCNA" name="Rover">
         <generalization xmi:type="uml:Generalization" xmi:id="_WgFwEMSeEeeNkM-fDIrCNA" general="_H2uS8MSeEeeNkM-fDIrCNA"/>
-        <generalization xmi:type="uml:Generalization" xmi:id="_vGhTQMSeEeeNkM-fDIrCNA" general="_gcu_YMSeEeeNkM-fDIrCNA"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_39Im8Nv9EeeKapJzUqGp9w" general="_TYmM4MVdEeecVOrCacIQRQ"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_wUCMAMVeEeecVOrCacIQRQ" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_YMcsUOAKEeewuf7P4KblaQ" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_W6ubMOAJEeewuf7P4KblaQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_gcu_YMSeEeeNkM-fDIrCNA" name="StrategyHandler">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_kP4g4MSeEeeNkM-fDIrCNA" name="chooseStrategyFor">
@@ -130,6 +130,9 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oOKlsMuAEee4lOItTkPZDg" name="mission" type="_EaicMMt-Eee4lOItTkPZDg" direction="return"/>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xmi:type="uml:Component" xmi:id="_W6ubMOAJEeewuf7P4KblaQ" name="Strategiser">
+        <generalization xmi:type="uml:Generalization" xmi:id="_UVHOYOAKEeewuf7P4KblaQ" general="_gcu_YMSeEeeNkM-fDIrCNA"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_h6Im8MSdEeeNkM-fDIrCNA" name="RoverManager">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_kW4WMMSdEeeNkM-fDIrCNA" name="changeMissionOf">
@@ -148,6 +151,7 @@
       <generalization xmi:type="uml:Generalization" xmi:id="__HEbMMSdEeeNkM-fDIrCNA" general="_h6Im8MSdEeeNkM-fDIrCNA"/>
       <generalization xmi:type="uml:Generalization" xmi:id="_VU37AMYbEeepsMJMafenNg" general="_2ntesMScEeeNkM-fDIrCNA"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="__uUlMMVdEeecVOrCacIQRQ" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_TYmM4MVdEeecVOrCacIQRQ"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_yLN7cOAKEeewuf7P4KblaQ" client="_83dJAMSdEeeNkM-fDIrCNA" supplier="_H2uS8MSeEeeNkM-fDIrCNA"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:DataType" xmi:id="_EaicMMt-Eee4lOItTkPZDg" name="Mission"/>
