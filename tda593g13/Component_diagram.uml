@@ -107,7 +107,6 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_WgFwEMSeEeeNkM-fDIrCNA" general="_H2uS8MSeEeeNkM-fDIrCNA"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_vGhTQMSeEeeNkM-fDIrCNA" general="_gcu_YMSeEeeNkM-fDIrCNA"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_39Im8Nv9EeeKapJzUqGp9w" general="_TYmM4MVdEeecVOrCacIQRQ"/>
-        <packagedElement xmi:type="uml:Usage" xmi:id="_wT8IoMSeEeeNkM-fDIrCNA" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_gcu_YMSeEeeNkM-fDIrCNA"/>
         <packagedElement xmi:type="uml:Usage" xmi:id="_wUCMAMVeEeecVOrCacIQRQ" client="_Tcwh8MSeEeeNkM-fDIrCNA" supplier="_ZRrcAMSgEeeNkM-fDIrCNA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_gcu_YMSeEeeNkM-fDIrCNA" name="StrategyHandler">
