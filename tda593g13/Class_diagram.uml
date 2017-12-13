@@ -186,7 +186,7 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_DFnlwM3xEeek8LApaKUyHw" name="getOperationalStatus">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_0kOcEM30Eeek8LApaKUyHw" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_eIlVcM30Eeek8LApaKUyHw" name="getMissionStatus">
@@ -245,6 +245,13 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_1UEGAM-TEeecqo1J0OwUdA" name="update">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_1UEGAc-TEeecqo1J0OwUdA" name="updateEvent" type="_wWhAQM7KEeeO2p5ASy90lQ"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RpviYOAMEeejYJ4TDDTpEA" name="getOperationalStatus">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RpviYeAMEeejYJ4TDDTpEA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RpviYuAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RpwJcOAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_sAirIM3xEeek8LApaKUyHw" name="StrategyHandler">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_5KI3QM30Eeek8LApaKUyHw" name="chooseStrategy">
@@ -279,13 +286,13 @@
       <packagedElement xmi:type="uml:Interface" xmi:id="_NjAckM3vEeek8LApaKUyHw" name="RoverManager">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_tLLc0M3yEeek8LApaKUyHw" name="changeMissionOf">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_JRJzkM30Eeek8LApaKUyHw" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_LfSfEM30Eeek8LApaKUyHw" name="mission" type="_8ov64M3uEeek8LApaKUyHw"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_tWTuwM3yEeek8LApaKUyHw" name="abortMissionOf">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_OYcdgM30Eeek8LApaKUyHw" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
@@ -372,37 +379,125 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KF9QA9NXEeeF2efK8E3CEg"/>
           </ownedParameter>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_yClucOALEeejYJ4TDDTpEA" name="getPositionOf">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_yCpY0OALEeejYJ4TDDTpEA" name="roverID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yCpY0eALEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yCp_4OALEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_yCqm8OALEeejYJ4TDDTpEA" type="_d4h8sM3zEeek8LApaKUyHw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yCqm8eALEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yCrOAOALEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_yCtqQOALEeejYJ4TDDTpEA" name="getRoverCommunicators">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_yCtqQeALEeejYJ4TDDTpEA" type="_-ZJPkM3wEeek8LApaKUyHw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yCuRUOALEeejYJ4TDDTpEA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yCuRUeALEeejYJ4TDDTpEA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_7uWCEOALEeejYJ4TDDTpEA" name="getVideoOf">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_7uWpIOALEeejYJ4TDDTpEA" name="roverID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7uWpIeALEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7uXQMOALEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_7uXQMeALEeejYJ4TDDTpEA" type="_nM_xsM3zEeek8LApaKUyHw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7uXQMuALEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7uXQM-ALEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-y4xIOALEeejYJ4TDDTpEA" name="getOperationalStatusOf">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-y5YMOALEeejYJ4TDDTpEA" name="roverID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-y5YMeALEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-y5YMuALEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-y5_QOALEeejYJ4TDDTpEA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-y5_QeALEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-y5_QuALEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_AtLTkOAMEeejYJ4TDDTpEA" name="getOperationalStatusOf">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AtL6oOAMEeejYJ4TDDTpEA" name="roverID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AtMhsOAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AtNIwOAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AtNIweAMEeejYJ4TDDTpEA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AtNv0OAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AtNv0eAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_DbxAwOAMEeejYJ4TDDTpEA" name="getMissionOf">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Dbxn0OAMEeejYJ4TDDTpEA" name="roverID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DbyO4OAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DbyO4eAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Dby18OAMEeejYJ4TDDTpEA" type="_8ov64M3uEeek8LApaKUyHw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dby18eAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dby18uAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_F6iJQOAMEeejYJ4TDDTpEA" name="getRewardPoints">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_F6iwUOAMEeejYJ4TDDTpEA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F6iwUeAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F6iwUuAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_LAHjAOAMEeejYJ4TDDTpEA" name="changeMissionOf">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_LAIKEOAMEeejYJ4TDDTpEA" name="roverID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LAIKEeAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LAIxIOAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_LAIxIeAMEeejYJ4TDDTpEA" name="mission" type="_8ov64M3uEeek8LApaKUyHw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LAIxIuAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LAJYMOAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_NpFJUOAMEeejYJ4TDDTpEA" name="abortMissionOf">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NpFJUeAMEeejYJ4TDDTpEA" name="roverID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NpFwYOAMEeejYJ4TDDTpEA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NpFwYeAMEeejYJ4TDDTpEA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_NNCMkM3vEeek8LApaKUyHw" name="DataManager">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_r4yA0M3yEeek8LApaKUyHw" name="getPositionOf">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_WZIL4M3zEeek8LApaKUyHw" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ea1YgM3zEeek8LApaKUyHw" type="_d4h8sM3zEeek8LApaKUyHw" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_sLwnMM3yEeek8LApaKUyHw" name="getVideoOf">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_jZqqAM3zEeek8LApaKUyHw" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_nXKaUM3zEeek8LApaKUyHw" type="_nM_xsM3zEeek8LApaKUyHw" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_sbqrcM3yEeek8LApaKUyHw" name="getOperationalStatusOf">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_pn2qkM3zEeek8LApaKUyHw" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_rgNTUM3zEeek8LApaKUyHw" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_sofmgM3yEeek8LApaKUyHw" name="getMissionOf">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_xbCTAM3zEeek8LApaKUyHw" name="roverID">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_4pgE0M3zEeek8LApaKUyHw" type="_8ov64M3uEeek8LApaKUyHw" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_s1NM0M3yEeek8LApaKUyHw" name="getRewardPoints">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_BgbpQM30Eeek8LApaKUyHw" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_sP2_cNNVEeeF2efK8E3CEg" name="getRoverCommunicators">
